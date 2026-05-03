@@ -62,6 +62,7 @@ function Footer() {
         <p>© {new Date().getFullYear()} EasyBuildCalc. Free construction calculators.</p>
         <nav className="flex gap-4">
           <a href="/material-prices" className="hover:text-gray-700">Material Prices</a>
+          <a href="/housing-starts" className="hover:text-gray-700">Housing Starts</a>
           <a href="/about" className="hover:text-gray-700">About</a>
           <a href="/contact" className="hover:text-gray-700">Contact</a>
           <a href="/privacy" className="hover:text-gray-700">Privacy</a>

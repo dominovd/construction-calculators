@@ -30,6 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: BASE,                             lastModified: now, changeFrequency: "weekly",  priority: 1.0 },
     { url: `${BASE}/material-prices`,        lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/housing-starts`,         lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/about`,                  lastModified: now, changeFrequency: "yearly",  priority: 0.5 },
     { url: `${BASE}/privacy`,                lastModified: now, changeFrequency: "yearly",  priority: 0.3 },
     ...calculators.map(({ slug, priority, changeFreq }) => ({
