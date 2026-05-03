@@ -5,7 +5,6 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/contact"],
     },
     sitemap: "https://easybuildcalc.com/sitemap.xml",
   };
