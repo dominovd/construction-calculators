@@ -37,11 +37,21 @@ const faqLd = {
   ],
 };
 
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://easybuildcalc.com" },
+    { "@type": "ListItem", position: 2, name: "Brick Calculator", item: "https://easybuildcalc.com/brick-calculator" },
+  ],
+};
+
 export default function BrickPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <h1 className="text-2xl font-bold text-gray-900 mb-1">Free Brick Calculator</h1>
       <p className="text-gray-500 text-sm mb-6">
         Estimate bricks and mortar needed for walls, patios, pathways, and garden beds.
@@ -86,7 +96,8 @@ export default function BrickPage() {
         <p>
           A 60-lb bag of mortar mix covers approximately <strong>12–15 square feet</strong> of single-wythe
           wall. Always add 10% extra for waste and thick spots. Pre-mixed mortar bags are easiest for
-          smaller projects; bulk mortar is more economical for large walls.
+          smaller projects; bulk mortar is more economical for large walls. Use our free brick calculator
+          above to estimate both brick count and mortar bags in one step.
         </p>
 
         <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
@@ -98,17 +109,22 @@ export default function BrickPage() {
         </div>
 
         <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
-        <div className="space-y-4">
+        <div className="space-y-2">
           {[
             { q: "How many bricks do I need for a 10×10 patio?", a: "A 10×10 patio is 100 sq ft. Using standard brick pavers at 4.5 bricks per sq ft, you need approximately 450 bricks. Add 10% for cuts and waste, bringing the total to about 495 bricks." },
             { q: "How many bricks per square foot for a wall?", a: "Standard US bricks (7⅝″ × 3⅝″ × 2¼″) with ⅜-inch mortar joints cover approximately 7.5 bricks per square foot in a single wythe (one brick thick) wall. Modular bricks cover about 6.75 per sq ft." },
             { q: "How much mortar do I need for brickwork?", a: "One 60-lb bag of mortar mix covers approximately 12–15 sq ft of single-wythe brickwork. A simple rule: you need about 1 bag of mortar for every 15–20 bricks when using ⅜-inch joints." },
             { q: "How long does it take mortar to dry?", a: "Mortar typically reaches initial set in 24 hours and full cure in 28 days. You can usually continue building within 24–48 hours. Avoid loading freshly laid masonry and protect from rain and freezing temperatures during curing." },
           ].map(({ q, a }) => (
-            <div key={q}>
-              <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
-              <p className="text-gray-600">{a}</p>
-            </div>
+            <details key={q} className="border border-gray-200 rounded-lg">
+              <summary className="font-semibold text-gray-800 px-4 py-3 cursor-pointer select-none list-none flex justify-between items-center hover:bg-gray-50 rounded-lg">
+                <span>{q}</span>
+                <span className="text-gray-400 ml-2 flex-shrink-0 text-lg">+</span>
+              </summary>
+              <div className="px-4 pb-4 border-t border-gray-100">
+                <p className="text-gray-600 pt-3">{a}</p>
+              </div>
+            </details>
           ))}
         </div>
       </article>

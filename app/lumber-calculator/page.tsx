@@ -37,11 +37,21 @@ const faqLd = {
   ],
 };
 
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://easybuildcalc.com" },
+    { "@type": "ListItem", position: 2, name: "Lumber Calculator", item: "https://easybuildcalc.com/lumber-calculator" },
+  ],
+};
+
 export default function LumberPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <nav className="text-xs text-gray-500 mb-4">
         <a href="/" className="hover:text-blue-600">Home</a>
@@ -102,22 +112,28 @@ export default function LumberPage() {
           <strong className="text-amber-800">Pro tip:</strong>{" "}
           <span className="text-amber-700">
             Add 15–20% waste for hardwood projects (cuts, defects, grain matching).
-            For framing, 10% is usually sufficient.
+            For framing, 10% is usually sufficient. Use our free calculator above to
+            get your board feet and total cost before heading to the lumber yard.
           </span>
         </div>
 
         <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
-        <div className="space-y-4">
+        <div className="space-y-2">
           {[
             { q: "What is the actual size of a 2x4?", a: "A 2×4 has actual dimensions of 1.5 inches × 3.5 inches. Lumber is sold by its nominal (pre-milling) size, but milling and drying reduce it. Always use actual dimensions when calculating board feet or planning cuts." },
             { q: "How much does lumber cost per board foot?", a: "Common softwood framing lumber (SPF 2×4) sells for $0.50–$0.80 per board foot at home centers. Hardwoods vary widely: poplar costs $3–$5/BF; oak is $5–$8/BF; walnut runs $10–$20/BF; figured maple or exotic species can exceed $30/BF." },
             { q: "How do I calculate how much lumber I need?", a: "For framing: calculate total linear feet needed for each member size, then convert to board count by dividing by your board length. For hardwood projects: calculate total board feet needed, add 15–20% waste, then divide by average BF per board in your lumber." },
             { q: "What is green lumber vs. kiln-dried?", a: "Green lumber is freshly cut and has high moisture content — it will shrink and warp as it dries. Kiln-dried (KD) lumber has been dried to 19% moisture or less and is more dimensionally stable. Use KD lumber for interior finish work; green or treated is fine for structural framing." },
           ].map(({ q, a }) => (
-            <div key={q}>
-              <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
-              <p className="text-gray-600">{a}</p>
-            </div>
+            <details key={q} className="border border-gray-200 rounded-lg">
+              <summary className="font-semibold text-gray-800 px-4 py-3 cursor-pointer select-none list-none flex justify-between items-center hover:bg-gray-50 rounded-lg">
+                <span>{q}</span>
+                <span className="text-gray-400 ml-2 flex-shrink-0 text-lg">+</span>
+              </summary>
+              <div className="px-4 pb-4 border-t border-gray-100">
+                <p className="text-gray-600 pt-3">{a}</p>
+              </div>
+            </details>
           ))}
         </div>
       </article>

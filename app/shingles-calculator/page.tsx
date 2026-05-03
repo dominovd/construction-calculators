@@ -37,11 +37,21 @@ const faqLd = {
   ],
 };
 
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://easybuildcalc.com" },
+    { "@type": "ListItem", position: 2, name: "Shingles Calculator", item: "https://easybuildcalc.com/shingles-calculator" },
+  ],
+};
+
 export default function ShinglesPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <nav className="text-xs text-gray-500 mb-4">
         <a href="/" className="hover:text-blue-600">Home</a>
@@ -62,6 +72,7 @@ export default function ShinglesPage() {
           A <strong>roofing square</strong> equals 100 square feet of roof surface. It&apos;s the
           standard unit roofers use when ordering and pricing shingles. Most architectural shingles
           come in <strong>3 bundles per square</strong>, though heavier products may need 4 bundles.
+          Use our free calculator above to get your square and bundle count based on footprint and pitch.
         </p>
 
         <h2 className="text-xl font-semibold text-gray-900">Pitch Factor Chart</h2>
@@ -101,17 +112,22 @@ export default function ShinglesPage() {
         </div>
 
         <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
-        <div className="space-y-4">
+        <div className="space-y-2">
           {[
             { q: "How many bundles of shingles do I need per square?", a: "Standard 3-tab and architectural (dimensional) shingles come 3 bundles per square (100 sq ft). Heavier premium shingles may require 4 bundles per square — always check the product packaging." },
             { q: "How many squares of shingles for a 1,500 sq ft house?", a: "The roof area is larger than the house footprint due to pitch. A 1,500 sq ft house with a 4:12 pitch has approximately 1,575 sq ft of roof area (multiply by 1.05 pitch factor). That's about 17 squares or 51 bundles, plus starter course and ridge cap." },
             { q: "How long do architectural shingles last?", a: "Quality architectural (dimensional) shingles are rated for 25–30 years and often last 20–25 years in practice. Premium Class 4 impact-resistant shingles can last 30–40 years and may qualify for insurance discounts." },
             { q: "What is the minimum pitch for asphalt shingles?", a: "Standard asphalt shingles require a minimum 2:12 pitch with special underlayment installation. Below 2:12, you need a membrane roofing system (low-slope materials). Most manufacturers recommend 4:12 or steeper for best performance." },
           ].map(({ q, a }) => (
-            <div key={q}>
-              <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
-              <p className="text-gray-600">{a}</p>
-            </div>
+            <details key={q} className="border border-gray-200 rounded-lg">
+              <summary className="font-semibold text-gray-800 px-4 py-3 cursor-pointer select-none list-none flex justify-between items-center hover:bg-gray-50 rounded-lg">
+                <span>{q}</span>
+                <span className="text-gray-400 ml-2 flex-shrink-0 text-lg">+</span>
+              </summary>
+              <div className="px-4 pb-4 border-t border-gray-100">
+                <p className="text-gray-600 pt-3">{a}</p>
+              </div>
+            </details>
           ))}
         </div>
       </article>

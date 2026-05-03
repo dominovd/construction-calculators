@@ -37,11 +37,21 @@ const faqLd = {
   ],
 };
 
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://easybuildcalc.com" },
+    { "@type": "ListItem", position: 2, name: "Rebar Calculator", item: "https://easybuildcalc.com/rebar-calculator" },
+  ],
+};
+
 export default function RebarPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <h1 className="text-2xl font-bold text-gray-900 mb-1">Free Rebar Calculator</h1>
       <p className="text-gray-500 text-sm mb-6">
         Calculate rebar quantity, linear footage, and weight for concrete slabs and footings.
@@ -54,6 +64,8 @@ export default function RebarPage() {
         <p>
           For a concrete slab with a grid pattern, rebar runs in two perpendicular directions.
           The number of bars in each direction equals the slab dimension divided by spacing, plus one.
+          This free tool handles all the math — just enter your slab dimensions and spacing to get
+          bar counts, linear footage, and total weight.
         </p>
         <pre className="bg-gray-100 rounded-lg p-3 text-xs overflow-x-auto">
           Bars (direction 1) = ⌈Width ÷ Spacing⌉ + 1{"\n"}
@@ -98,17 +110,22 @@ export default function RebarPage() {
         </p>
 
         <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
-        <div className="space-y-4">
+        <div className="space-y-2">
           {[
             { q: "What size rebar should I use for a concrete driveway?", a: "#4 rebar (½ inch diameter) at 12-inch spacing is standard for residential driveways and patios. For heavier use or expansive soils, use #4 at 12-inch OC both ways. Always check local building codes." },
             { q: "Do I need rebar in a 4-inch concrete slab?", a: "Rebar is recommended for most slabs — driveways, garage floors, and patios. While a plain 4-inch slab may technically hold up, rebar significantly reduces cracking from settling, temperature changes, and vehicle loads." },
             { q: "How far apart should rebar be spaced in a slab?", a: "Standard spacing is 12 inches on center (OC) for residential slabs. High-load applications like garage floors may use 12-inch spacing with heavier #5 rebar. Residential footings typically use 2 bars horizontally, centered in the footing." },
             { q: "Should I use rebar or wire mesh in a concrete slab?", a: "Rebar provides superior crack control and tensile strength, especially for slabs that may be subject to settlement or heavy loads. Wire mesh (welded wire fabric) is cheaper and faster to install but provides less structural reinforcement. Many contractors use a combination." },
           ].map(({ q, a }) => (
-            <div key={q}>
-              <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
-              <p className="text-gray-600">{a}</p>
-            </div>
+            <details key={q} className="border border-gray-200 rounded-lg">
+              <summary className="font-semibold text-gray-800 px-4 py-3 cursor-pointer select-none list-none flex justify-between items-center hover:bg-gray-50 rounded-lg">
+                <span>{q}</span>
+                <span className="text-gray-400 ml-2 flex-shrink-0 text-lg">+</span>
+              </summary>
+              <div className="px-4 pb-4 border-t border-gray-100">
+                <p className="text-gray-600 pt-3">{a}</p>
+              </div>
+            </details>
           ))}
         </div>
       </article>

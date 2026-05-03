@@ -37,11 +37,21 @@ const faqLd = {
   ],
 };
 
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://easybuildcalc.com" },
+    { "@type": "ListItem", position: 2, name: "Mulch Calculator", item: "https://easybuildcalc.com/mulch-calculator" },
+  ],
+};
+
 export default function MulchPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <nav className="text-xs text-gray-500 mb-4">
         <a href="/" className="hover:text-blue-600">Home</a>
@@ -95,7 +105,8 @@ export default function MulchPage() {
         <p>
           Bagged mulch is convenient for small beds and easy to transport in a car.
           Bulk delivery becomes more economical above <strong>3 cubic yards</strong> and is
-          available in larger varieties like shredded hardwood, cedar, and pine bark.
+          available in larger varieties like shredded hardwood, cedar, and pine bark. This free
+          tool helps you compare both options side by side before heading to the store.
         </p>
 
         <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm">
@@ -107,17 +118,22 @@ export default function MulchPage() {
         </div>
 
         <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
-        <div className="space-y-4">
+        <div className="space-y-2">
           {[
             { q: "How much mulch do I need for a 100 sq ft garden bed?", a: "For 3-inch depth: 100 × (3/12) ÷ 27 = 0.93 cubic yards, or about 1 cubic yard. That's roughly 14 bags of 2 cu ft mulch. For a 2-inch layer, you need about 0.62 cubic yards or 9–10 bags." },
             { q: "How deep should mulch be?", a: "Apply 2–3 inches of mulch for weed suppression and moisture retention in most beds. Do not exceed 4 inches — deep mulch can prevent water penetration, cause root rot, and harbor pests. Keep mulch 2–3 inches away from plant stems and tree trunks." },
             { q: "How much does a yard of mulch cost?", a: "Bulk mulch delivered typically costs $25–$55 per cubic yard depending on type and region. Shredded hardwood is $30–$45/yd; cedar is $45–$65/yd; colored mulch is $40–$60/yd. Bagged mulch at home centers costs more per yard but is convenient for small areas." },
             { q: "How many bags of mulch equal a yard?", a: "One cubic yard equals 27 cubic feet. A standard 2 cu ft bag: 27 ÷ 2 = 13.5 bags per yard. A 3 cu ft bag: 27 ÷ 3 = 9 bags per yard. Bulk delivery is more economical above 2–3 cubic yards." },
           ].map(({ q, a }) => (
-            <div key={q}>
-              <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
-              <p className="text-gray-600">{a}</p>
-            </div>
+            <details key={q} className="border border-gray-200 rounded-lg">
+              <summary className="font-semibold text-gray-800 px-4 py-3 cursor-pointer select-none list-none flex justify-between items-center hover:bg-gray-50 rounded-lg">
+                <span>{q}</span>
+                <span className="text-gray-400 ml-2 flex-shrink-0 text-lg">+</span>
+              </summary>
+              <div className="px-4 pb-4 border-t border-gray-100">
+                <p className="text-gray-600 pt-3">{a}</p>
+              </div>
+            </details>
           ))}
         </div>
       </article>

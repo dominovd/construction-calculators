@@ -37,11 +37,21 @@ const faqLd = {
   ],
 };
 
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://easybuildcalc.com" },
+    { "@type": "ListItem", position: 2, name: "Deck Calculator", item: "https://easybuildcalc.com/deck-calculator" },
+  ],
+};
+
 export default function DeckPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <nav className="text-xs text-gray-500 mb-4">
         <a href="/" className="hover:text-blue-600">Home</a>
@@ -89,6 +99,7 @@ export default function DeckPage() {
           Standard treated lumber decking (5/4×6 or 2×6) spans up to <strong>16 inches OC</strong> safely.
           For composite or PVC decking, check the manufacturer specs — many require 12-inch spacing,
           especially for diagonal installations. Always double-check joist span tables for your specific load.
+          This free tool lets you plug in your board size and deck dimensions to get an instant board count.
         </p>
 
         <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm">
@@ -101,17 +112,22 @@ export default function DeckPage() {
         </div>
 
         <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
-        <div className="space-y-4">
+        <div className="space-y-2">
           {[
             { q: "How many deck boards do I need for a 12×16 deck?", a: "A 12×16 deck is 192 sq ft. Using 5/4×6 boards (5.5 inch actual width) with ¼-inch gaps, you need approximately 38 boards at 16 feet long, or 42 boards with 10% waste. The exact count depends on board length and run direction." },
             { q: "What is the best wood for a deck?", a: "Pressure-treated pine is the most popular choice for its affordability and durability ($2–$4/linear ft). Cedar and redwood are naturally rot-resistant and look beautiful ($4–$8/lf). Composite decking (Trex, TimberTech) costs more upfront ($6–$12/lf) but requires almost no maintenance." },
             { q: "How wide should gaps be between deck boards?", a: "Leave ¼ to ⅛ inch between boards for drainage and expansion. Green or wet pressure-treated lumber will shrink as it dries, so butting boards tightly often results in proper gaps once dry. Use a 16d nail as a spacer for consistent gaps." },
             { q: "What joist spacing do I need under decking?", a: "Standard 5/4×6 decking spans 16 inches OC safely for straight installation. For diagonal decking (45°), reduce joist spacing to 12 inches OC. Composite and PVC decking has its own span requirements — always check the manufacturer specs." },
           ].map(({ q, a }) => (
-            <div key={q}>
-              <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
-              <p className="text-gray-600">{a}</p>
-            </div>
+            <details key={q} className="border border-gray-200 rounded-lg">
+              <summary className="font-semibold text-gray-800 px-4 py-3 cursor-pointer select-none list-none flex justify-between items-center hover:bg-gray-50 rounded-lg">
+                <span>{q}</span>
+                <span className="text-gray-400 ml-2 flex-shrink-0 text-lg">+</span>
+              </summary>
+              <div className="px-4 pb-4 border-t border-gray-100">
+                <p className="text-gray-600 pt-3">{a}</p>
+              </div>
+            </details>
           ))}
         </div>
       </article>

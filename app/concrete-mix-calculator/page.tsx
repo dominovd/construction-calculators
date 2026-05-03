@@ -37,11 +37,21 @@ const faqLd = {
   ],
 };
 
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://easybuildcalc.com" },
+    { "@type": "ListItem", position: 2, name: "Concrete Mix Calculator", item: "https://easybuildcalc.com/concrete-mix-calculator" },
+  ],
+};
+
 export default function ConcreteMixPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <nav className="text-xs text-gray-500 mb-4">
         <a href="/" className="hover:text-blue-600">Home</a>
@@ -95,22 +105,28 @@ export default function ConcreteMixPage() {
           <strong className="text-amber-800">Pro tip:</strong>{" "}
           <span className="text-amber-700">
             Hand mixing is practical for small jobs under 0.5 yd³. For anything larger, ready-mix
-            is more consistent, faster, and often cheaper when you factor in labor.
+            is more consistent, faster, and often cheaper when you factor in labor. Use our free
+            calculator above to compare mix ratios before you buy materials.
           </span>
         </div>
 
         <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
-        <div className="space-y-4">
+        <div className="space-y-2">
           {[
             { q: "What is the best concrete mix ratio for a driveway?", a: "A 1:2:3 mix (cement:sand:gravel) produces approximately 3,000 psi concrete, which is suitable for driveways, sidewalks, and patios. For structural elements like beams and columns, use a stronger 1:1.5:3 mix (~4,000 psi)." },
             { q: "How many bags of cement per yard of concrete?", a: "For a standard 1:2:3 mix, you need approximately 5.5–6 bags of 94-lb Portland cement per cubic yard of concrete. This assumes a water-cement ratio of 0.50 and typical aggregate gradation." },
             { q: "What is the water-cement ratio?", a: "The water-cement ratio (W/C) is the weight of water divided by the weight of cement. Lower ratios (0.40–0.45) produce stronger, more durable concrete. Higher ratios (0.55+) make mixing easier but reduce strength. Never add extra water on site to make concrete easier to pour." },
             { q: "Can I mix concrete without a mixer?", a: "Yes, but it's labor-intensive. For volumes under ¼ cubic yard, hand mixing in a wheelbarrow or tub works. Use a margin trowel or hoe. For larger volumes, rent a drum mixer — mixing by hand becomes impractical above 10–15 bags." },
           ].map(({ q, a }) => (
-            <div key={q}>
-              <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
-              <p className="text-gray-600">{a}</p>
-            </div>
+            <details key={q} className="border border-gray-200 rounded-lg">
+              <summary className="font-semibold text-gray-800 px-4 py-3 cursor-pointer select-none list-none flex justify-between items-center hover:bg-gray-50 rounded-lg">
+                <span>{q}</span>
+                <span className="text-gray-400 ml-2 flex-shrink-0 text-lg">+</span>
+              </summary>
+              <div className="px-4 pb-4 border-t border-gray-100">
+                <p className="text-gray-600 pt-3">{a}</p>
+              </div>
+            </details>
           ))}
         </div>
       </article>

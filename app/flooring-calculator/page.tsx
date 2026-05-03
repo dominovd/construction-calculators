@@ -37,11 +37,21 @@ const faqLd = {
   ],
 };
 
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://easybuildcalc.com" },
+    { "@type": "ListItem", position: 2, name: "Flooring Calculator", item: "https://easybuildcalc.com/flooring-calculator" },
+  ],
+};
+
 export default function FlooringPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <h1 className="text-2xl font-bold text-gray-900 mb-1">Free Flooring Calculator</h1>
       <p className="text-gray-500 text-sm mb-6">
         Calculate flooring for any room — hardwood, laminate, vinyl plank, tile, or carpet.
@@ -53,7 +63,8 @@ export default function FlooringPage() {
         <h2 className="text-lg font-semibold text-gray-900">How to Calculate Flooring</h2>
         <p>
           Multiply your room&apos;s length by its width to get square footage. Always add a
-          <strong> waste factor</strong> before ordering:
+          <strong> waste factor</strong> before ordering. This free tool calculates square footage,
+          waste-adjusted totals, and box counts — enter your room dimensions and price per box to get started:
         </p>
         <div className="overflow-x-auto">
           <table className="w-full text-xs border-collapse">
@@ -108,17 +119,22 @@ export default function FlooringPage() {
         </div>
 
         <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
-        <div className="space-y-4">
+        <div className="space-y-2">
           {[
             { q: "How much flooring do I need for a 12×12 room?", a: "A 12×12 room has 144 sq ft of floor area. Add 10% waste for a straight installation, so order approximately 158–160 sq ft. For diagonal or herringbone patterns, add 15–20% instead." },
             { q: "How do I calculate flooring for multiple rooms?", a: "Calculate each room separately (length × width), then add all areas together. Add your waste percentage to the total, not to each room individually, to minimize over-ordering." },
             { q: "What is the typical waste factor for flooring?", a: "For straight installations parallel to walls, use 7–10%. For diagonal (45°) installations, use 12–15%. For herringbone or complex patterns, use 15–20%. Irregular room shapes add another 5%." },
             { q: "How many boxes of flooring do I need?", a: "Divide your total square footage (including waste) by the coverage per box shown on the product packaging. Most laminate and vinyl plank boxes cover 20–25 sq ft; hardwood typically 15–20 sq ft." },
           ].map(({ q, a }) => (
-            <div key={q}>
-              <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
-              <p className="text-gray-600">{a}</p>
-            </div>
+            <details key={q} className="border border-gray-200 rounded-lg">
+              <summary className="font-semibold text-gray-800 px-4 py-3 cursor-pointer select-none list-none flex justify-between items-center hover:bg-gray-50 rounded-lg">
+                <span>{q}</span>
+                <span className="text-gray-400 ml-2 flex-shrink-0 text-lg">+</span>
+              </summary>
+              <div className="px-4 pb-4 border-t border-gray-100">
+                <p className="text-gray-600 pt-3">{a}</p>
+              </div>
+            </details>
           ))}
         </div>
       </article>

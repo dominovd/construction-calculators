@@ -37,11 +37,21 @@ const faqLd = {
   ],
 };
 
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://easybuildcalc.com" },
+    { "@type": "ListItem", position: 2, name: "Gravel Calculator", item: "https://easybuildcalc.com/gravel-calculator" },
+  ],
+};
+
 export default function GravelPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <nav className="text-xs text-gray-500 mb-4">
         <a href="/" className="hover:text-blue-600">Home</a>
@@ -98,21 +108,27 @@ export default function GravelPage() {
           <span className="text-amber-700">
             Always add 10% for compaction — gravel settles 10–15% after installation.
             For driveways, install geotextile fabric underneath to prevent gravel from sinking into soil.
+            Use our free calculator above to get exact tons and cubic yards before ordering.
           </span>
         </div>
 
         <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
-        <div className="space-y-4">
+        <div className="space-y-2">
           {[
             { q: "How many tons of gravel do I need for a driveway?", a: "A standard 2-car driveway (20 ft wide × 50 ft long) at 4-inch depth needs about 12.3 cubic yards or roughly 18 tons of gravel. Add 10% for compaction and settling. Use our calculator above for your exact dimensions." },
             { q: "How deep should gravel be for a driveway?", a: "For a new gravel driveway, use 4–6 inches of compacted base gravel (#21 or #57 stone) topped with 2–4 inches of pea gravel or crushed stone surface. Total depth of 6–8 inches is standard for passenger vehicles." },
             { q: "How much area does a ton of gravel cover?", a: "One ton of gravel covers approximately 100 sq ft at 2 inches deep, or 65 sq ft at 3 inches deep. At 4 inches deep, 1 ton covers about 50 sq ft. Coverage varies slightly by stone type and density." },
             { q: "What type of gravel is best for a driveway?", a: "#57 crushed stone or #21A (crusher run) works best as a base layer — it compacts well and provides a stable foundation. Top the base with pea gravel, crushed granite, or ⅜-inch crushed stone for a clean finished surface." },
           ].map(({ q, a }) => (
-            <div key={q}>
-              <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
-              <p className="text-gray-600">{a}</p>
-            </div>
+            <details key={q} className="border border-gray-200 rounded-lg">
+              <summary className="font-semibold text-gray-800 px-4 py-3 cursor-pointer select-none list-none flex justify-between items-center hover:bg-gray-50 rounded-lg">
+                <span>{q}</span>
+                <span className="text-gray-400 ml-2 flex-shrink-0 text-lg">+</span>
+              </summary>
+              <div className="px-4 pb-4 border-t border-gray-100">
+                <p className="text-gray-600 pt-3">{a}</p>
+              </div>
+            </details>
           ))}
         </div>
       </article>

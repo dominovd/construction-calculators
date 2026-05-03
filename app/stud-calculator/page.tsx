@@ -33,6 +33,15 @@ const faqLd = {
   ],
 };
 
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://easybuildcalc.com" },
+    { "@type": "ListItem", position: 2, name: "Stud Calculator", item: "https://easybuildcalc.com/stud-calculator" },
+  ],
+};
+
 export default function StudPage() {
   return (
     <>
@@ -43,6 +52,10 @@ export default function StudPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <div className="max-w-3xl mx-auto px-4 py-8">
         <nav className="text-xs text-gray-500 mb-4">
@@ -64,7 +77,8 @@ export default function StudPage() {
           <h2 className="text-xl font-semibold text-gray-900">How Many Studs Do I Need?</h2>
           <p>
             The basic formula for calculating wall studs is simple: divide the wall length (in inches)
-            by the stud spacing, then add 1 for the final end stud. Most residential walls use{" "}
+            by the stud spacing, then add 1 for the final end stud. Use our free calculator above to
+            get an instant count with waste buffer included. Most residential walls use{" "}
             <strong>16 inches on center (OC)</strong> spacing, which provides structural support
             for drywall and meets building codes.
           </p>
@@ -125,17 +139,22 @@ export default function StudPage() {
           </ul>
 
           <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
-          <div className="space-y-4">
+          <div className="space-y-2">
             {[
               { q: "How many studs do I need for a 10-foot wall?", a: "For a 10-foot wall at 16-inch OC spacing: (10 × 12) ÷ 16 + 1 = 8.5, rounded up to 9 studs. Add 2–3 extra for corners and any openings." },
               { q: "What does 16 OC mean for studs?", a: "OC stands for 'on center' — the distance measured from the center of one stud to the center of the next. 16-inch OC is the standard for most residential walls. 24-inch OC uses fewer studs and is used for non-load-bearing walls." },
               { q: "What length studs do I need for an 8-foot ceiling?", a: "Use pre-cut 92⅝-inch studs (also called 'pre-cuts' or '8-foot studs'). This accounts for a double top plate (3 inches) and single bottom plate (1.5 inches), resulting in exactly 8-foot finished ceiling height." },
               { q: "How many extra studs should I buy?", a: "Add at least 10–15% extra. You'll need additional studs for corners (3-stud corners), T-intersections, and blocking around doors and windows. The calculator already includes a 10% buffer." },
             ].map(({ q, a }) => (
-              <div key={q}>
-                <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
-                <p className="text-gray-600">{a}</p>
-              </div>
+              <details key={q} className="border border-gray-200 rounded-lg">
+                <summary className="font-semibold text-gray-800 px-4 py-3 cursor-pointer select-none list-none flex justify-between items-center hover:bg-gray-50 rounded-lg">
+                  <span>{q}</span>
+                  <span className="text-gray-400 ml-2 flex-shrink-0 text-lg">+</span>
+                </summary>
+                <div className="px-4 pb-4 border-t border-gray-100">
+                  <p className="text-gray-600 pt-3">{a}</p>
+                </div>
+              </details>
             ))}
           </div>
         </article>

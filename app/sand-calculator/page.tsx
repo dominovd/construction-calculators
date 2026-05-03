@@ -37,11 +37,21 @@ const faqLd = {
   ],
 };
 
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://easybuildcalc.com" },
+    { "@type": "ListItem", position: 2, name: "Sand Calculator", item: "https://easybuildcalc.com/sand-calculator" },
+  ],
+};
+
 export default function SandPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <h1 className="text-2xl font-bold text-gray-900 mb-1">Free Sand Calculator</h1>
       <p className="text-gray-500 text-sm mb-6">
         Calculate cubic yards, tons, and bags of sand, gravel, topsoil, or mulch for any area.
@@ -51,6 +61,7 @@ export default function SandPage() {
 
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-lg font-semibold text-gray-900">Sand Calculation Formula</h2>
+        <p>Use our free calculator above to get cubic yards, tons, and bag counts instantly. The math behind it:</p>
         <pre className="bg-gray-100 rounded-lg p-3 text-xs overflow-x-auto">
           Cubic Feet = Length × Width × (Depth ÷ 12){"\n"}
           Cubic Yards = Cubic Feet ÷ 27{"\n"}
@@ -112,17 +123,22 @@ export default function SandPage() {
         </div>
 
         <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
-        <div className="space-y-4">
+        <div className="space-y-2">
           {[
             { q: "How much sand do I need under pavers?", a: "For a paver patio or walkway, use 1 inch of bedding sand (coarse, concrete sand) under the pavers. For a 200 sq ft patio at 1-inch depth, you need about 0.62 cubic yards or roughly 0.84 tons of sand." },
             { q: "How many bags of sand per square foot?", a: "For a 1-inch sand layer under pavers: one 50-lb bag covers about 6 sq ft. For a 2-inch layer, one bag covers 3 sq ft. At 3 inches, one 50-lb bag covers only about 2 sq ft." },
             { q: "What type of sand is used for paver base?", a: "Use coarse concrete sand (also called sharp sand or builder's sand) for paver bedding — not play sand or mason sand. Concrete sand drains well and resists shifting. For polymeric sand between pavers, use special polymeric jointing sand." },
             { q: "How much sand do I need for a sandbox?", a: "A typical backyard sandbox (4 ft × 6 ft × 8 inches deep) needs about 1.33 cubic yards or approximately 18 cubic feet of sand. That's about 9 bags of 50-lb play sand. Use washed play sand — not construction sand." },
           ].map(({ q, a }) => (
-            <div key={q}>
-              <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
-              <p className="text-gray-600">{a}</p>
-            </div>
+            <details key={q} className="border border-gray-200 rounded-lg">
+              <summary className="font-semibold text-gray-800 px-4 py-3 cursor-pointer select-none list-none flex justify-between items-center hover:bg-gray-50 rounded-lg">
+                <span>{q}</span>
+                <span className="text-gray-400 ml-2 flex-shrink-0 text-lg">+</span>
+              </summary>
+              <div className="px-4 pb-4 border-t border-gray-100">
+                <p className="text-gray-600 pt-3">{a}</p>
+              </div>
+            </details>
           ))}
         </div>
       </article>

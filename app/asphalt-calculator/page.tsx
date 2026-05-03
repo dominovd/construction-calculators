@@ -37,6 +37,15 @@ const faqLd = {
   ],
 };
 
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://easybuildcalc.com" },
+    { "@type": "ListItem", position: 2, name: "Asphalt Calculator", item: "https://easybuildcalc.com/asphalt-calculator" },
+  ],
+};
+
 export default function AsphaltPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
@@ -45,6 +54,7 @@ export default function AsphaltPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <h1 className="text-2xl font-bold text-gray-900 mb-1">Free Asphalt Calculator</h1>
       <p className="text-gray-500 text-sm mb-6">
         Calculate asphalt tonnage and cost for driveways, parking lots, and roads.
@@ -95,21 +105,27 @@ export default function AsphaltPage() {
         <p>
           Hot mix asphalt typically costs <strong>$80–$150 per ton</strong> depending on region and oil prices.
           A standard 500 sq ft driveway at 3" depth requires about 9–10 tons, costing roughly $900–$1,500
-          in materials alone. Installation labor typically adds $2–$5 per square foot.
+          in materials alone. Installation labor typically adds $2–$5 per square foot. Use our free
+          calculator above to get an instant estimate for your specific project dimensions.
         </p>
 
         <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
-        <div className="space-y-4">
+        <div className="space-y-2">
           {[
             { q: "How many tons of asphalt do I need for a driveway?", a: "A standard single-car driveway (10 ft × 50 ft) at 3-inch depth needs about 5.5 cubic yards or roughly 11 tons of asphalt. A 2-car driveway (20 ft × 50 ft) at 3 inches requires about 22 tons." },
             { q: "How thick should an asphalt driveway be?", a: "Residential driveways should be at least 2–3 inches of compacted asphalt over a 4–6 inch compacted aggregate base. Heavier use areas or cold climates may require 3–4 inches of asphalt. Always compact the base layer before paving." },
             { q: "How much does asphalt cost per square foot?", a: "Asphalt paving typically costs $3–$7 per square foot installed, including materials and labor. Material alone (hot mix asphalt) runs $80–$150 per ton. A 1,000 sq ft driveway typically costs $3,000–$6,000 fully installed." },
             { q: "How long does an asphalt driveway last?", a: "A properly installed and maintained asphalt driveway lasts 20–30 years. Sealcoat every 3–5 years to protect against UV damage, oil spills, and water penetration. Fill cracks as they appear to prevent water infiltration and base damage." },
           ].map(({ q, a }) => (
-            <div key={q}>
-              <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
-              <p className="text-gray-600">{a}</p>
-            </div>
+            <details key={q} className="border border-gray-200 rounded-lg">
+              <summary className="font-semibold text-gray-800 px-4 py-3 cursor-pointer select-none list-none flex justify-between items-center hover:bg-gray-50 rounded-lg">
+                <span>{q}</span>
+                <span className="text-gray-400 ml-2 flex-shrink-0 text-lg">+</span>
+              </summary>
+              <div className="px-4 pb-4 border-t border-gray-100">
+                <p className="text-gray-600 pt-3">{a}</p>
+              </div>
+            </details>
           ))}
         </div>
       </article>

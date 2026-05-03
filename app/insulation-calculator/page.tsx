@@ -37,11 +37,21 @@ const faqLd = {
   ],
 };
 
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://easybuildcalc.com" },
+    { "@type": "ListItem", position: 2, name: "Insulation Calculator", item: "https://easybuildcalc.com/insulation-calculator" },
+  ],
+};
+
 export default function InsulationPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <nav className="text-xs text-gray-500 mb-4">
         <a href="/" className="hover:text-blue-600">Home</a>
@@ -92,7 +102,8 @@ export default function InsulationPage() {
           <strong>Fiberglass batts</strong> are easy to install in open stud cavities and attic floors.
           <strong> Blown-in</strong> (loose fill) fills irregular spaces better and is ideal for attics,
           crawl spaces, and retrofit projects. Blown-in requires a machine (often rented free when buying
-          a minimum number of bags at home centers).
+          a minimum number of bags at home centers). This free tool helps you estimate bags or rolls for
+          either insulation type before you head to the store.
         </p>
 
         <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm">
@@ -104,17 +115,22 @@ export default function InsulationPage() {
         </div>
 
         <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
-        <div className="space-y-4">
+        <div className="space-y-2">
           {[
             { q: "What R-value do I need for my attic?", a: "The DOE recommends R-38 to R-60 for attics in most US climate zones. Zone 1–2 (South) needs R-30; zones 3–4 need R-38 to R-49; zones 5–8 (North) need R-49 to R-60. Check the Energy Star map for your specific zone." },
             { q: "Is blown-in insulation better than batts?", a: "Blown-in insulation fills gaps and irregular spaces better than batts, making it superior for attics and retrofit projects. Batts are easier for DIY wall insulation in open stud cavities. Both provide similar R-value per inch when installed correctly." },
             { q: "How much does insulation cost per square foot?", a: "Fiberglass batt insulation costs $0.50–$1.50 per sq ft installed. Blown-in insulation runs $1.00–$2.50 per sq ft. Spray foam costs $2–$7 per sq ft. DIY installation with bagged insulation is significantly cheaper than professional installation." },
             { q: "Can I add insulation on top of existing insulation?", a: "Yes, in most cases. You can add blown-in insulation over existing batts in an attic to reach a higher R-value. Make sure existing insulation is dry and not moldy. Do not cover recessed lights unless they are rated IC (Insulation Contact)." },
           ].map(({ q, a }) => (
-            <div key={q}>
-              <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
-              <p className="text-gray-600">{a}</p>
-            </div>
+            <details key={q} className="border border-gray-200 rounded-lg">
+              <summary className="font-semibold text-gray-800 px-4 py-3 cursor-pointer select-none list-none flex justify-between items-center hover:bg-gray-50 rounded-lg">
+                <span>{q}</span>
+                <span className="text-gray-400 ml-2 flex-shrink-0 text-lg">+</span>
+              </summary>
+              <div className="px-4 pb-4 border-t border-gray-100">
+                <p className="text-gray-600 pt-3">{a}</p>
+              </div>
+            </details>
           ))}
         </div>
       </article>

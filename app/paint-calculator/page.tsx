@@ -37,11 +37,21 @@ const faqLd = {
   ],
 };
 
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://easybuildcalc.com" },
+    { "@type": "ListItem", position: 2, name: "Paint Calculator", item: "https://easybuildcalc.com/paint-calculator" },
+  ],
+};
+
 export default function PaintPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <nav className="text-xs text-gray-500 mb-4">
         <a href="/" className="hover:text-blue-600">Home</a>
@@ -59,6 +69,7 @@ export default function PaintPage() {
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-xl font-semibold text-gray-900">How Much Paint Do I Need?</h2>
         <p>
+          Use our free calculator above to get an accurate gallon count before heading to the store.
           One gallon of paint typically covers <strong>350–400 square feet</strong> on smooth surfaces.
           Most rooms need two coats — one for coverage and one for an even finish. New drywall or
           dramatic color changes may need a third coat.
@@ -106,17 +117,22 @@ export default function PaintPage() {
         </div>
 
         <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
-        <div className="space-y-4">
+        <div className="space-y-2">
           {[
             { q: "How many gallons of paint do I need for a 12×12 room?", a: "A 12×12 room with 8-foot ceilings has about 320 sq ft of paintable wall area (minus door and window). At 350 sq ft per gallon, you need about 1 gallon per coat — so 2 gallons for two coats." },
             { q: "Does primer count as a coat of paint?", a: "No. Primer is a separate product applied before paint. If painting over new drywall, a different color, or bare wood, always prime first. This improves adhesion, evens absorption, and often reduces the number of finish coats needed." },
             { q: "How much paint coverage does one gallon provide?", a: "One gallon of paint covers approximately 350–400 sq ft on smooth, primed surfaces. Rough, textured, or porous surfaces may only yield 250–300 sq ft per gallon. Always check the manufacturer's label for exact coverage." },
             { q: "Is it cheaper to buy a 5-gallon bucket?", a: "Yes, for large projects. A 5-gallon bucket typically saves 15–25% compared to buying five individual gallons. If you need 4 or more gallons of the same color, the 5-gallon option is almost always more economical." },
           ].map(({ q, a }) => (
-            <div key={q}>
-              <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
-              <p className="text-gray-600">{a}</p>
-            </div>
+            <details key={q} className="border border-gray-200 rounded-lg">
+              <summary className="font-semibold text-gray-800 px-4 py-3 cursor-pointer select-none list-none flex justify-between items-center hover:bg-gray-50 rounded-lg">
+                <span>{q}</span>
+                <span className="text-gray-400 ml-2 flex-shrink-0 text-lg">+</span>
+              </summary>
+              <div className="px-4 pb-4 border-t border-gray-100">
+                <p className="text-gray-600 pt-3">{a}</p>
+              </div>
+            </details>
           ))}
         </div>
       </article>

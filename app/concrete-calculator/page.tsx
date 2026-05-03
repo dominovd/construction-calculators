@@ -37,11 +37,21 @@ const faqLd = {
   ],
 };
 
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://easybuildcalc.com" },
+    { "@type": "ListItem", position: 2, name: "Concrete Calculator", item: "https://easybuildcalc.com/concrete-calculator" },
+  ],
+};
+
 export default function ConcretePage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
       <nav className="text-xs text-gray-500 mb-4">
         <a href="/" className="hover:text-blue-600">Home</a>
@@ -95,6 +105,7 @@ export default function ConcretePage() {
 
         <h2 className="text-xl font-semibold text-gray-900">Bags vs. Ready-Mix</h2>
         <p>
+          Use our free calculator above to compare bag count vs. ready-mix cost before you order.
           Mixing bags is cost-effective for small projects under 1 cubic yard. For anything larger,
           ready-mix concrete delivered by truck is faster, more consistent, and often cheaper per yard.
           Most ready-mix suppliers have a minimum order of 1 yard.
@@ -108,17 +119,22 @@ export default function ConcretePage() {
         </div>
 
         <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
-        <div className="space-y-4">
+        <div className="space-y-2">
           {[
             { q: "How many 80-lb bags of concrete make a yard?", a: "It takes approximately 45 bags of 80-lb concrete to make one cubic yard. For 60-lb bags, you need about 60 bags per cubic yard." },
             { q: "How thick should a concrete driveway slab be?", a: "A residential driveway should be at least 4 inches thick for standard vehicles. For heavier trucks or loads, use 5–6 inches. Always place concrete over a 4-inch compacted gravel base." },
             { q: "How much does a yard of ready-mix concrete cost?", a: "Ready-mix concrete typically costs $125–$200 per cubic yard depending on region, mix design, and supplier. Most companies have a minimum order of 1 yard and charge a short-load fee for orders under 3–5 yards." },
             { q: "When should I use bags instead of ready-mix?", a: "Bagged concrete is practical for projects under 0.5–1 cubic yard — small footings, fence posts, or repairs. For anything larger, ready-mix is faster, stronger, and often cheaper when labor is considered." },
           ].map(({ q, a }) => (
-            <div key={q}>
-              <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
-              <p className="text-gray-600">{a}</p>
-            </div>
+            <details key={q} className="border border-gray-200 rounded-lg">
+              <summary className="font-semibold text-gray-800 px-4 py-3 cursor-pointer select-none list-none flex justify-between items-center hover:bg-gray-50 rounded-lg">
+                <span>{q}</span>
+                <span className="text-gray-400 ml-2 flex-shrink-0 text-lg">+</span>
+              </summary>
+              <div className="px-4 pb-4 border-t border-gray-100">
+                <p className="text-gray-600 pt-3">{a}</p>
+              </div>
+            </details>
           ))}
         </div>
       </article>

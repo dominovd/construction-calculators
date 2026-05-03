@@ -41,6 +41,15 @@ const faqLd = {
   ],
 };
 
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://easybuildcalc.com" },
+    { "@type": "ListItem", position: 2, name: "Board Foot Calculator", item: "https://easybuildcalc.com/board-foot-calculator" },
+  ],
+};
+
 export default function BoardFootPage() {
   return (
     <>
@@ -51,6 +60,10 @@ export default function BoardFootPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
       <div className="max-w-3xl mx-auto px-4 py-8">
@@ -79,7 +92,8 @@ export default function BoardFootPage() {
             A <strong>board foot</strong> is a unit of lumber volume equal to a piece
             measuring 1 inch thick × 12 inches wide × 12 inches long — or any combination
             that equals the same volume. It&apos;s the standard unit used by lumber yards,
-            sawmills, and hardwood dealers across North America.
+            sawmills, and hardwood dealers across North America. Use this free tool to
+            calculate board feet for any board size before you order.
           </p>
 
           <h2 className="text-xl font-semibold text-gray-900">Board Foot Formula</h2>
@@ -145,17 +159,22 @@ export default function BoardFootPage() {
           </div>
 
           <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
-          <div className="space-y-4">
+          <div className="space-y-2">
             {[
               { q: "What is a board foot of lumber?", a: "A board foot is a unit of lumber volume equal to 1 inch thick × 12 inches wide × 12 inches long. It equals 144 cubic inches. This is the standard unit used by hardwood dealers and sawmills across North America." },
               { q: "How do you calculate board feet?", a: "Use the formula: Board Feet = (Thickness in inches × Width in inches × Length in feet) ÷ 12. For example, a 2×6 board that is 10 feet long equals (2 × 6 × 10) ÷ 12 = 10 board feet." },
               { q: "Is framing lumber sold by the board foot?", a: "No. Framing lumber (2×4, 2×6, etc.) is sold by the linear foot or per board at home improvement stores. Board feet are primarily used for hardwood lumber at specialty dealers." },
               { q: "How many board feet in a 2x4x8?", a: "A standard 2×4 that is 8 feet long contains (1.5 × 3.5 × 8) ÷ 12 = 3.5 board feet, using actual dimensions. Using nominal dimensions (2 × 4 × 8) ÷ 12 = 5.33 board feet." },
             ].map(({ q, a }) => (
-              <div key={q}>
-                <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
-                <p className="text-gray-600">{a}</p>
-              </div>
+              <details key={q} className="border border-gray-200 rounded-lg">
+                <summary className="font-semibold text-gray-800 px-4 py-3 cursor-pointer select-none list-none flex justify-between items-center hover:bg-gray-50 rounded-lg">
+                  <span>{q}</span>
+                  <span className="text-gray-400 ml-2 flex-shrink-0 text-lg">+</span>
+                </summary>
+                <div className="px-4 pb-4 border-t border-gray-100">
+                  <p className="text-gray-600 pt-3">{a}</p>
+                </div>
+              </details>
             ))}
           </div>
         </article>

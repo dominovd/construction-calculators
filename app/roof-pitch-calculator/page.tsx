@@ -37,6 +37,15 @@ const faqLd = {
   ],
 };
 
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://easybuildcalc.com" },
+    { "@type": "ListItem", position: 2, name: "Roof Pitch Calculator", item: "https://easybuildcalc.com/roof-pitch-calculator" },
+  ],
+};
+
 export default function RoofPitchPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
@@ -45,6 +54,7 @@ export default function RoofPitchPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <h1 className="text-2xl font-bold text-gray-900 mb-1">Free Roof Pitch Calculator</h1>
       <p className="text-gray-500 text-sm mb-6">
         Convert rise:run to degrees, get rafter length and ridge height for any building span.
@@ -57,7 +67,8 @@ export default function RoofPitchPage() {
         <p>
           Roof pitch is the ratio of vertical rise to horizontal run, expressed as X:12. A 4:12 pitch
           means the roof rises 4 inches for every 12 inches of horizontal run. It's the standard way
-          builders and architects communicate roof slope in the US.
+          builders and architects communicate roof slope in the US. Use our free calculator above to
+          convert any rise and run into degrees, rafter length, and ridge height instantly.
         </p>
 
         <h2 className="text-lg font-semibold text-gray-900">Roof Pitch Formula</h2>
@@ -99,17 +110,22 @@ export default function RoofPitchPage() {
         </div>
 
         <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
-        <div className="space-y-4">
+        <div className="space-y-2">
           {[
             { q: "What is the most common roof pitch?", a: "The most common roof pitch in the US is 4:12, meaning the roof rises 4 inches for every 12 inches of horizontal run. This is standard for most residential homes and works well with most roofing materials." },
             { q: "What roof pitch is too steep to walk on?", a: "Roof pitches above 7:12 (30°) are generally considered steep-slope and require special safety equipment. Most roofers use roof jacks and brackets on anything above 6:12. Pitches above 12:12 require climbing harnesses." },
             { q: "What is a low slope vs. steep slope roof?", a: "Roofs with a pitch below 2:12 are classified as flat or low slope and require different waterproofing materials (TPO, EPDM, modified bitumen). Pitches from 2:12 to 4:12 are low-slope; 4:12 and above are conventional steep-slope." },
             { q: "How do I measure my roof pitch?", a: "Place a level horizontally on the roof surface and measure 12 inches along it from the wall. Then measure the vertical distance from the end of the level down to the roof surface — that measurement in inches is your rise, giving you an X:12 pitch." },
           ].map(({ q, a }) => (
-            <div key={q}>
-              <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
-              <p className="text-gray-600">{a}</p>
-            </div>
+            <details key={q} className="border border-gray-200 rounded-lg">
+              <summary className="font-semibold text-gray-800 px-4 py-3 cursor-pointer select-none list-none flex justify-between items-center hover:bg-gray-50 rounded-lg">
+                <span>{q}</span>
+                <span className="text-gray-400 ml-2 flex-shrink-0 text-lg">+</span>
+              </summary>
+              <div className="px-4 pb-4 border-t border-gray-100">
+                <p className="text-gray-600 pt-3">{a}</p>
+              </div>
+            </details>
           ))}
         </div>
       </article>
