@@ -26,6 +26,10 @@ const CALCS = [
   { slug: "sand-calculator",         name: "Sand Calculator",           desc: "Calculate how many bags or tons of sand you need by area and depth.",            icon: "🏖️" },
   { slug: "asphalt-calculator",      name: "Asphalt Calculator",        desc: "Estimate asphalt tonnage for driveways, parking lots, and roads.",               icon: "🛣️" },
   { slug: "lumber-calculator",       name: "Lumber Cost Calculator",    desc: "Calculate board feet and total cost for any lumber size and quantity.",           icon: "📏" },
+  { slug: "tile-calculator",         name: "Tile Calculator",           desc: "Calculate tiles and boxes needed for any floor or wall with waste included.",      icon: "🔲" },
+  { slug: "paver-calculator",        name: "Paver Calculator",          desc: "Calculate paver quantity and base materials for patios, walkways, and driveways.", icon: "🧩" },
+  { slug: "stair-calculator",        name: "Stair Calculator",          desc: "Calculate step count, riser height, run depth, and stringer length.",             icon: "🪜" },
+  { slug: "sod-calculator",          name: "Sod Calculator",            desc: "Calculate sod rolls, pallets, and topsoil for any lawn area.",                    icon: "🌱" },
 ];
 
 const MARKET_PAGES = [
