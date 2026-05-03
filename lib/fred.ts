@@ -121,6 +121,29 @@ export async function fetchMarketSummary() {
   };
 }
 
+/** Convert monthly observations to annual averages, indexed to baseYear=100 */
+export function annualizeAndIndex(
+  obs: Observation[],
+  baseYear = "2019"
+): { year: string; value: number }[] {
+  const byYear: Record<string, number[]> = {};
+  for (const o of obs) {
+    const yr = o.date.slice(0, 4);
+    if (!byYear[yr]) byYear[yr] = [];
+    byYear[yr].push(o.value);
+  }
+  const annual = Object.entries(byYear)
+    .map(([year, vals]) => ({
+      year,
+      value: vals.reduce((a, b) => a + b, 0) / vals.length,
+    }))
+    .sort((a, b) => a.year.localeCompare(b.year));
+
+  const base = annual.find((d) => d.year === baseYear);
+  if (!base) return annual;
+  return annual.map((d) => ({ year: d.year, value: (d.value / base.value) * 100 }));
+}
+
 export function formatDate(dateStr: string): string {
   const d = new Date(dateStr + "T00:00:00");
   return d.toLocaleDateString("en-US", { month: "short", year: "numeric" });

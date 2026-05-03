@@ -31,6 +31,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: BASE,                             lastModified: now, changeFrequency: "weekly",  priority: 1.0 },
     { url: `${BASE}/material-prices`,        lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/housing-starts`,         lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/lumber-market`,          lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    // country pages generated dynamically via generateStaticParams in [country]/page.tsx
     { url: `${BASE}/about`,                  lastModified: now, changeFrequency: "yearly",  priority: 0.5 },
     { url: `${BASE}/privacy`,                lastModified: now, changeFrequency: "yearly",  priority: 0.3 },
     ...calculators.map(({ slug, priority, changeFreq }) => ({
