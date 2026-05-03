@@ -1,6 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import { formatPct, formatDate } from "@/lib/fred";
+
+type MarketItem = { emoji: string; label: string; mom: number | null; lastDate: string | null };
+type MarketData = { items: MarketItem[]; hasData: boolean } | null;
 
 const CALCS = [
   { slug: "concrete-calculator",     name: "Concrete Calculator",       desc: "Calculate cubic yards, bag count, and ready-mix cost for slabs and footings.",    icon: "🪣" },
@@ -24,7 +28,7 @@ const CALCS = [
   { slug: "lumber-calculator",       name: "Lumber Cost Calculator",    desc: "Calculate board feet and total cost for any lumber size and quantity.",           icon: "📏" },
 ];
 
-export function HomeContent() {
+export function HomeContent({ market }: { market: MarketData }) {
   return (
     <>
       <section className="bg-white border-b border-gray-100 py-12 px-4">
@@ -37,6 +41,42 @@ export function HomeContent() {
           </p>
         </div>
       </section>
+
+      {/* Material Price Widget */}
+      {market?.hasData && (
+        <div className="max-w-5xl mx-auto px-4 pt-6">
+          <div className="bg-white border border-gray-200 rounded-2xl p-5">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-sm font-semibold text-gray-900">
+                📊 Material Price Index — this month
+              </h2>
+              <a href="/material-prices" className="text-xs text-blue-600 hover:underline">
+                View full history →
+              </a>
+            </div>
+            <div className="grid grid-cols-3 gap-3">
+              {market.items.map(({ emoji, label, mom, lastDate }) => {
+                const up = mom !== null && mom > 0;
+                const dn = mom !== null && mom < 0;
+                return (
+                  <div key={label} className="text-center">
+                    <div className="text-xl mb-1">{emoji}</div>
+                    <p className="text-[11px] text-gray-500 leading-tight mb-1">
+                      {label.split(" ")[0]}
+                    </p>
+                    <p className={`text-base font-bold ${up ? "text-red-600" : dn ? "text-green-600" : "text-gray-700"}`}>
+                      {up ? "↑" : dn ? "↓" : "→"} {formatPct(mom)}
+                    </p>
+                    {lastDate && (
+                      <p className="text-[10px] text-gray-400 mt-0.5">{formatDate(lastDate)}</p>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
 
       <section className="max-w-5xl mx-auto px-4 py-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

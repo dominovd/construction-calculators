@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { HomeContent } from "./HomeContent";
-import { fetchMarketSummary, formatPct, formatDate, MATERIALS } from "@/lib/fred";
+import { fetchMarketSummary, MATERIALS } from "@/lib/fred";
 
 export const metadata: Metadata = {
   title: "Free Construction Calculators for Builders & DIY",
@@ -41,9 +41,9 @@ export default async function HomePage() {
   const market = await fetchMarketSummary();
 
   const items = [
-    { key: "lumber",   label: MATERIALS.lumber.label,   emoji: MATERIALS.lumber.emoji,   ...market.lumber },
-    { key: "steel",    label: MATERIALS.steel.label,    emoji: MATERIALS.steel.emoji,    ...market.steel },
-    { key: "concrete", label: MATERIALS.concrete.label, emoji: MATERIALS.concrete.emoji, ...market.concrete },
+    { emoji: MATERIALS.lumber.emoji,   label: MATERIALS.lumber.label,   ...market.lumber },
+    { emoji: MATERIALS.steel.emoji,    label: MATERIALS.steel.label,    ...market.steel },
+    { emoji: MATERIALS.concrete.emoji, label: MATERIALS.concrete.label, ...market.concrete },
   ];
 
   const hasData = items.some((i) => i.mom !== null);
@@ -52,43 +52,7 @@ export default async function HomePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
-      <HomeContent />
-      {hasData && (
-        <section className="max-w-3xl mx-auto px-4 pb-10 -mt-4">
-          <div className="bg-white border border-gray-200 rounded-2xl p-5">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-sm font-semibold text-gray-900">
-                📊 Material Price Index — this month
-              </h2>
-              <a href="/material-prices" className="text-xs text-blue-600 hover:underline">
-                View full history →
-              </a>
-            </div>
-            <div className="grid grid-cols-3 gap-3">
-              {items.map(({ key, emoji, label, mom, lastDate }) => {
-                const up = mom !== null && mom > 0;
-                const dn = mom !== null && mom < 0;
-                return (
-                  <div key={key} className="text-center">
-                    <div className="text-xl mb-1">{emoji}</div>
-                    <p className="text-[11px] text-gray-500 leading-tight mb-1">{label.split(" ")[0]}</p>
-                    <p
-                      className={`text-base font-bold ${
-                        up ? "text-red-600" : dn ? "text-green-600" : "text-gray-700"
-                      }`}
-                    >
-                      {up ? "↑" : dn ? "↓" : "→"} {formatPct(mom)}
-                    </p>
-                    {lastDate && (
-                      <p className="text-[10px] text-gray-400 mt-0.5">{formatDate(lastDate)}</p>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      )}
+      <HomeContent market={{ items, hasData }} />
     </>
   );
 }

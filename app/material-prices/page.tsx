@@ -154,7 +154,7 @@ function PriceCard({
       <div className="px-4 pb-4">
         {noData ? (
           <div className="h-24 flex items-center justify-center text-xs text-gray-400 bg-gray-50 rounded-lg">
-            Add FRED_API_KEY to .env.local to load live data
+            Data temporarily unavailable
           </div>
         ) : (
           <PriceChart data={observations} color={color} />
@@ -255,7 +255,7 @@ export default async function MaterialPricesPage() {
         <div className="px-4 pb-4">
           {housing.observations.length === 0 ? (
             <div className="h-24 flex items-center justify-center text-xs text-gray-400 bg-gray-50 rounded-lg">
-              Add FRED_API_KEY to .env.local to load live data
+              Data temporarily unavailable
             </div>
           ) : (
             <PriceChart data={housing.observations} color={HOUSING.color} />
@@ -266,17 +266,6 @@ export default async function MaterialPricesPage() {
         </div>
       </div>
 
-      {/* Setup notice */}
-      {!hasData && (
-        <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 text-sm">
-          <p className="font-semibold text-amber-800 mb-2">⚙️ API key required to load live data</p>
-          <ol className="text-amber-700 space-y-1 list-decimal list-inside text-xs leading-relaxed">
-            <li>Get a free FRED API key at <strong>fred.stlouisfed.org/docs/api/api_key.html</strong></li>
-            <li>Add to your <code className="bg-amber-100 px-1 rounded">.env.local</code>: <code className="bg-amber-100 px-1 rounded">FRED_API_KEY=your_key_here</code></li>
-            <li>Restart the dev server</li>
-          </ol>
-        </div>
-      )}
 
       {/* Context article */}
       <article className="space-y-5 text-sm text-gray-700 leading-relaxed">
