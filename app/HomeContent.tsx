@@ -57,8 +57,9 @@ export function HomeContent() {
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-4 pb-12">
-        <div className="bg-blue-50 rounded-xl p-6 text-center">
+      {/* Description block */}
+      <section className="max-w-3xl mx-auto px-4 pb-4">
+        <div className="bg-blue-50 rounded-xl p-6 text-center mb-10">
           <h2 className="text-lg font-semibold text-blue-900 mb-2">
             Trusted by builders and DIYers
           </h2>
@@ -67,6 +68,57 @@ export function HomeContent() {
             estimation software — without the price tag.
           </p>
         </div>
+
+        <article className="space-y-6 text-sm text-gray-700 leading-relaxed">
+          <h2 className="text-xl font-semibold text-gray-900">Why Use a Free Construction Calculator?</h2>
+          <p>
+            Ordering too little material means a costly second delivery and project delays. Ordering
+            too much wastes money and leaves you hauling surplus bags back to the store. Our free
+            calculators give you a precise estimate before you buy — so you order exactly what you
+            need, the first time.
+          </p>
+          <p>
+            Whether you&apos;re a contractor putting together a bid, a builder framing a new home, or a
+            homeowner planning a weekend project, every tool on EasyBuildCalc is free, instant,
+            and requires no account. Enter your dimensions, pick your material, and get a complete
+            breakdown in seconds.
+          </p>
+
+          <div className="grid sm:grid-cols-3 gap-4 not-prose">
+            {[
+              { icon: "⚡", title: "Instant results", desc: "All calculations happen in your browser — no wait, no server." },
+              { icon: "🔒", title: "Your data stays private", desc: "Nothing you enter is stored or sent anywhere." },
+              { icon: "📏", title: "Industry-standard formulas", desc: "The same math used by professional estimators." },
+            ].map(({ icon, title, desc }) => (
+              <div key={title} className="bg-white border border-gray-200 rounded-xl p-4">
+                <div className="text-xl mb-1">{icon}</div>
+                <p className="font-semibold text-gray-900 text-sm mb-1">{title}</p>
+                <p className="text-xs text-gray-500 leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <h2 className="text-xl font-semibold text-gray-900 pt-2">Frequently Asked Questions</h2>
+          <div className="space-y-2">
+            {[
+              { q: "Are these construction calculators really free?", a: "Yes — every calculator on EasyBuildCalc is completely free to use. No account, no subscription, and no paywall. All calculations run in your browser and your data is never sent to any server." },
+              { q: "How accurate are the results?", a: "All calculators use standard industry formulas from construction estimating references and manufacturer coverage tables. Results are accurate estimates suited for planning and budgeting. For structural applications, always verify with your engineer or supplier." },
+              { q: "Do I need to sign up or create an account?", a: "No sign-up required. All 19 free tools are open — just enter your dimensions and get instant results." },
+              { q: "What construction calculators do you offer?", a: "EasyBuildCalc covers concrete, board feet, roof pitch, rebar, drywall, paint, flooring, studs, asphalt, mulch, fence, deck, shingles, concrete mix, insulation, gravel, sand, and lumber — 19 free calculators in total." },
+              { q: "Can I use these calculators on my phone?", a: "Yes. All calculators are fully responsive and work on any device — phone, tablet, or desktop. No app download needed." },
+            ].map(({ q, a }) => (
+              <details key={q} className="border border-gray-200 rounded-lg">
+                <summary className="font-semibold text-gray-800 px-4 py-3 cursor-pointer select-none list-none flex justify-between items-center hover:bg-gray-50 rounded-lg">
+                  <span>{q}</span>
+                  <span className="text-gray-400 ml-2 flex-shrink-0 text-lg">+</span>
+                </summary>
+                <div className="px-4 pb-4 border-t border-gray-100">
+                  <p className="text-gray-600 pt-3">{a}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </article>
       </section>
     </>
   );
