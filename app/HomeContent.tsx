@@ -30,6 +30,12 @@ const CALCS = [
   { slug: "paver-calculator",        name: "Paver Calculator",          desc: "Calculate paver quantity and base materials for patios, walkways, and driveways.", icon: "🧩" },
   { slug: "stair-calculator",        name: "Stair Calculator",          desc: "Calculate step count, riser height, run depth, and stringer length.",             icon: "🪜" },
   { slug: "sod-calculator",          name: "Sod Calculator",            desc: "Calculate sod rolls, pallets, and topsoil for any lawn area.",                    icon: "🌱" },
+  { slug: "cubic-yard-calculator",   name: "Cubic Yard Calculator",     desc: "Convert any shape to cubic yards and tons for concrete, gravel, or soil.",           icon: "📦" },
+  { slug: "topsoil-calculator",      name: "Topsoil Calculator",        desc: "Calculate cubic yards and bags of topsoil for lawns, beds, and landscaping.",         icon: "🌍" },
+  { slug: "retaining-wall-calculator", name: "Retaining Wall Calculator", desc: "Calculate retaining wall blocks, drainage gravel, and base materials.",             icon: "🧱" },
+  { slug: "carpet-calculator",       name: "Carpet Calculator",         desc: "Calculate carpet square yards, pad, and total cost for any room.",                    icon: "🏡" },
+  { slug: "block-calculator",        name: "Block Calculator",          desc: "Calculate CMU blocks, bricks, and mortar bags for any wall size.",                    icon: "🔲" },
+  { slug: "excavation-calculator",   name: "Excavation Calculator",     desc: "Calculate excavation volume, truck loads, and haul cost by soil type.",               icon: "🚛" },
 ];
 
 const MARKET_PAGES = [

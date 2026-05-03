@@ -31,6 +31,12 @@ const calculators = [
   { slug: "paver-calculator",        priority: 0.9, changeFreq: "monthly" as const },
   { slug: "stair-calculator",        priority: 0.9, changeFreq: "monthly" as const },
   { slug: "sod-calculator",          priority: 0.8, changeFreq: "monthly" as const },
+  { slug: "cubic-yard-calculator",   priority: 0.9, changeFreq: "monthly" as const },
+  { slug: "topsoil-calculator",      priority: 0.9, changeFreq: "monthly" as const },
+  { slug: "retaining-wall-calculator", priority: 0.8, changeFreq: "monthly" as const },
+  { slug: "carpet-calculator",       priority: 0.8, changeFreq: "monthly" as const },
+  { slug: "block-calculator",        priority: 0.8, changeFreq: "monthly" as const },
+  { slug: "excavation-calculator",   priority: 0.8, changeFreq: "monthly" as const },
 ];
 
 const countryPages = Object.keys(COUNTRY_META).map((code) => ({
