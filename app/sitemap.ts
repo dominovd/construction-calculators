@@ -1,6 +1,11 @@
 import type { MetadataRoute } from "next";
+import { COUNTRY_META } from "@/lib/oecd";
 
 const BASE = "https://easybuildcalc.com";
+
+function codeToSlug(code: string): string {
+  return COUNTRY_META[code].name.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
+}
 
 const calculators = [
   { slug: "concrete-calculator",     priority: 0.9, changeFreq: "monthly" as const },
@@ -24,6 +29,13 @@ const calculators = [
   { slug: "concrete-mix-calculator", priority: 0.6, changeFreq: "monthly" as const },
 ];
 
+const countryPages = Object.keys(COUNTRY_META).map((code) => ({
+  url: `${BASE}/construction-market/${codeToSlug(code)}`,
+  lastModified: new Date(),
+  changeFrequency: "monthly" as const,
+  priority: 0.6,
+}));
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
@@ -32,8 +44,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/material-prices`,        lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/housing-starts`,         lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/lumber-market`,          lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    // country pages generated dynamically via generateStaticParams in [country]/page.tsx
+    ...countryPages,
     { url: `${BASE}/about`,                  lastModified: now, changeFrequency: "yearly",  priority: 0.5 },
+    { url: `${BASE}/contact`,                lastModified: now, changeFrequency: "yearly",  priority: 0.4 },
     { url: `${BASE}/privacy`,                lastModified: now, changeFrequency: "yearly",  priority: 0.3 },
     ...calculators.map(({ slug, priority, changeFreq }) => ({
       url: `${BASE}/${slug}`,
