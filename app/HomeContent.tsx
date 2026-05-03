@@ -28,9 +28,16 @@ const CALCS = [
   { slug: "lumber-calculator",       name: "Lumber Cost Calculator",    desc: "Calculate board feet and total cost for any lumber size and quantity.",           icon: "📏" },
 ];
 
+const MARKET_PAGES = [
+  { href: "/material-prices",  emoji: "📈", title: "Material Price Index",       desc: "Monthly lumber, steel & concrete price trends from BLS data." },
+  { href: "/housing-starts",   emoji: "🏠", title: "Global Housing Starts",      desc: "Annual new construction starts for 20+ countries via OECD." },
+  { href: "/lumber-market",    emoji: "🪵", title: "Lumber Market: US vs World", desc: "US lumber PPI vs global softwood prices, indexed to 2019=100." },
+];
+
 export function HomeContent({ market }: { market: MarketData }) {
   return (
     <>
+      {/* Hero */}
       <section className="bg-white border-b border-gray-100 py-12 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
@@ -78,7 +85,33 @@ export function HomeContent({ market }: { market: MarketData }) {
         </div>
       )}
 
-      <section className="max-w-5xl mx-auto px-4 py-10">
+      {/* Market Data pages */}
+      <section className="max-w-5xl mx-auto px-4 pt-6 pb-2">
+        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
+          Construction Market Data
+        </h2>
+        <div className="grid sm:grid-cols-3 gap-3">
+          {MARKET_PAGES.map(({ href, emoji, title, desc }) => (
+            <a
+              key={href}
+              href={href}
+              className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition-all group"
+            >
+              <span className="text-2xl shrink-0">{emoji}</span>
+              <div>
+                <p className="text-sm font-semibold text-gray-900 group-hover:text-blue-700 mb-0.5">{title}</p>
+                <p className="text-xs text-gray-500 leading-relaxed">{desc}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      {/* Calculators grid */}
+      <section className="max-w-5xl mx-auto px-4 py-8">
+        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
+          Free Calculators
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {CALCS.map((calc) => (
             <Link
@@ -97,32 +130,8 @@ export function HomeContent({ market }: { market: MarketData }) {
         </div>
       </section>
 
-      {/* Market Data block */}
-      <section className="max-w-5xl mx-auto px-4 pb-2">
-        <h2 className="text-base font-semibold text-gray-700 mb-3">📊 Construction Market Data</h2>
-        <div className="grid sm:grid-cols-3 gap-3">
-          {[
-            { href: "/material-prices",  emoji: "📈", title: "Material Price Index",      desc: "Monthly lumber, steel & concrete price trends from BLS data." },
-            { href: "/housing-starts",   emoji: "🏠", title: "Global Housing Starts",     desc: "Annual new construction starts for 20+ countries via OECD." },
-            { href: "/lumber-market",    emoji: "🪵", title: "Lumber Market: US vs World", desc: "US lumber PPI vs global softwood prices, indexed to 2019=100." },
-          ].map(({ href, emoji, title, desc }) => (
-            <a
-              key={href}
-              href={href}
-              className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition-all group"
-            >
-              <span className="text-2xl shrink-0">{emoji}</span>
-              <div>
-                <p className="text-sm font-semibold text-gray-900 group-hover:text-blue-700 mb-0.5">{title}</p>
-                <p className="text-xs text-gray-500 leading-relaxed">{desc}</p>
-              </div>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      {/* Description block */}
-      <section className="max-w-3xl mx-auto px-4 pb-4 mt-6">
+      {/* Description + FAQ */}
+      <section className="max-w-3xl mx-auto px-4 pb-4">
         <div className="bg-blue-50 rounded-xl p-6 text-center mb-10">
           <h2 className="text-lg font-semibold text-blue-900 mb-2">
             Trusted by builders and DIYers
@@ -148,7 +157,7 @@ export function HomeContent({ market }: { market: MarketData }) {
             breakdown in seconds.
           </p>
 
-          <div className="grid sm:grid-cols-3 gap-4 not-prose">
+          <div className="grid sm:grid-cols-3 gap-4">
             {[
               { icon: "⚡", title: "Instant results", desc: "All calculations happen in your browser — no wait, no server." },
               { icon: "🔒", title: "Your data stays private", desc: "Nothing you enter is stored or sent anywhere." },
