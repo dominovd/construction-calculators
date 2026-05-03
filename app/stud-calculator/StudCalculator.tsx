@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { useT } from "@/components/LanguageProvider";
 
 export function StudCalculator() {
+  const { t } = useT();
   const [wallLength, setWallLength] = useState("12");
   const [spacing, setSpacing] = useState<16 | 24>(16);
   const [extraWalls, setExtraWalls] = useState("0");
@@ -12,31 +14,24 @@ export function StudCalculator() {
   const extra = parseInt(extraWalls) || 0;
   const open = parseInt(openings) || 0;
 
-  // Base studs: (length in inches / spacing) + 1 per wall
   const walls = Math.max(1, extra + 1);
   const basePerWall = Math.ceil((len * 12) / spacing) + 1;
   const baseTotal = basePerWall * walls;
-
-  // Add 3 studs per corner (extra walls create corners)
   const cornerStuds = extra * 3;
-
-  // Window/door openings: add 2 king studs + 2 jack studs each = ~4 extra per opening
   const openingStuds = open * 4;
-
   const subtotal = baseTotal + cornerStuds + openingStuds;
   const withWaste = Math.ceil(subtotal * 1.1);
 
   return (
     <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
       <div className="bg-blue-700 px-5 py-3">
-        <h2 className="text-white font-semibold text-sm">Stud / Framing Calculator</h2>
+        <h2 className="text-white font-semibold text-sm">{t("calc_stud")}</h2>
       </div>
 
       <div className="p-5 space-y-4">
-        {/* Wall length */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
-            Wall length (feet)
+            {t("wall_length")}
           </label>
           <input
             type="number"
@@ -45,14 +40,12 @@ export function StudCalculator() {
             value={wallLength}
             onChange={(e) => setWallLength(e.target.value)}
             className="calc-input max-w-xs"
-            placeholder="e.g. 12"
           />
         </div>
 
-        {/* Stud spacing */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Stud spacing
+            {t("spacing")}
           </label>
           <div className="flex gap-3">
             {([16, 24] as const).map((s) => (
@@ -74,7 +67,6 @@ export function StudCalculator() {
           </p>
         </div>
 
-        {/* Extra walls */}
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -92,7 +84,7 @@ export function StudCalculator() {
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Doors / windows
+              {t("doors_windows")}
             </label>
             <input
               type="number"
@@ -106,26 +98,24 @@ export function StudCalculator() {
           </div>
         </div>
 
-        {/* Results */}
         <div className="grid grid-cols-3 gap-3 mt-2">
           <div className="result-box">
-            <p className="text-xs text-blue-600 font-medium mb-1">Base count</p>
+            <p className="text-xs text-blue-600 font-medium mb-1">{t("studs_needed")}</p>
             <p className="text-2xl font-bold text-blue-800">{subtotal}</p>
             <p className="text-xs text-blue-500 mt-0.5">studs</p>
           </div>
           <div className="result-box">
-            <p className="text-xs text-blue-600 font-medium mb-1">+10% waste</p>
+            <p className="text-xs text-blue-600 font-medium mb-1">{t("with_10pct")}</p>
             <p className="text-2xl font-bold text-blue-800">{withWaste}</p>
             <p className="text-xs text-blue-500 mt-0.5">recommended</p>
           </div>
           <div className="result-box">
-            <p className="text-xs text-blue-600 font-medium mb-1">Spacing</p>
+            <p className="text-xs text-blue-600 font-medium mb-1">{t("spacing")}</p>
             <p className="text-2xl font-bold text-blue-800">{spacing}&quot;</p>
             <p className="text-xs text-blue-500 mt-0.5">on center</p>
           </div>
         </div>
 
-        {/* Breakdown */}
         {(cornerStuds > 0 || openingStuds > 0) && (
           <div className="bg-gray-50 border border-gray-100 rounded-lg p-3 text-xs text-gray-500 space-y-1">
             <p className="font-medium text-gray-600 mb-1">Breakdown:</p>

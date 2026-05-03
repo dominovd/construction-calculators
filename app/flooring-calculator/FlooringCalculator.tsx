@@ -1,16 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import { useT } from "@/components/LanguageProvider";
 
 const FLOORING_TYPES = [
-  { label: "Hardwood", coveragePerBox: 20, pricePerSqFt: 5 },
-  { label: "Laminate", coveragePerBox: 22, pricePerSqFt: 2.5 },
-  { label: "Vinyl Plank", coveragePerBox: 24, pricePerSqFt: 3 },
-  { label: "Tile (12×12)", coveragePerBox: 16, pricePerSqFt: 2 },
-  { label: "Carpet", coveragePerBox: 0, pricePerSqFt: 3.5 },
+  { label: "Hardwood",      coveragePerBox: 20, pricePerSqFt: 5 },
+  { label: "Laminate",      coveragePerBox: 22, pricePerSqFt: 2.5 },
+  { label: "Vinyl Plank",   coveragePerBox: 24, pricePerSqFt: 3 },
+  { label: "Tile (12×12)",  coveragePerBox: 16, pricePerSqFt: 2 },
+  { label: "Carpet",        coveragePerBox: 0,  pricePerSqFt: 3.5 },
 ];
 
 export function FlooringCalculator() {
+  const { t } = useT();
   const [length, setLength] = useState("15");
   const [width, setWidth] = useState("12");
   const [waste, setWaste] = useState("10");
@@ -31,13 +33,12 @@ export function FlooringCalculator() {
   return (
     <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
       <div className="bg-blue-700 px-5 py-3">
-        <h2 className="text-white font-semibold text-sm">Flooring Calculator</h2>
+        <h2 className="text-white font-semibold text-sm">{t("calc_flooring")}</h2>
       </div>
 
       <div className="p-5">
-        {/* Flooring type */}
         <div className="mb-4">
-          <label className="block text-xs text-gray-500 mb-1">Flooring Type</label>
+          <label className="block text-xs text-gray-500 mb-1">{t("material")}</label>
           <div className="flex flex-wrap gap-2">
             {FLOORING_TYPES.map((f, i) => (
               <button
@@ -57,23 +58,23 @@ export function FlooringCalculator() {
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           <div>
-            <label className="block text-xs text-gray-500 mb-1">Length (ft)</label>
+            <label className="block text-xs text-gray-500 mb-1">{t("room_length")}</label>
             <input type="number" inputMode="decimal" min="0" step="0.5" value={length}
               onChange={(e) => setLength(e.target.value)} className="calc-input text-center" />
           </div>
           <div>
-            <label className="block text-xs text-gray-500 mb-1">Width (ft)</label>
+            <label className="block text-xs text-gray-500 mb-1">{t("room_width")}</label>
             <input type="number" inputMode="decimal" min="0" step="0.5" value={width}
               onChange={(e) => setWidth(e.target.value)} className="calc-input text-center" />
           </div>
           <div>
-            <label className="block text-xs text-gray-500 mb-1">Waste %</label>
+            <label className="block text-xs text-gray-500 mb-1">{t("waste_pct")}</label>
             <input type="number" inputMode="decimal" min="0" max="30" step="1" value={waste}
               onChange={(e) => setWaste(e.target.value)} className="calc-input text-center" />
           </div>
           <div>
             <label className="block text-xs text-gray-500 mb-1">
-              Price/ft² ($) <span className="text-gray-400">(optional)</span>
+              Price/ft² ($) <span className="text-gray-400">{t("optional")}</span>
             </label>
             <input type="number" inputMode="decimal" min="0" step="0.25"
               placeholder={ft.pricePerSqFt.toString()}
@@ -84,18 +85,18 @@ export function FlooringCalculator() {
 
         <div className="mt-5 grid grid-cols-2 sm:grid-cols-4 gap-3">
           <div className="result-box">
-            <p className="text-xs text-blue-600 font-medium mb-1">Room Area</p>
+            <p className="text-xs text-blue-600 font-medium mb-1">{t("room_area")}</p>
             <p className="text-2xl font-bold text-blue-800">{sqFt.toFixed(1)}</p>
             <p className="text-xs text-blue-500 mt-0.5">sq ft</p>
           </div>
           <div className="result-box">
-            <p className="text-xs text-blue-600 font-medium mb-1">Order This Much</p>
+            <p className="text-xs text-blue-600 font-medium mb-1">{t("order_this")}</p>
             <p className="text-2xl font-bold text-blue-800">{sqFtWithWaste.toFixed(1)}</p>
             <p className="text-xs text-blue-500 mt-0.5">sq ft (+{waste}% waste)</p>
           </div>
           <div className="result-box">
             <p className="text-xs text-blue-600 font-medium mb-1">
-              {boxes !== null ? "Boxes" : "Sq Yards"}
+              {boxes !== null ? t("boxes") : t("sq_yards")}
             </p>
             <p className="text-2xl font-bold text-blue-800">
               {boxes !== null ? boxes : (sqFtWithWaste / 9).toFixed(1)}
@@ -105,7 +106,7 @@ export function FlooringCalculator() {
             </p>
           </div>
           <div className="result-box">
-            <p className="text-xs text-blue-600 font-medium mb-1">Est. Material Cost</p>
+            <p className="text-xs text-blue-600 font-medium mb-1">{t("material_cost")}</p>
             <p className="text-2xl font-bold text-blue-800">${totalCost.toFixed(0)}</p>
             <p className="text-xs text-blue-500 mt-0.5">at ${price}/ft²</p>
           </div>

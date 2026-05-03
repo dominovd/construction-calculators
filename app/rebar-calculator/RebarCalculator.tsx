@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useT } from "@/components/LanguageProvider";
 
 const REBAR_SIZES = [
   { label: "#3 (⅜\")", weightPerFt: 0.376 },
@@ -10,10 +11,11 @@ const REBAR_SIZES = [
 ];
 
 export function RebarCalculator() {
+  const { t } = useT();
   const [length, setLength] = useState("20");
   const [width, setWidth] = useState("20");
   const [spacing, setSpacing] = useState("12");
-  const [rebarIdx, setRebarIdx] = useState(1); // default #4
+  const [rebarIdx, setRebarIdx] = useState(1);
   const [pricePerFt, setPricePerFt] = useState("0.65");
 
   const l = parseFloat(length) || 0;
@@ -22,12 +24,9 @@ export function RebarCalculator() {
   const price = parseFloat(pricePerFt) || 0;
   const rebar = REBAR_SIZES[rebarIdx];
 
-  // Bars running in each direction (add 1 for start + end)
   const barsAlongLength = Math.ceil(w / (sp / 12)) + 1;
   const barsAlongWidth = Math.ceil(l / (sp / 12)) + 1;
   const totalBars = barsAlongLength + barsAlongWidth;
-
-  // Linear feet: bars along length each run full length, bars along width each run full width
   const linearFt = barsAlongLength * l + barsAlongWidth * w;
   const weightLbs = linearFt * rebar.weightPerFt;
   const totalCost = linearFt * price;
@@ -35,11 +34,10 @@ export function RebarCalculator() {
   return (
     <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
       <div className="bg-blue-700 px-5 py-3">
-        <h2 className="text-white font-semibold text-sm">Rebar Calculator</h2>
+        <h2 className="text-white font-semibold text-sm">{t("calc_rebar")}</h2>
       </div>
 
       <div className="p-5">
-        {/* Rebar size selector */}
         <div className="mb-4">
           <label className="block text-xs text-gray-500 mb-1">Rebar Size</label>
           <div className="flex flex-wrap gap-2">
@@ -61,13 +59,13 @@ export function RebarCalculator() {
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {[
-            { label: "Slab Length (ft)", value: length, setter: setLength },
-            { label: "Slab Width (ft)", value: width, setter: setWidth },
-            { label: "Spacing (in)", value: spacing, setter: setSpacing },
-            { label: "Price / ft ($)", value: pricePerFt, setter: setPricePerFt },
-          ].map(({ label, value, setter }) => (
-            <div key={label}>
-              <label className="block text-xs text-gray-500 mb-1">{label}</label>
+            { labelKey: "slab_length", value: length, setter: setLength },
+            { labelKey: "slab_width",  value: width,  setter: setWidth },
+            { labelKey: "spacing_in",  value: spacing, setter: setSpacing },
+            { labelKey: "price_per_ft", value: pricePerFt, setter: setPricePerFt },
+          ].map(({ labelKey, value, setter }) => (
+            <div key={labelKey}>
+              <label className="block text-xs text-gray-500 mb-1">{t(labelKey)}</label>
               <input
                 type="number"
                 inputMode="decimal"
@@ -83,22 +81,22 @@ export function RebarCalculator() {
 
         <div className="mt-5 grid grid-cols-2 sm:grid-cols-4 gap-3">
           <div className="result-box">
-            <p className="text-xs text-blue-600 font-medium mb-1">Total Bars</p>
+            <p className="text-xs text-blue-600 font-medium mb-1">{t("total_bars")}</p>
             <p className="text-2xl font-bold text-blue-800">{totalBars}</p>
             <p className="text-xs text-blue-500 mt-0.5">pieces</p>
           </div>
           <div className="result-box">
-            <p className="text-xs text-blue-600 font-medium mb-1">Linear Feet</p>
+            <p className="text-xs text-blue-600 font-medium mb-1">{t("linear_feet")}</p>
             <p className="text-2xl font-bold text-blue-800">{linearFt.toFixed(0)}</p>
             <p className="text-xs text-blue-500 mt-0.5">ft total</p>
           </div>
           <div className="result-box">
-            <p className="text-xs text-blue-600 font-medium mb-1">Weight</p>
+            <p className="text-xs text-blue-600 font-medium mb-1">{t("weight")}</p>
             <p className="text-2xl font-bold text-blue-800">{weightLbs.toFixed(0)}</p>
             <p className="text-xs text-blue-500 mt-0.5">lbs</p>
           </div>
           <div className="result-box">
-            <p className="text-xs text-blue-600 font-medium mb-1">Est. Cost</p>
+            <p className="text-xs text-blue-600 font-medium mb-1">{t("estimated_cost")}</p>
             <p className="text-2xl font-bold text-blue-800">${totalCost.toFixed(0)}</p>
             <p className="text-xs text-blue-500 mt-0.5">materials</p>
           </div>
@@ -106,8 +104,8 @@ export function RebarCalculator() {
 
         {linearFt > 0 && (
           <div className="mt-3 bg-amber-50 border border-amber-100 rounded-lg px-3 py-2 text-xs text-amber-700">
-            {barsAlongLength} bars × {l} ft + {barsAlongWidth} bars × {w} ft.
-            With 10% waste: <strong>{Math.ceil(linearFt * 1.1)} ft</strong> / <strong>{(weightLbs * 1.1).toFixed(0)} lbs</strong>
+            {barsAlongLength} bars × {l} ft + {barsAlongWidth} bars × {w} ft.{" "}
+            {t("with_waste")} <strong>{Math.ceil(linearFt * 1.1)} ft</strong> / <strong>{(weightLbs * 1.1).toFixed(0)} lbs</strong>
           </div>
         )}
       </div>
