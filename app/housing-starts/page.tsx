@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
-import { fetchHousingStarts, formatStarts, formatPct, type CountryStarts } from "@/lib/oecd";
+import { fetchHousingStarts, formatStarts, formatPct, COUNTRY_META, type CountryStarts } from "@/lib/oecd";
 import { computeChartPaths } from "@/lib/fred";
+
+function codeToSlug(code: string): string {
+  return COUNTRY_META[code].name.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
+}
 
 export const metadata: Metadata = {
   title: "Global Housing Starts by Country — 2024 Construction Data",
@@ -37,19 +41,24 @@ function BarRow({
   const up = country.yoy !== null && country.yoy > 0;
   const dn = country.yoy !== null && country.yoy < 0;
 
+  const slug = codeToSlug(country.code);
+
   return (
-    <div className="flex items-center gap-3 py-2 border-b border-gray-50 last:border-0">
+    <a
+      href={`/construction-market/${slug}`}
+      className="flex items-center gap-3 py-2 border-b border-gray-50 last:border-0 hover:bg-blue-50 rounded-lg px-1 -mx-1 transition-colors group"
+    >
       {/* rank */}
       <span className="w-5 text-xs text-gray-400 text-right shrink-0">{rank}</span>
       {/* flag + name */}
       <div className="w-40 flex items-center gap-1.5 shrink-0">
         <span className="text-base">{country.flag}</span>
-        <span className="text-sm text-gray-800 truncate">{country.name}</span>
+        <span className="text-sm text-gray-800 group-hover:text-blue-700 truncate">{country.name}</span>
       </div>
       {/* bar */}
       <div className="flex-1 bg-gray-100 rounded-full h-4 overflow-hidden">
         <div
-          className="h-full rounded-full bg-blue-500"
+          className="h-full rounded-full bg-blue-500 group-hover:bg-blue-600 transition-colors"
           style={{ width: `${pct.toFixed(1)}%` }}
         />
       </div>
@@ -65,7 +74,8 @@ function BarRow({
       >
         {up ? "↑" : dn ? "↓" : ""} {formatPct(country.yoy)}
       </span>
-    </div>
+      <span className="text-xs text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity shrink-0">→</span>
+    </a>
   );
 }
 
@@ -221,7 +231,7 @@ export default async function HousingStartsPage() {
             <h2 className="text-base font-semibold text-gray-900 mb-1">
               Housing Starts Ranking — {latestYear}
             </h2>
-            <p className="text-xs text-gray-400 mb-5">Total new residential units started. YoY = year-over-year change.</p>
+            <p className="text-xs text-gray-400 mb-5">Total new residential units started. YoY = year-over-year change. <span className="text-blue-500">Click any country for detailed data →</span></p>
             <div className="hidden sm:flex items-center gap-3 pb-2 mb-1 border-b border-gray-100">
               <span className="w-5" />
               <span className="w-40 text-xs text-gray-400">Country</span>
