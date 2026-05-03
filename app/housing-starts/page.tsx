@@ -353,8 +353,8 @@ export default async function HousingStartsPage() {
           >
             OECD Statistics
           </a>{" "}
-          — Housing dataset, STARTS indicator, annual frequency. Data typically lags by 12–24
-          months for some countries. Not seasonally adjusted.
+          — Housing dataset, STARTS indicator, annual frequency. Data updated through 2023.
+          Some countries may lag by 12–24 months in official reporting. Not seasonally adjusted.
         </p>
       </article>
     </div>
