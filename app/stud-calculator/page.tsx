@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Stud Calculator — Wall Framing Stud Count",
   description:
     "Calculate how many studs you need for wall framing. Enter wall length and stud spacing (16\" or 24\" OC) to get an exact stud count with extras.",
-  alternates: { canonical: "https://buildcalc.com/stud-calculator" },
+  alternates: { canonical: "https://easybuildcalc.com/stud-calculator" },
 };
 
 const jsonLd = {

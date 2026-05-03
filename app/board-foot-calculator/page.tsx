@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   title: "Board Foot Calculator — Free Lumber Volume Tool",
   description:
     "Calculate board feet of lumber instantly. Enter thickness, width, and length to get exact volume. Free tool for carpenters, woodworkers, and builders.",
-  alternates: { canonical: "https://buildcalc.com/board-foot-calculator" },
+  alternates: { canonical: "https://easybuildcalc.com/board-foot-calculator" },
   openGraph: {
     title: "Board Foot Calculator",
     description: "Calculate board feet of lumber by thickness, width, and length.",
-    url: "https://buildcalc.com/board-foot-calculator",
+    url: "https://easybuildcalc.com/board-foot-calculator",
   },
 };
 
