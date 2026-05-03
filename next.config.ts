@@ -1,8 +1,14 @@
 import type { NextConfig } from "next";
 
+const LOCALES = ["uk", "ru", "pl", "de", "es", "fr", "ja", "ar", "it"];
+
 const nextConfig: NextConfig = {
-  // Static export — деплой на Vercel без сервера
-  // output: 'export', // раскомментируй если нужен чистый static export
+  async rewrites() {
+    return LOCALES.map((locale) => ({
+      source: `/${locale}/:path*`,
+      destination: `/:path*`,
+    }));
+  },
 };
 
 export default nextConfig;

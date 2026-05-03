@@ -15,7 +15,8 @@ const CALCS = [
 ];
 
 export function HomeContent() {
-  const { t } = useT();
+  const { t, locale } = useT();
+  const prefix = locale === "en" ? "" : `/${locale}`;
 
   return (
     <>
@@ -37,7 +38,7 @@ export function HomeContent() {
           {CALCS.map((calc) => (
             <Link
               key={calc.slug}
-              href={`/${calc.slug}`}
+              href={`${prefix}/${calc.slug}`}
               className="bg-white rounded-xl border border-gray-200 p-5 hover:border-blue-400 hover:shadow-sm transition-all group"
             >
               <div className="text-2xl mb-2">{calc.icon}</div>
