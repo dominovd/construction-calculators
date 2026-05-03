@@ -1,3 +1,6 @@
+import fs from "fs";
+import path from "path";
+
 export type CountryStarts = {
   code: string;
   name: string;
@@ -32,9 +35,67 @@ export const COUNTRY_META: Record<string, { name: string; flag: string }> = {
   FIN: { name: "Finland",        flag: "🇫🇮" },
 };
 
-// ── Static fallback data (OECD Housing Starts, units) ──────────────────────
-// Source: OECD Housing dataset, STARTS indicator, annual. Values in dwelling units.
-// Used when the live API is unreachable. Updated through 2023.
+// ── 1. Read from committed JSON file (updated by GitHub Actions weekly) ──────
+function loadFromFile(): CountryStarts[] | null {
+  try {
+    const filePath = path.join(process.cwd(), "data", "housing-starts.json");
+    const raw = fs.readFileSync(filePath, "utf-8");
+    const data = JSON.parse(raw) as CountryStarts[];
+    if (Array.isArray(data) && data.length > 0) return data;
+  } catch {
+    // file missing or malformed — fall through
+  }
+  return null;
+}
+
+// ── 2. Parse live OECD SDMX-JSON response ────────────────────────────────────
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function parseSdmxJson(json: any): CountryStarts[] {
+  try {
+    const locationDim = json.structure.dimensions.series.find(
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (d: any) => d.id === "LOCATION"
+    );
+    const timeDim = json.structure.dimensions.observation[0];
+    const seriesMap = json.dataSets[0].series;
+
+    const results: CountryStarts[] = [];
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    locationDim.values.forEach((loc: any, locIdx: number) => {
+      const code = loc.id as string;
+      const meta = COUNTRY_META[code];
+      if (!meta) return;
+
+      const key = `${locIdx}:0:0`;
+      const s = seriesMap[key];
+      if (!s) return;
+
+      const values = Object.entries(s.observations)
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        .map(([tIdx, obs]: [string, any]) => ({
+          year: timeDim.values[parseInt(tIdx)].id as string,
+          value: obs[0] as number,
+        }))
+        .filter((v) => v.value !== null && !isNaN(v.value))
+        .sort((a, b) => a.year.localeCompare(b.year));
+
+      if (!values.length) return;
+
+      const last = values[values.length - 1];
+      const prev = values.length >= 2 ? values[values.length - 2] : null;
+      const yoy = prev ? ((last.value - prev.value) / prev.value) * 100 : null;
+
+      results.push({ code, name: meta.name, flag: meta.flag, values, latest: last.value, latestYear: last.year, yoy });
+    });
+
+    return results.sort((a, b) => (b.latest ?? 0) - (a.latest ?? 0));
+  } catch {
+    return [];
+  }
+}
+
+// ── 3. Hardcoded static fallback (last resort) ───────────────────────────────
 const STATIC_DATA: Record<string, { year: string; value: number }[]> = {
   USA: [
     { year: "2014", value: 1003000 }, { year: "2015", value: 1108000 },
@@ -50,6 +111,13 @@ const STATIC_DATA: Record<string, { year: string; value: number }[]> = {
     { year: "2020", value: 812164 }, { year: "2021", value: 856484 },
     { year: "2022", value: 860000 }, { year: "2023", value: 819623 },
   ],
+  KOR: [
+    { year: "2014", value: 440100 }, { year: "2015", value: 517000 },
+    { year: "2016", value: 726000 }, { year: "2017", value: 654000 },
+    { year: "2018", value: 554000 }, { year: "2019", value: 487000 },
+    { year: "2020", value: 457000 }, { year: "2021", value: 543000 },
+    { year: "2022", value: 380000 }, { year: "2023", value: 350000 },
+  ],
   DEU: [
     { year: "2014", value: 285000 }, { year: "2015", value: 310000 },
     { year: "2016", value: 375400 }, { year: "2017", value: 348000 },
@@ -63,20 +131,6 @@ const STATIC_DATA: Record<string, { year: string; value: number }[]> = {
     { year: "2018", value: 412000 }, { year: "2019", value: 446000 },
     { year: "2020", value: 376000 }, { year: "2021", value: 460000 },
     { year: "2022", value: 383000 }, { year: "2023", value: 295000 },
-  ],
-  KOR: [
-    { year: "2014", value: 440100 }, { year: "2015", value: 517000 },
-    { year: "2016", value: 726000 }, { year: "2017", value: 654000 },
-    { year: "2018", value: 554000 }, { year: "2019", value: 487000 },
-    { year: "2020", value: 457000 }, { year: "2021", value: 543000 },
-    { year: "2022", value: 380000 }, { year: "2023", value: 350000 },
-  ],
-  GBR: [
-    { year: "2014", value: 141000 }, { year: "2015", value: 155000 },
-    { year: "2016", value: 163000 }, { year: "2017", value: 162000 },
-    { year: "2018", value: 165000 }, { year: "2019", value: 172000 },
-    { year: "2020", value: 141000 }, { year: "2021", value: 187000 },
-    { year: "2022", value: 172000 }, { year: "2023", value: 155000 },
   ],
   CAN: [
     { year: "2014", value: 189300 }, { year: "2015", value: 194500 },
@@ -99,11 +153,18 @@ const STATIC_DATA: Record<string, { year: string; value: number }[]> = {
     { year: "2020", value: 221400 }, { year: "2021", value: 235000 },
     { year: "2022", value: 210000 }, { year: "2023", value: 220000 },
   ],
+  GBR: [
+    { year: "2014", value: 141000 }, { year: "2015", value: 155000 },
+    { year: "2016", value: 163000 }, { year: "2017", value: 162000 },
+    { year: "2018", value: 165000 }, { year: "2019", value: 172000 },
+    { year: "2020", value: 141000 }, { year: "2021", value: 187000 },
+    { year: "2022", value: 172000 }, { year: "2023", value: 155000 },
+  ],
   ESP: [
-    { year: "2014", value: 34400 }, { year: "2015", value: 49600 },
-    { year: "2016", value: 63600 }, { year: "2017", value: 82300 },
+    { year: "2014", value: 34400 },  { year: "2015", value: 49600 },
+    { year: "2016", value: 63600 },  { year: "2017", value: 82300 },
     { year: "2018", value: 100300 }, { year: "2019", value: 107200 },
-    { year: "2020", value: 84000 }, { year: "2021", value: 109000 },
+    { year: "2020", value: 84000 },  { year: "2021", value: 109000 },
     { year: "2022", value: 112000 }, { year: "2023", value: 115000 },
   ],
   ITA: [
@@ -195,84 +256,26 @@ function buildFromStatic(): CountryStarts[] {
     const last = values[values.length - 1];
     const prev = values.length >= 2 ? values[values.length - 2] : null;
     const yoy = prev ? ((last.value - prev.value) / prev.value) * 100 : null;
-    results.push({
-      code,
-      name: meta.name,
-      flag: meta.flag,
-      values,
-      latest: last.value,
-      latestYear: last.year,
-      yoy,
-    });
+    results.push({ code, name: meta.name, flag: meta.flag, values, latest: last.value, latestYear: last.year, yoy });
   }
   return results.sort((a, b) => (b.latest ?? 0) - (a.latest ?? 0));
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function parseSdmxJson(json: any): CountryStarts[] {
-  try {
-    const locationDim = json.structure.dimensions.series.find(
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (d: any) => d.id === "LOCATION"
-    );
-    const timeDim = json.structure.dimensions.observation[0];
-    const seriesMap = json.dataSets[0].series;
-
-    const results: CountryStarts[] = [];
-
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    locationDim.values.forEach((loc: any, locIdx: number) => {
-      const code = loc.id as string;
-      const meta = COUNTRY_META[code];
-      if (!meta) return;
-
-      const key = `${locIdx}:0:0`;
-      const s = seriesMap[key];
-      if (!s) return;
-
-      const values = Object.entries(s.observations)
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        .map(([tIdx, obs]: [string, any]) => ({
-          year: timeDim.values[parseInt(tIdx)].id as string,
-          value: obs[0] as number,
-        }))
-        .filter((v) => v.value !== null && !isNaN(v.value))
-        .sort((a, b) => a.year.localeCompare(b.year));
-
-      if (!values.length) return;
-
-      const last = values[values.length - 1];
-      const prev = values.length >= 2 ? values[values.length - 2] : null;
-      const yoy = prev ? ((last.value - prev.value) / prev.value) * 100 : null;
-
-      results.push({
-        code,
-        name: meta.name,
-        flag: meta.flag,
-        values,
-        latest: last.value,
-        latestYear: last.year,
-        yoy,
-      });
-    });
-
-    if (!results.length) return buildFromStatic();
-    return results.sort((a, b) => (b.latest ?? 0) - (a.latest ?? 0));
-  } catch {
-    return buildFromStatic();
-  }
-}
-
+// ── Main export ───────────────────────────────────────────────────────────────
 export async function fetchHousingStarts(): Promise<CountryStarts[]> {
-  const CODES = Object.keys(COUNTRY_META).join("+");
-  const OECD_URL =
-    `https://stats.oecd.org/SDMX-JSON/data/HOUSING/${CODES}.STARTS.A/OECD` +
-    `?contentType=application/json&lastNObservations=10`;
+  // Priority 1: JSON file committed by GitHub Actions (freshest data)
+  const fromFile = loadFromFile();
+  if (fromFile) return fromFile;
 
+  // Priority 2: Live OECD API (works from non-Vercel IPs)
   try {
-    const res = await fetch(OECD_URL, {
+    const CODES = Object.keys(COUNTRY_META).join("+");
+    const url =
+      `https://stats.oecd.org/SDMX-JSON/data/HOUSING/${CODES}.STARTS.A/OECD` +
+      `?contentType=application/json&lastNObservations=10`;
+    const res = await fetch(url, {
       headers: {
-        "User-Agent": "EasyBuildCalc/1.0 (https://easybuildcalc.com; data@easybuildcalc.com)",
+        "User-Agent": "EasyBuildCalc/1.0 (https://easybuildcalc.com)",
         "Accept": "application/json",
       },
       next: { revalidate: 86400 * 7 },
@@ -283,9 +286,10 @@ export async function fetchHousingStarts(): Promise<CountryStarts[]> {
       if (parsed.length > 0) return parsed;
     }
   } catch {
-    // fall through to static data
+    // fall through
   }
 
+  // Priority 3: Hardcoded static data
   return buildFromStatic();
 }
 

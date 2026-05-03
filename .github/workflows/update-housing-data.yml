@@ -1,0 +1,39 @@
+name: Update OECD Housing Starts Data
+
+on:
+  # Run every Monday at 07:00 UTC
+  schedule:
+    - cron: "0 7 * * 1"
+  # Allow triggering manually from the GitHub Actions tab
+  workflow_dispatch:
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch OECD data
+        run: node scripts/fetch-oecd.mjs
+
+      - name: Commit updated data file
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add data/housing-starts.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit — data is already up to date."
+          else
+            git commit -m "data: update OECD housing starts $(date +%Y-%m-%d) [skip ci]"
+            git push
+            echo "✓ Pushed updated housing-starts.json"
+          fi

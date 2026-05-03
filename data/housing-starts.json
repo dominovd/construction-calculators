@@ -1,0 +1,422 @@
+[
+  {
+    "code": "USA",
+    "name": "United States",
+    "flag": "🇺🇸",
+    "values": [
+      { "year": "2014", "value": 1003000 },
+      { "year": "2015", "value": 1108000 },
+      { "year": "2016", "value": 1168000 },
+      { "year": "2017", "value": 1202000 },
+      { "year": "2018", "value": 1247000 },
+      { "year": "2019", "value": 1290000 },
+      { "year": "2020", "value": 1380000 },
+      { "year": "2021", "value": 1595000 },
+      { "year": "2022", "value": 1553000 },
+      { "year": "2023", "value": 1413000 }
+    ],
+    "latest": 1413000,
+    "latestYear": "2023",
+    "yoy": -9.02
+  },
+  {
+    "code": "JPN",
+    "name": "Japan",
+    "flag": "🇯🇵",
+    "values": [
+      { "year": "2014", "value": 880472 },
+      { "year": "2015", "value": 909299 },
+      { "year": "2016", "value": 967237 },
+      { "year": "2017", "value": 946396 },
+      { "year": "2018", "value": 942370 },
+      { "year": "2019", "value": 905123 },
+      { "year": "2020", "value": 812164 },
+      { "year": "2021", "value": 856484 },
+      { "year": "2022", "value": 860000 },
+      { "year": "2023", "value": 819623 }
+    ],
+    "latest": 819623,
+    "latestYear": "2023",
+    "yoy": -4.70
+  },
+  {
+    "code": "KOR",
+    "name": "South Korea",
+    "flag": "🇰🇷",
+    "values": [
+      { "year": "2014", "value": 440100 },
+      { "year": "2015", "value": 517000 },
+      { "year": "2016", "value": 726000 },
+      { "year": "2017", "value": 654000 },
+      { "year": "2018", "value": 554000 },
+      { "year": "2019", "value": 487000 },
+      { "year": "2020", "value": 457000 },
+      { "year": "2021", "value": 543000 },
+      { "year": "2022", "value": 380000 },
+      { "year": "2023", "value": 350000 }
+    ],
+    "latest": 350000,
+    "latestYear": "2023",
+    "yoy": -7.89
+  },
+  {
+    "code": "DEU",
+    "name": "Germany",
+    "flag": "🇩🇪",
+    "values": [
+      { "year": "2014", "value": 285000 },
+      { "year": "2015", "value": 310000 },
+      { "year": "2016", "value": 375400 },
+      { "year": "2017", "value": 348000 },
+      { "year": "2018", "value": 347300 },
+      { "year": "2019", "value": 360000 },
+      { "year": "2020", "value": 368000 },
+      { "year": "2021", "value": 380000 },
+      { "year": "2022", "value": 295000 },
+      { "year": "2023", "value": 260100 }
+    ],
+    "latest": 260100,
+    "latestYear": "2023",
+    "yoy": -11.83
+  },
+  {
+    "code": "FRA",
+    "name": "France",
+    "flag": "🇫🇷",
+    "values": [
+      { "year": "2014", "value": 355300 },
+      { "year": "2015", "value": 354100 },
+      { "year": "2016", "value": 378000 },
+      { "year": "2017", "value": 426000 },
+      { "year": "2018", "value": 412000 },
+      { "year": "2019", "value": 446000 },
+      { "year": "2020", "value": 376000 },
+      { "year": "2021", "value": 460000 },
+      { "year": "2022", "value": 383000 },
+      { "year": "2023", "value": 295000 }
+    ],
+    "latest": 295000,
+    "latestYear": "2023",
+    "yoy": -22.98
+  },
+  {
+    "code": "POL",
+    "name": "Poland",
+    "flag": "🇵🇱",
+    "values": [
+      { "year": "2014", "value": 143000 },
+      { "year": "2015", "value": 148000 },
+      { "year": "2016", "value": 163000 },
+      { "year": "2017", "value": 178000 },
+      { "year": "2018", "value": 185000 },
+      { "year": "2019", "value": 207900 },
+      { "year": "2020", "value": 221400 },
+      { "year": "2021", "value": 235000 },
+      { "year": "2022", "value": 210000 },
+      { "year": "2023", "value": 220000 }
+    ],
+    "latest": 220000,
+    "latestYear": "2023",
+    "yoy": 4.76
+  },
+  {
+    "code": "GBR",
+    "name": "United Kingdom",
+    "flag": "🇬🇧",
+    "values": [
+      { "year": "2014", "value": 141000 },
+      { "year": "2015", "value": 155000 },
+      { "year": "2016", "value": 163000 },
+      { "year": "2017", "value": 162000 },
+      { "year": "2018", "value": 165000 },
+      { "year": "2019", "value": 172000 },
+      { "year": "2020", "value": 141000 },
+      { "year": "2021", "value": 187000 },
+      { "year": "2022", "value": 172000 },
+      { "year": "2023", "value": 155000 }
+    ],
+    "latest": 155000,
+    "latestYear": "2023",
+    "yoy": -9.88
+  },
+  {
+    "code": "CAN",
+    "name": "Canada",
+    "flag": "🇨🇦",
+    "values": [
+      { "year": "2014", "value": 189300 },
+      { "year": "2015", "value": 194500 },
+      { "year": "2016", "value": 197900 },
+      { "year": "2017", "value": 219800 },
+      { "year": "2018", "value": 212800 },
+      { "year": "2019", "value": 208700 },
+      { "year": "2020", "value": 218437 },
+      { "year": "2021", "value": 271198 },
+      { "year": "2022", "value": 261534 },
+      { "year": "2023", "value": 240267 }
+    ],
+    "latest": 240267,
+    "latestYear": "2023",
+    "yoy": -8.13
+  },
+  {
+    "code": "AUS",
+    "name": "Australia",
+    "flag": "🇦🇺",
+    "values": [
+      { "year": "2014", "value": 154900 },
+      { "year": "2015", "value": 184700 },
+      { "year": "2016", "value": 188900 },
+      { "year": "2017", "value": 171900 },
+      { "year": "2018", "value": 162700 },
+      { "year": "2019", "value": 167700 },
+      { "year": "2020", "value": 149200 },
+      { "year": "2021", "value": 193500 },
+      { "year": "2022", "value": 189300 },
+      { "year": "2023", "value": 170000 }
+    ],
+    "latest": 170000,
+    "latestYear": "2023",
+    "yoy": -10.19
+  },
+  {
+    "code": "ESP",
+    "name": "Spain",
+    "flag": "🇪🇸",
+    "values": [
+      { "year": "2014", "value": 34400 },
+      { "year": "2015", "value": 49600 },
+      { "year": "2016", "value": 63600 },
+      { "year": "2017", "value": 82300 },
+      { "year": "2018", "value": 100300 },
+      { "year": "2019", "value": 107200 },
+      { "year": "2020", "value": 84000 },
+      { "year": "2021", "value": 109000 },
+      { "year": "2022", "value": 112000 },
+      { "year": "2023", "value": 115000 }
+    ],
+    "latest": 115000,
+    "latestYear": "2023",
+    "yoy": 2.68
+  },
+  {
+    "code": "ITA",
+    "name": "Italy",
+    "flag": "🇮🇹",
+    "values": [
+      { "year": "2014", "value": 56000 },
+      { "year": "2015", "value": 57000 },
+      { "year": "2016", "value": 61000 },
+      { "year": "2017", "value": 64000 },
+      { "year": "2018", "value": 66000 },
+      { "year": "2019", "value": 65000 },
+      { "year": "2020", "value": 55000 },
+      { "year": "2021", "value": 70000 },
+      { "year": "2022", "value": 73000 },
+      { "year": "2023", "value": 70000 }
+    ],
+    "latest": 70000,
+    "latestYear": "2023",
+    "yoy": -4.11
+  },
+  {
+    "code": "NLD",
+    "name": "Netherlands",
+    "flag": "🇳🇱",
+    "values": [
+      { "year": "2014", "value": 44700 },
+      { "year": "2015", "value": 54800 },
+      { "year": "2016", "value": 63300 },
+      { "year": "2017", "value": 63200 },
+      { "year": "2018", "value": 66000 },
+      { "year": "2019", "value": 71500 },
+      { "year": "2020", "value": 69800 },
+      { "year": "2021", "value": 77600 },
+      { "year": "2022", "value": 73000 },
+      { "year": "2023", "value": 73200 }
+    ],
+    "latest": 73200,
+    "latestYear": "2023",
+    "yoy": 0.27
+  },
+  {
+    "code": "NZL",
+    "name": "New Zealand",
+    "flag": "🇳🇿",
+    "values": [
+      { "year": "2014", "value": 22200 },
+      { "year": "2015", "value": 25000 },
+      { "year": "2016", "value": 29000 },
+      { "year": "2017", "value": 31000 },
+      { "year": "2018", "value": 32200 },
+      { "year": "2019", "value": 38200 },
+      { "year": "2020", "value": 39000 },
+      { "year": "2021", "value": 51000 },
+      { "year": "2022", "value": 46900 },
+      { "year": "2023", "value": 36500 }
+    ],
+    "latest": 36500,
+    "latestYear": "2023",
+    "yoy": -22.18
+  },
+  {
+    "code": "SWE",
+    "name": "Sweden",
+    "flag": "🇸🇪",
+    "values": [
+      { "year": "2014", "value": 37000 },
+      { "year": "2015", "value": 49400 },
+      { "year": "2016", "value": 62000 },
+      { "year": "2017", "value": 63200 },
+      { "year": "2018", "value": 51000 },
+      { "year": "2019", "value": 45800 },
+      { "year": "2020", "value": 44300 },
+      { "year": "2021", "value": 53000 },
+      { "year": "2022", "value": 51000 },
+      { "year": "2023", "value": 34900 }
+    ],
+    "latest": 34900,
+    "latestYear": "2023",
+    "yoy": -31.57
+  },
+  {
+    "code": "AUT",
+    "name": "Austria",
+    "flag": "🇦🇹",
+    "values": [
+      { "year": "2014", "value": 42000 },
+      { "year": "2015", "value": 45600 },
+      { "year": "2016", "value": 44800 },
+      { "year": "2017", "value": 48600 },
+      { "year": "2018", "value": 46800 },
+      { "year": "2019", "value": 52000 },
+      { "year": "2020", "value": 50300 },
+      { "year": "2021", "value": 52000 },
+      { "year": "2022", "value": 43000 },
+      { "year": "2023", "value": 36000 }
+    ],
+    "latest": 36000,
+    "latestYear": "2023",
+    "yoy": -16.28
+  },
+  {
+    "code": "CHE",
+    "name": "Switzerland",
+    "flag": "🇨🇭",
+    "values": [
+      { "year": "2014", "value": 46300 },
+      { "year": "2015", "value": 47200 },
+      { "year": "2016", "value": 48800 },
+      { "year": "2017", "value": 51000 },
+      { "year": "2018", "value": 49800 },
+      { "year": "2019", "value": 52000 },
+      { "year": "2020", "value": 48200 },
+      { "year": "2021", "value": 46000 },
+      { "year": "2022", "value": 40100 },
+      { "year": "2023", "value": 38000 }
+    ],
+    "latest": 38000,
+    "latestYear": "2023",
+    "yoy": -5.24
+  },
+  {
+    "code": "BEL",
+    "name": "Belgium",
+    "flag": "🇧🇪",
+    "values": [
+      { "year": "2014", "value": 41000 },
+      { "year": "2015", "value": 42000 },
+      { "year": "2016", "value": 43000 },
+      { "year": "2017", "value": 44000 },
+      { "year": "2018", "value": 42000 },
+      { "year": "2019", "value": 43000 },
+      { "year": "2020", "value": 40000 },
+      { "year": "2021", "value": 48000 },
+      { "year": "2022", "value": 44000 },
+      { "year": "2023", "value": 38000 }
+    ],
+    "latest": 38000,
+    "latestYear": "2023",
+    "yoy": -13.64
+  },
+  {
+    "code": "IRL",
+    "name": "Ireland",
+    "flag": "🇮🇪",
+    "values": [
+      { "year": "2014", "value": 11000 },
+      { "year": "2015", "value": 12600 },
+      { "year": "2016", "value": 14900 },
+      { "year": "2017", "value": 19300 },
+      { "year": "2018", "value": 18000 },
+      { "year": "2019", "value": 21200 },
+      { "year": "2020", "value": 20500 },
+      { "year": "2021", "value": 30000 },
+      { "year": "2022", "value": 29000 },
+      { "year": "2023", "value": 32500 }
+    ],
+    "latest": 32500,
+    "latestYear": "2023",
+    "yoy": 12.07
+  },
+  {
+    "code": "NOR",
+    "name": "Norway",
+    "flag": "🇳🇴",
+    "values": [
+      { "year": "2014", "value": 28000 },
+      { "year": "2015", "value": 33600 },
+      { "year": "2016", "value": 37800 },
+      { "year": "2017", "value": 36600 },
+      { "year": "2018", "value": 33200 },
+      { "year": "2019", "value": 28000 },
+      { "year": "2020", "value": 27200 },
+      { "year": "2021", "value": 32000 },
+      { "year": "2022", "value": 29000 },
+      { "year": "2023", "value": 21000 }
+    ],
+    "latest": 21000,
+    "latestYear": "2023",
+    "yoy": -27.59
+  },
+  {
+    "code": "DNK",
+    "name": "Denmark",
+    "flag": "🇩🇰",
+    "values": [
+      { "year": "2014", "value": 14100 },
+      { "year": "2015", "value": 19800 },
+      { "year": "2016", "value": 23000 },
+      { "year": "2017", "value": 25200 },
+      { "year": "2018", "value": 24000 },
+      { "year": "2019", "value": 22000 },
+      { "year": "2020", "value": 19300 },
+      { "year": "2021", "value": 22000 },
+      { "year": "2022", "value": 20000 },
+      { "year": "2023", "value": 16200 }
+    ],
+    "latest": 16200,
+    "latestYear": "2023",
+    "yoy": -19.00
+  },
+  {
+    "code": "FIN",
+    "name": "Finland",
+    "flag": "🇫🇮",
+    "values": [
+      { "year": "2014", "value": 23300 },
+      { "year": "2015", "value": 24000 },
+      { "year": "2016", "value": 33700 },
+      { "year": "2017", "value": 43000 },
+      { "year": "2018", "value": 39800 },
+      { "year": "2019", "value": 39700 },
+      { "year": "2020", "value": 32000 },
+      { "year": "2021", "value": 39300 },
+      { "year": "2022", "value": 36000 },
+      { "year": "2023", "value": 21500 }
+    ],
+    "latest": 21500,
+    "latestYear": "2023",
+    "yoy": -40.28
+  }
+]
