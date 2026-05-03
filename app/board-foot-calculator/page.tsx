@@ -1,21 +1,17 @@
 import type { Metadata } from "next";
 import { BoardFootCalculator } from "./BoardFootCalculator";
-import { localeAlternates } from "@/lib/locale-meta";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const { canonical, languages } = await localeAlternates("board-foot-calculator");
-  return {
-    title: "Board Foot Calculator — Free Lumber Volume Tool",
-    description:
-      "Calculate board feet of lumber instantly. Enter thickness, width, and length to get exact volume. Free tool for carpenters, woodworkers, and builders.",
-    alternates: { canonical, languages },
-    openGraph: {
-      title: "Board Foot Calculator",
-      description: "Calculate board feet of lumber by thickness, width, and length.",
-      url: canonical,
-    },
-  };
-}
+export const metadata: Metadata = {
+  title: "Board Foot Calculator — Free Lumber Volume Tool",
+  description:
+    "Calculate board feet of lumber instantly. Enter thickness, width, and length to get exact volume. Free tool for carpenters, woodworkers, and builders.",
+  alternates: { canonical: "https://easybuildcalc.com/board-foot-calculator" },
+  openGraph: {
+    title: "Board Foot Calculator",
+    description: "Calculate board feet of lumber by thickness, width, and length.",
+    url: "https://easybuildcalc.com/board-foot-calculator",
+  },
+};
 
 // Structured data для Google (HowTo schema)
 const jsonLd = {

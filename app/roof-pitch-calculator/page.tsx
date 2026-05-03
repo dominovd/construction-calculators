@@ -1,21 +1,17 @@
 import type { Metadata } from "next";
 import { RoofPitchCalculator } from "./RoofPitchCalculator";
-import { localeAlternates } from "@/lib/locale-meta";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const { canonical, languages } = await localeAlternates("roof-pitch-calculator");
-  return {
-    title: "Roof Pitch Calculator — Angle, Rafter Length & Ridge Height",
-    description:
-      "Calculate roof pitch angle in degrees, rafter length, and ridge height from rise and run. Free tool for contractors, roofers, and DIY builders.",
-    alternates: { canonical, languages },
-    openGraph: {
-      title: "Roof Pitch Calculator",
-      description: "Convert roof pitch to angle and calculate rafter length for any roof.",
-      url: canonical,
-    },
-  };
-}
+export const metadata: Metadata = {
+  title: "Roof Pitch Calculator — Angle, Rafter Length & Ridge Height",
+  description:
+    "Calculate roof pitch angle in degrees, rafter length, and ridge height from rise and run. Free tool for contractors, roofers, and DIY builders.",
+  alternates: { canonical: "https://easybuildcalc.com/roof-pitch-calculator" },
+  openGraph: {
+    title: "Roof Pitch Calculator",
+    description: "Convert roof pitch to angle and calculate rafter length for any roof.",
+    url: "https://easybuildcalc.com/roof-pitch-calculator",
+  },
+};
 
 const jsonLd = {
   "@context": "https://schema.org",

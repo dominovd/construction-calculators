@@ -1,21 +1,17 @@
 import type { Metadata } from "next";
 import { FlooringCalculator } from "./FlooringCalculator";
-import { localeAlternates } from "@/lib/locale-meta";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const { canonical, languages } = await localeAlternates("flooring-calculator");
-  return {
-    title: "Flooring Calculator — Square Feet, Boxes & Cost",
-    description:
-      "Calculate how much flooring you need for any room. Supports hardwood, laminate, vinyl plank, tile, and carpet. Includes waste factor and cost estimate.",
-    alternates: { canonical, languages },
-    openGraph: {
-      title: "Flooring Calculator",
-      description: "Calculate flooring square footage, boxes needed, and material cost.",
-      url: canonical,
-    },
-  };
-}
+export const metadata: Metadata = {
+  title: "Flooring Calculator — Square Feet, Boxes & Cost",
+  description:
+    "Calculate how much flooring you need for any room. Supports hardwood, laminate, vinyl plank, tile, and carpet. Includes waste factor and cost estimate.",
+  alternates: { canonical: "https://easybuildcalc.com/flooring-calculator" },
+  openGraph: {
+    title: "Flooring Calculator",
+    description: "Calculate flooring square footage, boxes needed, and material cost.",
+    url: "https://easybuildcalc.com/flooring-calculator",
+  },
+};
 
 const jsonLd = {
   "@context": "https://schema.org",

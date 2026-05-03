@@ -1,21 +1,17 @@
 import type { Metadata } from "next";
 import { BrickCalculator } from "./BrickCalculator";
-import { localeAlternates } from "@/lib/locale-meta";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const { canonical, languages } = await localeAlternates("brick-calculator");
-  return {
-    title: "Brick Calculator — Bricks & Mortar for Any Wall or Patio",
-    description:
-      "Calculate how many bricks and bags of mortar you need for walls, patios, and walkways. Supports standard, modular, queen, and paver brick sizes.",
-    alternates: { canonical, languages },
-    openGraph: {
-      title: "Brick Calculator",
-      description: "Calculate bricks and mortar for walls, patios, and walkways.",
-      url: canonical,
-    },
-  };
-}
+export const metadata: Metadata = {
+  title: "Brick Calculator — Bricks & Mortar for Any Wall or Patio",
+  description:
+    "Calculate how many bricks and bags of mortar you need for walls, patios, and walkways. Supports standard, modular, queen, and paver brick sizes.",
+  alternates: { canonical: "https://easybuildcalc.com/brick-calculator" },
+  openGraph: {
+    title: "Brick Calculator",
+    description: "Calculate bricks and mortar for walls, patios, and walkways.",
+    url: "https://easybuildcalc.com/brick-calculator",
+  },
+};
 
 const jsonLd = {
   "@context": "https://schema.org",

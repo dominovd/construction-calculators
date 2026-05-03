@@ -1,21 +1,17 @@
 import type { Metadata } from "next";
 import { SandCalculator } from "./SandCalculator";
-import { localeAlternates } from "@/lib/locale-meta";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const { canonical, languages } = await localeAlternates("sand-calculator");
-  return {
-    title: "Sand Calculator — Cubic Yards, Tons & Bags",
-    description:
-      "Calculate how much sand, gravel, or topsoil you need by area and depth. Get cubic yards, tons, and number of 50-lb bags instantly.",
-    alternates: { canonical, languages },
-    openGraph: {
-      title: "Sand Calculator",
-      description: "Calculate sand, gravel, or topsoil quantity in cubic yards, tons, and bags.",
-      url: canonical,
-    },
-  };
-}
+export const metadata: Metadata = {
+  title: "Sand Calculator — Cubic Yards, Tons & Bags",
+  description:
+    "Calculate how much sand, gravel, or topsoil you need by area and depth. Get cubic yards, tons, and number of 50-lb bags instantly.",
+  alternates: { canonical: "https://easybuildcalc.com/sand-calculator" },
+  openGraph: {
+    title: "Sand Calculator",
+    description: "Calculate sand, gravel, or topsoil quantity in cubic yards, tons, and bags.",
+    url: "https://easybuildcalc.com/sand-calculator",
+  },
+};
 
 const jsonLd = {
   "@context": "https://schema.org",

@@ -1,10 +1,5 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import "./globals.css";
-import { LanguageProvider } from "@/components/LanguageProvider";
-import { SiteHeader } from "@/components/SiteHeader";
-import { SiteFooter } from "@/components/SiteFooter";
-import type { Locale } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://easybuildcalc.com"),
@@ -27,26 +22,49 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const headersList = await headers();
-  const locale = (headersList.get("x-locale") as Locale) || "en";
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang={locale}>
+    <html lang="en">
       <head>
         <meta name="google-site-verification" content="ZQ1waCH9VzWxNtRgULBPxZ3yTGbg4VLAroLQpsnlsdQ" />
       </head>
       <body className="min-h-screen flex flex-col">
-        <LanguageProvider initialLocale={locale}>
-          <SiteHeader />
-          <main className="flex-1">{children}</main>
-          <SiteFooter />
-        </LanguageProvider>
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
+  );
+}
+
+function Header() {
+  return (
+    <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
+      <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
+        <a href="/" className="text-lg font-semibold text-blue-700 hover:text-blue-800">
+          🔧 EasyBuildCalc
+        </a>
+        <nav className="hidden sm:flex gap-5 text-sm text-gray-600">
+          <a href="/board-foot-calculator" className="hover:text-blue-600">Board Foot</a>
+          <a href="/stud-calculator" className="hover:text-blue-600">Stud / Framing</a>
+          <a href="/roof-pitch-calculator" className="hover:text-blue-600">Roof Pitch</a>
+          <a href="/rebar-calculator" className="hover:text-blue-600">Rebar</a>
+        </nav>
+      </div>
+    </header>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="bg-white border-t border-gray-200 mt-16">
+      <div className="max-w-5xl mx-auto px-4 py-8 text-sm text-gray-500 flex flex-col sm:flex-row justify-between gap-4">
+        <p>© {new Date().getFullYear()} EasyBuildCalc. Free construction calculators.</p>
+        <nav className="flex gap-4">
+          <a href="/contact" className="hover:text-gray-700">Contact</a>
+          <a href="/privacy" className="hover:text-gray-700">Privacy</a>
+        </nav>
+      </div>
+    </footer>
   );
 }

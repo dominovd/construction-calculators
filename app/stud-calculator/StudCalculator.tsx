@@ -1,10 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { useT } from "@/components/LanguageProvider";
 
 export function StudCalculator() {
-  const { t } = useT();
   const [wallLength, setWallLength] = useState("12");
   const [spacing, setSpacing] = useState<16 | 24>(16);
   const [extraWalls, setExtraWalls] = useState("0");
@@ -25,39 +23,23 @@ export function StudCalculator() {
   return (
     <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
       <div className="bg-blue-700 px-5 py-3">
-        <h2 className="text-white font-semibold text-sm">{t("calc_stud")}</h2>
+        <h2 className="text-white font-semibold text-sm">Stud / Framing Calculator</h2>
       </div>
-
       <div className="p-5 space-y-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            {t("wall_length")}
-          </label>
-          <input
-            type="number"
-            min="0"
-            step="0.5"
-            value={wallLength}
-            onChange={(e) => setWallLength(e.target.value)}
-            className="calc-input max-w-xs"
-          />
+          <label className="block text-sm font-medium text-gray-700 mb-1">Wall length (feet)</label>
+          <input type="number" min="0" step="0.5" value={wallLength}
+            onChange={(e) => setWallLength(e.target.value)} className="calc-input max-w-xs" />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            {t("spacing")}
-          </label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">Stud spacing</label>
           <div className="flex gap-3">
             {([16, 24] as const).map((s) => (
-              <button
-                key={s}
-                onClick={() => setSpacing(s)}
-                className={`flex-1 max-w-[120px] py-2 rounded-lg border text-sm font-medium transition-colors
-                  ${spacing === s
-                    ? "bg-blue-600 border-blue-600 text-white"
-                    : "bg-white border-gray-300 text-gray-700 hover:border-blue-400"
-                  }`}
-              >
+              <button key={s} onClick={() => setSpacing(s)}
+                className={`flex-1 max-w-[120px] py-2 rounded-lg border text-sm font-medium transition-colors ${
+                  spacing === s ? "bg-blue-600 border-blue-600 text-white" : "bg-white border-gray-300 text-gray-700 hover:border-blue-400"
+                }`}>
                 {s}&quot; OC
               </button>
             ))}
@@ -69,48 +51,32 @@ export function StudCalculator() {
 
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Additional walls
-            </label>
-            <input
-              type="number"
-              min="0"
-              value={extraWalls}
-              onChange={(e) => setExtraWalls(e.target.value)}
-              className="calc-input"
-              placeholder="0"
-            />
+            <label className="block text-sm font-medium text-gray-700 mb-1">Additional walls</label>
+            <input type="number" min="0" value={extraWalls}
+              onChange={(e) => setExtraWalls(e.target.value)} className="calc-input" placeholder="0" />
             <p className="text-xs text-gray-400 mt-1">Same length as above</p>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              {t("doors_windows")}
-            </label>
-            <input
-              type="number"
-              min="0"
-              value={openings}
-              onChange={(e) => setOpenings(e.target.value)}
-              className="calc-input"
-              placeholder="0"
-            />
+            <label className="block text-sm font-medium text-gray-700 mb-1">Doors / windows</label>
+            <input type="number" min="0" value={openings}
+              onChange={(e) => setOpenings(e.target.value)} className="calc-input" placeholder="0" />
             <p className="text-xs text-gray-400 mt-1">Each adds ~4 extra studs</p>
           </div>
         </div>
 
         <div className="grid grid-cols-3 gap-3 mt-2">
           <div className="result-box">
-            <p className="text-xs text-blue-600 font-medium mb-1">{t("studs_needed")}</p>
+            <p className="text-xs text-blue-600 font-medium mb-1">Studs Needed</p>
             <p className="text-2xl font-bold text-blue-800">{subtotal}</p>
             <p className="text-xs text-blue-500 mt-0.5">studs</p>
           </div>
           <div className="result-box">
-            <p className="text-xs text-blue-600 font-medium mb-1">{t("with_10pct")}</p>
+            <p className="text-xs text-blue-600 font-medium mb-1">With 10% extra</p>
             <p className="text-2xl font-bold text-blue-800">{withWaste}</p>
             <p className="text-xs text-blue-500 mt-0.5">recommended</p>
           </div>
           <div className="result-box">
-            <p className="text-xs text-blue-600 font-medium mb-1">{t("spacing")}</p>
+            <p className="text-xs text-blue-600 font-medium mb-1">Spacing</p>
             <p className="text-2xl font-bold text-blue-800">{spacing}&quot;</p>
             <p className="text-xs text-blue-500 mt-0.5">on center</p>
           </div>

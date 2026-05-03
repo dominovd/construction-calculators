@@ -1,21 +1,17 @@
 import type { Metadata } from "next";
 import { AsphaltCalculator } from "./AsphaltCalculator";
-import { localeAlternates } from "@/lib/locale-meta";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const { canonical, languages } = await localeAlternates("asphalt-calculator");
-  return {
-    title: "Asphalt Calculator — Tons & Cost for Driveways and Parking Lots",
-    description:
-      "Calculate how many tons of asphalt you need for a driveway, parking lot, or road. Enter length, width, and depth to get tonnage and cost estimate.",
-    alternates: { canonical, languages },
-    openGraph: {
-      title: "Asphalt Calculator",
-      description: "Calculate asphalt tonnage for driveways and parking lots.",
-      url: canonical,
-    },
-  };
-}
+export const metadata: Metadata = {
+  title: "Asphalt Calculator — Tons & Cost for Driveways and Parking Lots",
+  description:
+    "Calculate how many tons of asphalt you need for a driveway, parking lot, or road. Enter length, width, and depth to get tonnage and cost estimate.",
+  alternates: { canonical: "https://easybuildcalc.com/asphalt-calculator" },
+  openGraph: {
+    title: "Asphalt Calculator",
+    description: "Calculate asphalt tonnage for driveways and parking lots.",
+    url: "https://easybuildcalc.com/asphalt-calculator",
+  },
+};
 
 const jsonLd = {
   "@context": "https://schema.org",
