@@ -36,6 +36,10 @@ const CALCS = [
   { slug: "carpet-calculator",       name: "Carpet Calculator",         desc: "Calculate carpet square yards, pad, and total cost for any room.",                    icon: "🏡" },
   { slug: "block-calculator",        name: "Block Calculator",          desc: "Calculate CMU blocks, bricks, and mortar bags for any wall size.",                    icon: "🔲" },
   { slug: "excavation-calculator",   name: "Excavation Calculator",     desc: "Calculate excavation volume, truck loads, and haul cost by soil type.",               icon: "🚛" },
+  { slug: "metal-roofing-calculator", name: "Metal Roofing Calculator",  desc: "Calculate metal roofing panels, squares, and cost for any pitch and footprint.",          icon: "🏠" },
+  { slug: "wallpaper-calculator",    name: "Wallpaper Calculator",       desc: "Calculate wallpaper rolls for any room, deducting doors and windows.",                     icon: "🎨" },
+  { slug: "concrete-curb-calculator",name: "Concrete Curb Calculator",   desc: "Calculate concrete cubic yards for curbs and gutters by profile type.",                   icon: "🛣️" },
+  { slug: "window-calculator",       name: "Window Calculator",          desc: "Estimate window material and installation cost for any mix of window types.",               icon: "🪟" },
 ];
 
 const MARKET_PAGES = [
