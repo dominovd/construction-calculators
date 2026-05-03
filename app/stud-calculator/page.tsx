@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { StudCalculator } from "./StudCalculator";
-import { AffiliateBlock } from "@/components/AffiliateBlock";
 
 export const metadata: Metadata = {
   title: "Stud Calculator — Wall Framing Stud Count",
@@ -44,22 +43,6 @@ export default function StudPage() {
         </p>
 
         <StudCalculator />
-
-        <AffiliateBlock
-          title="Buy framing lumber"
-          items={[
-            {
-              name: "2×4 Studs — Framing Lumber",
-              url: "https://www.homedepot.com/b/Lumber-Composites-Dimensional-Lumber/2x4/N-5yc1vZaqqs",
-              store: "homedepot",
-            },
-            {
-              name: "Framing Nailer — Pneumatic",
-              url: "https://www.amazon.com/s?k=framing+nailer",
-              store: "amazon",
-            },
-          ]}
-        />
 
         <article className="mt-10 space-y-6 text-sm text-gray-700 leading-relaxed">
           <h2 className="text-xl font-semibold text-gray-900">How Many Studs Do I Need?</h2>

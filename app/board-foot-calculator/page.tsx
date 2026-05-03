@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { BoardFootCalculator } from "./BoardFootCalculator";
-import { AffiliateBlock } from "@/components/AffiliateBlock";
 
 export const metadata: Metadata = {
   title: "Board Foot Calculator — Free Lumber Volume Tool",
@@ -57,23 +56,6 @@ export default function BoardFootPage() {
 
         {/* Calculator (client component) */}
         <BoardFootCalculator />
-
-        {/* Affiliate block */}
-        <AffiliateBlock
-          title="Buy lumber for your project"
-          items={[
-            {
-              name: "Dimensional Lumber — 2×4, 2×6, 2×8",
-              url: "https://www.homedepot.com/b/Lumber-Composites-Dimensional-Lumber/N-5yc1vZaqqs", // ← заменить на affiliate link
-              store: "homedepot",
-            },
-            {
-              name: "Hardwood Boards — Oak, Pine, Maple",
-              url: "https://www.amazon.com/s?k=hardwood+lumber+boards", // ← заменить на affiliate link
-              store: "amazon",
-            },
-          ]}
-        />
 
         {/* SEO content */}
         <article className="mt-10 space-y-6 text-sm text-gray-700 leading-relaxed">
