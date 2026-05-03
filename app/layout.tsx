@@ -72,7 +72,7 @@ function Footer() {
       <div className="max-w-5xl mx-auto px-4 py-8 text-sm text-gray-500 flex flex-col sm:flex-row justify-between gap-4">
         <p>© {new Date().getFullYear()} EasyBuildCalc. Free construction calculators.</p>
         <nav className="flex gap-4">
-          <a href="/about" className="hover:text-gray-700">About</a>
+          <a href="/contact" className="hover:text-gray-700">Contact</a>
           <a href="/privacy" className="hover:text-gray-700">Privacy</a>
         </nav>
       </div>
