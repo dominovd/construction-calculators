@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { RebarCalculator } from "./RebarCalculator";
 
 export const metadata: Metadata = {
-  title: "Rebar Calculator — Quantity, Spacing & Weight for Concrete Slabs",
+  title: "Free Rebar Calculator — Quantity, Spacing & Weight for Concrete Slabs",
   description:
-    "Calculate rebar quantity, linear feet, and weight for concrete slabs and footings. Enter slab dimensions and spacing to get exact rebar counts.",
+    "Calculate rebar quantity, linear feet, and weight for concrete slabs and footings. Enter slab dimensions and spacing to get exact rebar counts. Free online tool.",
   alternates: { canonical: "https://easybuildcalc.com/rebar-calculator" },
   openGraph: {
     title: "Rebar Calculator",
@@ -26,11 +26,23 @@ const jsonLd = {
   ],
 };
 
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "What size rebar should I use for a concrete driveway?", acceptedAnswer: { "@type": "Answer", text: "#4 rebar (½ inch diameter) at 12-inch spacing is standard for residential driveways and patios. For heavier use or expansive soils, use #4 at 12-inch OC both ways. Always check local building codes." } },
+    { "@type": "Question", name: "Do I need rebar in a 4-inch concrete slab?", acceptedAnswer: { "@type": "Answer", text: "Rebar is recommended for most slabs — driveways, garage floors, and patios. While a plain 4-inch slab may technically hold up, rebar significantly reduces cracking from settling, temperature changes, and vehicle loads." } },
+    { "@type": "Question", name: "How far apart should rebar be spaced in a slab?", acceptedAnswer: { "@type": "Answer", text: "Standard spacing is 12 inches on center (OC) for residential slabs. High-load applications like garage floors may use 12-inch spacing with heavier #5 rebar. Residential footings typically use 2 bars horizontally, centered in the footing." } },
+    { "@type": "Question", name: "Should I use rebar or wire mesh in a concrete slab?", acceptedAnswer: { "@type": "Answer", text: "Rebar provides superior crack control and tensile strength, especially for slabs that may be subject to settlement or heavy loads. Wire mesh (welded wire fabric) is cheaper and faster to install but provides less structural reinforcement. Many contractors use a combination." } },
+  ],
+};
+
 export default function RebarPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <h1 className="text-2xl font-bold text-gray-900 mb-1">Rebar Calculator</h1>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <h1 className="text-2xl font-bold text-gray-900 mb-1">Free Rebar Calculator</h1>
       <p className="text-gray-500 text-sm mb-6">
         Calculate rebar quantity, linear footage, and weight for concrete slabs and footings.
       </p>
@@ -84,6 +96,21 @@ export default function RebarPage() {
           Garage slabs use <strong>#4 at 18" OC</strong>. Always check local building codes — seismic
           zones and heavy loads require closer spacing or larger bars.
         </p>
+
+        <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          {[
+            { q: "What size rebar should I use for a concrete driveway?", a: "#4 rebar (½ inch diameter) at 12-inch spacing is standard for residential driveways and patios. For heavier use or expansive soils, use #4 at 12-inch OC both ways. Always check local building codes." },
+            { q: "Do I need rebar in a 4-inch concrete slab?", a: "Rebar is recommended for most slabs — driveways, garage floors, and patios. While a plain 4-inch slab may technically hold up, rebar significantly reduces cracking from settling, temperature changes, and vehicle loads." },
+            { q: "How far apart should rebar be spaced in a slab?", a: "Standard spacing is 12 inches on center (OC) for residential slabs. High-load applications like garage floors may use 12-inch spacing with heavier #5 rebar. Residential footings typically use 2 bars horizontally, centered in the footing." },
+            { q: "Should I use rebar or wire mesh in a concrete slab?", a: "Rebar provides superior crack control and tensile strength, especially for slabs that may be subject to settlement or heavy loads. Wire mesh (welded wire fabric) is cheaper and faster to install but provides less structural reinforcement. Many contractors use a combination." },
+          ].map(({ q, a }) => (
+            <div key={q}>
+              <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
+              <p className="text-gray-600">{a}</p>
+            </div>
+          ))}
+        </div>
       </article>
     </div>
   );

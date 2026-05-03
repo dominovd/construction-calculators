@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { AsphaltCalculator } from "./AsphaltCalculator";
 
 export const metadata: Metadata = {
-  title: "Asphalt Calculator — Tons & Cost for Driveways and Parking Lots",
+  title: "Free Asphalt Calculator — Tons & Cost for Driveways and Parking Lots",
   description:
-    "Calculate how many tons of asphalt you need for a driveway, parking lot, or road. Enter length, width, and depth to get tonnage and cost estimate.",
+    "Calculate how many tons of asphalt you need for a driveway, parking lot, or road. Enter length, width, and depth to get tonnage and cost estimate. Free online tool.",
   alternates: { canonical: "https://easybuildcalc.com/asphalt-calculator" },
   openGraph: {
     title: "Asphalt Calculator",
@@ -26,6 +26,17 @@ const jsonLd = {
   ],
 };
 
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "How many tons of asphalt do I need for a driveway?", acceptedAnswer: { "@type": "Answer", text: "A standard single-car driveway (10 ft × 50 ft) at 3-inch depth needs about 5.5 cubic yards or roughly 11 tons of asphalt. A 2-car driveway (20 ft × 50 ft) at 3 inches requires about 22 tons." } },
+    { "@type": "Question", name: "How thick should an asphalt driveway be?", acceptedAnswer: { "@type": "Answer", text: "Residential driveways should be at least 2–3 inches of compacted asphalt over a 4–6 inch compacted aggregate base. Heavier use areas or cold climates may require 3–4 inches of asphalt. Always compact the base layer before paving." } },
+    { "@type": "Question", name: "How much does asphalt cost per square foot?", acceptedAnswer: { "@type": "Answer", text: "Asphalt paving typically costs $3–$7 per square foot installed, including materials and labor. Material alone (hot mix asphalt) runs $80–$150 per ton. A 1,000 sq ft driveway typically costs $3,000–$6,000 fully installed." } },
+    { "@type": "Question", name: "How long does an asphalt driveway last?", acceptedAnswer: { "@type": "Answer", text: "A properly installed and maintained asphalt driveway lasts 20–30 years. Sealcoat every 3–5 years to protect against UV damage, oil spills, and water penetration. Fill cracks as they appear to prevent water infiltration and base damage." } },
+  ],
+};
+
 export default function AsphaltPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
@@ -33,7 +44,8 @@ export default function AsphaltPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <h1 className="text-2xl font-bold text-gray-900 mb-1">Asphalt Calculator</h1>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <h1 className="text-2xl font-bold text-gray-900 mb-1">Free Asphalt Calculator</h1>
       <p className="text-gray-500 text-sm mb-6">
         Calculate asphalt tonnage and cost for driveways, parking lots, and roads.
       </p>
@@ -85,6 +97,21 @@ export default function AsphaltPage() {
           A standard 500 sq ft driveway at 3" depth requires about 9–10 tons, costing roughly $900–$1,500
           in materials alone. Installation labor typically adds $2–$5 per square foot.
         </p>
+
+        <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          {[
+            { q: "How many tons of asphalt do I need for a driveway?", a: "A standard single-car driveway (10 ft × 50 ft) at 3-inch depth needs about 5.5 cubic yards or roughly 11 tons of asphalt. A 2-car driveway (20 ft × 50 ft) at 3 inches requires about 22 tons." },
+            { q: "How thick should an asphalt driveway be?", a: "Residential driveways should be at least 2–3 inches of compacted asphalt over a 4–6 inch compacted aggregate base. Heavier use areas or cold climates may require 3–4 inches of asphalt. Always compact the base layer before paving." },
+            { q: "How much does asphalt cost per square foot?", a: "Asphalt paving typically costs $3–$7 per square foot installed, including materials and labor. Material alone (hot mix asphalt) runs $80–$150 per ton. A 1,000 sq ft driveway typically costs $3,000–$6,000 fully installed." },
+            { q: "How long does an asphalt driveway last?", a: "A properly installed and maintained asphalt driveway lasts 20–30 years. Sealcoat every 3–5 years to protect against UV damage, oil spills, and water penetration. Fill cracks as they appear to prevent water infiltration and base damage." },
+          ].map(({ q, a }) => (
+            <div key={q}>
+              <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
+              <p className="text-gray-600">{a}</p>
+            </div>
+          ))}
+        </div>
       </article>
     </div>
   );

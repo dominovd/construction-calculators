@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { DeckCalculator } from "./DeckCalculator";
 
 export const metadata: Metadata = {
-  title: "Deck Calculator — Boards, Linear Feet & Material Cost",
+  title: "Free Deck Calculator — Boards, Linear Feet & Material Cost",
   description:
-    "Calculate how many decking boards you need for any deck size. Supports 5/4×6, 2×6, 2×4, and 2×8 boards with customizable gap and waste factor.",
+    "Calculate how many decking boards you need for any deck size. Supports 5/4×6, 2×6, 2×4, and 2×8 boards with customizable gap and waste factor. Free online tool.",
   alternates: { canonical: "https://easybuildcalc.com/deck-calculator" },
   openGraph: {
     title: "Deck Calculator",
@@ -26,10 +26,22 @@ const jsonLd = {
   ],
 };
 
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "How many deck boards do I need for a 12x16 deck?", acceptedAnswer: { "@type": "Answer", text: "A 12x16 deck is 192 sq ft. Using 5/4x6 boards (5.5 inch actual width) with 1/4-inch gaps, you need approximately 38 boards at 16 feet long, or 42 boards with 10% waste. The exact count depends on board length and run direction." } },
+    { "@type": "Question", name: "What is the best wood for a deck?", acceptedAnswer: { "@type": "Answer", text: "Pressure-treated pine is the most popular choice for its affordability and durability ($2–$4/linear ft). Cedar and redwood are naturally rot-resistant and look beautiful ($4–$8/lf). Composite decking (Trex, TimberTech) costs more upfront ($6–$12/lf) but requires almost no maintenance." } },
+    { "@type": "Question", name: "How wide should gaps be between deck boards?", acceptedAnswer: { "@type": "Answer", text: "Leave 1/4 to 1/8 inch between boards for drainage and expansion. Green or wet pressure-treated lumber will shrink as it dries, so butting boards tightly often results in proper gaps once dry. Use a 16d nail as a spacer for consistent gaps." } },
+    { "@type": "Question", name: "What joist spacing do I need under decking?", acceptedAnswer: { "@type": "Answer", text: "Standard 5/4x6 decking spans 16 inches OC safely for straight installation. For diagonal decking (45 degrees), reduce joist spacing to 12 inches OC. Composite and PVC decking has its own span requirements — always check the manufacturer specs." } },
+  ],
+};
+
 export default function DeckPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
       <nav className="text-xs text-gray-500 mb-4">
         <a href="/" className="hover:text-blue-600">Home</a>
@@ -37,7 +49,7 @@ export default function DeckPage() {
         <span className="text-gray-700">Deck Calculator</span>
       </nav>
 
-      <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Deck Calculator</h1>
+      <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Free Deck Calculator</h1>
       <p className="text-gray-600 mb-6">
         Calculate decking boards, linear footage, and material cost for any deck size and board profile.
       </p>
@@ -86,6 +98,21 @@ export default function DeckPage() {
             Budget separately for joists, beams, posts, concrete footings, and hardware — typically
             2–3× the cost of decking boards alone.
           </span>
+        </div>
+
+        <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          {[
+            { q: "How many deck boards do I need for a 12×16 deck?", a: "A 12×16 deck is 192 sq ft. Using 5/4×6 boards (5.5 inch actual width) with ¼-inch gaps, you need approximately 38 boards at 16 feet long, or 42 boards with 10% waste. The exact count depends on board length and run direction." },
+            { q: "What is the best wood for a deck?", a: "Pressure-treated pine is the most popular choice for its affordability and durability ($2–$4/linear ft). Cedar and redwood are naturally rot-resistant and look beautiful ($4–$8/lf). Composite decking (Trex, TimberTech) costs more upfront ($6–$12/lf) but requires almost no maintenance." },
+            { q: "How wide should gaps be between deck boards?", a: "Leave ¼ to ⅛ inch between boards for drainage and expansion. Green or wet pressure-treated lumber will shrink as it dries, so butting boards tightly often results in proper gaps once dry. Use a 16d nail as a spacer for consistent gaps." },
+            { q: "What joist spacing do I need under decking?", a: "Standard 5/4×6 decking spans 16 inches OC safely for straight installation. For diagonal decking (45°), reduce joist spacing to 12 inches OC. Composite and PVC decking has its own span requirements — always check the manufacturer specs." },
+          ].map(({ q, a }) => (
+            <div key={q}>
+              <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
+              <p className="text-gray-600">{a}</p>
+            </div>
+          ))}
         </div>
       </article>
     </div>

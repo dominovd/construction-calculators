@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { InsulationCalculator } from "./InsulationCalculator";
 
 export const metadata: Metadata = {
-  title: "Insulation Calculator — Batts, Rolls & Blown-in by R-Value",
+  title: "Free Insulation Calculator — Batts, Rolls & Blown-in by R-Value",
   description:
-    "Calculate how many bags or rolls of insulation you need for walls, attics, and crawl spaces. Supports fiberglass batt and blown-in insulation by R-value.",
+    "Calculate how many bags or rolls of insulation you need for walls, attics, and crawl spaces. Supports fiberglass batt and blown-in insulation by R-value. Free online tool.",
   alternates: { canonical: "https://easybuildcalc.com/insulation-calculator" },
   openGraph: {
     title: "Insulation Calculator",
@@ -26,10 +26,22 @@ const jsonLd = {
   ],
 };
 
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "What R-value do I need for my attic?", acceptedAnswer: { "@type": "Answer", text: "The DOE recommends R-38 to R-60 for attics in most US climate zones. Zone 1–2 (South) needs R-30; zones 3–4 need R-38 to R-49; zones 5–8 (North) need R-49 to R-60. Check the Energy Star map for your specific zone." } },
+    { "@type": "Question", name: "Is blown-in insulation better than batts?", acceptedAnswer: { "@type": "Answer", text: "Blown-in insulation fills gaps and irregular spaces better than batts, making it superior for attics and retrofit projects. Batts are easier for DIY wall insulation in open stud cavities. Both provide similar R-value per inch when installed correctly." } },
+    { "@type": "Question", name: "How much does insulation cost per square foot?", acceptedAnswer: { "@type": "Answer", text: "Fiberglass batt insulation costs $0.50–$1.50 per sq ft installed. Blown-in insulation runs $1.00–$2.50 per sq ft. Spray foam costs $2–$7 per sq ft. DIY installation with bagged insulation is significantly cheaper than professional installation." } },
+    { "@type": "Question", name: "Can I add insulation on top of existing insulation?", acceptedAnswer: { "@type": "Answer", text: "Yes, in most cases. You can add blown-in insulation over existing batts in an attic to reach a higher R-value. Make sure existing insulation is dry and not moldy. Do not cover recessed lights unless they are rated IC (Insulation Contact)." } },
+  ],
+};
+
 export default function InsulationPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
       <nav className="text-xs text-gray-500 mb-4">
         <a href="/" className="hover:text-blue-600">Home</a>
@@ -37,7 +49,7 @@ export default function InsulationPage() {
         <span className="text-gray-700">Insulation Calculator</span>
       </nav>
 
-      <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Insulation Calculator</h1>
+      <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Free Insulation Calculator</h1>
       <p className="text-gray-600 mb-6">
         Calculate insulation bags or rolls needed for walls, attics, and floors by R-value and area.
       </p>
@@ -89,6 +101,21 @@ export default function InsulationPage() {
             Air sealing before insulating doubles your energy savings. Caulk and foam around
             penetrations, electrical boxes, and framing gaps before adding insulation.
           </span>
+        </div>
+
+        <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          {[
+            { q: "What R-value do I need for my attic?", a: "The DOE recommends R-38 to R-60 for attics in most US climate zones. Zone 1–2 (South) needs R-30; zones 3–4 need R-38 to R-49; zones 5–8 (North) need R-49 to R-60. Check the Energy Star map for your specific zone." },
+            { q: "Is blown-in insulation better than batts?", a: "Blown-in insulation fills gaps and irregular spaces better than batts, making it superior for attics and retrofit projects. Batts are easier for DIY wall insulation in open stud cavities. Both provide similar R-value per inch when installed correctly." },
+            { q: "How much does insulation cost per square foot?", a: "Fiberglass batt insulation costs $0.50–$1.50 per sq ft installed. Blown-in insulation runs $1.00–$2.50 per sq ft. Spray foam costs $2–$7 per sq ft. DIY installation with bagged insulation is significantly cheaper than professional installation." },
+            { q: "Can I add insulation on top of existing insulation?", a: "Yes, in most cases. You can add blown-in insulation over existing batts in an attic to reach a higher R-value. Make sure existing insulation is dry and not moldy. Do not cover recessed lights unless they are rated IC (Insulation Contact)." },
+          ].map(({ q, a }) => (
+            <div key={q}>
+              <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
+              <p className="text-gray-600">{a}</p>
+            </div>
+          ))}
         </div>
       </article>
     </div>

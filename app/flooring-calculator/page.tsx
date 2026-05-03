@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { FlooringCalculator } from "./FlooringCalculator";
 
 export const metadata: Metadata = {
-  title: "Flooring Calculator — Square Feet, Boxes & Cost",
+  title: "Free Flooring Calculator — Square Feet, Boxes & Cost",
   description:
-    "Calculate how much flooring you need for any room. Supports hardwood, laminate, vinyl plank, tile, and carpet. Includes waste factor and cost estimate.",
+    "Calculate how much flooring you need for any room. Supports hardwood, laminate, vinyl plank, tile, and carpet. Includes waste factor and cost estimate. Free online tool.",
   alternates: { canonical: "https://easybuildcalc.com/flooring-calculator" },
   openGraph: {
     title: "Flooring Calculator",
@@ -26,11 +26,23 @@ const jsonLd = {
   ],
 };
 
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "How much flooring do I need for a 12×12 room?", acceptedAnswer: { "@type": "Answer", text: "A 12×12 room has 144 sq ft of floor area. Add 10% waste for a straight installation, so order approximately 158–160 sq ft. For diagonal or herringbone patterns, add 15–20% instead." } },
+    { "@type": "Question", name: "How do I calculate flooring for multiple rooms?", acceptedAnswer: { "@type": "Answer", text: "Calculate each room separately (length × width), then add all areas together. Add your waste percentage to the total, not to each room individually, to minimize over-ordering." } },
+    { "@type": "Question", name: "What is the typical waste factor for flooring?", acceptedAnswer: { "@type": "Answer", text: "For straight installations parallel to walls, use 7–10%. For diagonal (45°) installations, use 12–15%. For herringbone or complex patterns, use 15–20%. Irregular room shapes add another 5%." } },
+    { "@type": "Question", name: "How many boxes of flooring do I need?", acceptedAnswer: { "@type": "Answer", text: "Divide your total square footage (including waste) by the coverage per box shown on the product packaging. Most laminate and vinyl plank boxes cover 20–25 sq ft; hardwood typically 15–20 sq ft." } },
+  ],
+};
+
 export default function FlooringPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <h1 className="text-2xl font-bold text-gray-900 mb-1">Flooring Calculator</h1>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <h1 className="text-2xl font-bold text-gray-900 mb-1">Free Flooring Calculator</h1>
       <p className="text-gray-500 text-sm mb-6">
         Calculate flooring for any room — hardwood, laminate, vinyl plank, tile, or carpet.
       </p>
@@ -93,6 +105,21 @@ export default function FlooringPage() {
               ))}
             </tbody>
           </table>
+        </div>
+
+        <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          {[
+            { q: "How much flooring do I need for a 12×12 room?", a: "A 12×12 room has 144 sq ft of floor area. Add 10% waste for a straight installation, so order approximately 158–160 sq ft. For diagonal or herringbone patterns, add 15–20% instead." },
+            { q: "How do I calculate flooring for multiple rooms?", a: "Calculate each room separately (length × width), then add all areas together. Add your waste percentage to the total, not to each room individually, to minimize over-ordering." },
+            { q: "What is the typical waste factor for flooring?", a: "For straight installations parallel to walls, use 7–10%. For diagonal (45°) installations, use 12–15%. For herringbone or complex patterns, use 15–20%. Irregular room shapes add another 5%." },
+            { q: "How many boxes of flooring do I need?", a: "Divide your total square footage (including waste) by the coverage per box shown on the product packaging. Most laminate and vinyl plank boxes cover 20–25 sq ft; hardwood typically 15–20 sq ft." },
+          ].map(({ q, a }) => (
+            <div key={q}>
+              <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
+              <p className="text-gray-600">{a}</p>
+            </div>
+          ))}
         </div>
       </article>
     </div>

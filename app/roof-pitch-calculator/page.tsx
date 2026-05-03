@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { RoofPitchCalculator } from "./RoofPitchCalculator";
 
 export const metadata: Metadata = {
-  title: "Roof Pitch Calculator — Angle, Rafter Length & Ridge Height",
+  title: "Free Roof Pitch Calculator — Angle, Rafter Length & Ridge Height",
   description:
     "Calculate roof pitch angle in degrees, rafter length, and ridge height from rise and run. Free tool for contractors, roofers, and DIY builders.",
   alternates: { canonical: "https://easybuildcalc.com/roof-pitch-calculator" },
@@ -26,6 +26,17 @@ const jsonLd = {
   ],
 };
 
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "What is the most common roof pitch?", acceptedAnswer: { "@type": "Answer", text: "The most common roof pitch in the US is 4:12, meaning the roof rises 4 inches for every 12 inches of horizontal run. This is standard for most residential homes and works well with most roofing materials." } },
+    { "@type": "Question", name: "What roof pitch is too steep to walk on?", acceptedAnswer: { "@type": "Answer", text: "Roof pitches above 7:12 (30°) are generally considered steep-slope and require special safety equipment. Most roofers use roof jacks and brackets on anything above 6:12. Pitches above 12:12 require climbing harnesses." } },
+    { "@type": "Question", name: "What is a low slope vs. steep slope roof?", acceptedAnswer: { "@type": "Answer", text: "Roofs with a pitch below 2:12 are classified as flat or low slope and require different waterproofing materials (TPO, EPDM, modified bitumen). Pitches from 2:12 to 4:12 are low-slope; 4:12 and above are conventional steep-slope." } },
+    { "@type": "Question", name: "How do I measure my roof pitch?", acceptedAnswer: { "@type": "Answer", text: "Place a level horizontally on the roof surface and measure 12 inches along it from the wall. Then measure the vertical distance from the end of the level down to the roof surface — that measurement in inches is your rise, giving you an X:12 pitch." } },
+  ],
+};
+
 export default function RoofPitchPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
@@ -33,7 +44,8 @@ export default function RoofPitchPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <h1 className="text-2xl font-bold text-gray-900 mb-1">Roof Pitch Calculator</h1>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      <h1 className="text-2xl font-bold text-gray-900 mb-1">Free Roof Pitch Calculator</h1>
       <p className="text-gray-500 text-sm mb-6">
         Convert rise:run to degrees, get rafter length and ridge height for any building span.
       </p>
@@ -84,6 +96,21 @@ export default function RoofPitchPage() {
               ))}
             </tbody>
           </table>
+        </div>
+
+        <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          {[
+            { q: "What is the most common roof pitch?", a: "The most common roof pitch in the US is 4:12, meaning the roof rises 4 inches for every 12 inches of horizontal run. This is standard for most residential homes and works well with most roofing materials." },
+            { q: "What roof pitch is too steep to walk on?", a: "Roof pitches above 7:12 (30°) are generally considered steep-slope and require special safety equipment. Most roofers use roof jacks and brackets on anything above 6:12. Pitches above 12:12 require climbing harnesses." },
+            { q: "What is a low slope vs. steep slope roof?", a: "Roofs with a pitch below 2:12 are classified as flat or low slope and require different waterproofing materials (TPO, EPDM, modified bitumen). Pitches from 2:12 to 4:12 are low-slope; 4:12 and above are conventional steep-slope." },
+            { q: "How do I measure my roof pitch?", a: "Place a level horizontally on the roof surface and measure 12 inches along it from the wall. Then measure the vertical distance from the end of the level down to the roof surface — that measurement in inches is your rise, giving you an X:12 pitch." },
+          ].map(({ q, a }) => (
+            <div key={q}>
+              <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
+              <p className="text-gray-600">{a}</p>
+            </div>
+          ))}
         </div>
       </article>
     </div>

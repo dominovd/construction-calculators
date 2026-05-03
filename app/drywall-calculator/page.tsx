@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { DrywallCalculator } from "./DrywallCalculator";
 
 export const metadata: Metadata = {
-  title: "Drywall Calculator — Sheets & Cost for Any Room",
+  title: "Free Drywall Calculator — Sheets & Cost for Any Room",
   description:
-    "Calculate how many drywall sheets you need for walls and ceilings. Enter room dimensions, doors, and windows to get exact sheet count and material cost.",
+    "Calculate how many drywall sheets you need for walls and ceilings. Enter room dimensions, doors, and windows to get exact sheet count and material cost. Free online tool.",
   alternates: { canonical: "https://easybuildcalc.com/drywall-calculator" },
   openGraph: {
     title: "Drywall Calculator",
@@ -26,10 +26,22 @@ const jsonLd = {
   ],
 };
 
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "How many sheets of drywall do I need for a 12×12 room?", acceptedAnswer: { "@type": "Answer", text: "A 12×12 room with 8-foot ceilings has approximately 384 sq ft of wall area. Minus 2 doors (42 sq ft), you need about 342 sq ft of drywall, which equals 11 sheets of 4×8 drywall (32 sq ft each) plus waste." } },
+    { "@type": "Question", name: "What thickness drywall should I use for walls?", acceptedAnswer: { "@type": "Answer", text: "½-inch drywall is standard for most interior walls and ceilings. Use ⅝-inch for fire-rated walls (garages, between floors), soundproofing, and commercial applications. ¼-inch is for curved surfaces only." } },
+    { "@type": "Question", name: "How much does drywall cost per sheet?", acceptedAnswer: { "@type": "Answer", text: "Standard ½-inch 4×8 drywall sheets cost $12–$20 each at home centers depending on type and location. Moisture-resistant (green board) and fire-rated (type X) varieties cost $15–$25 per sheet." } },
+    { "@type": "Question", name: "Do I need special drywall for a bathroom?", acceptedAnswer: { "@type": "Answer", text: "Yes. Use moisture-resistant drywall (greenboard) in bathrooms — but not in shower or tub areas, which require cement board. Paperless drywall or glass-mat drywall is even more mold-resistant in humid areas." } },
+  ],
+};
+
 export default function DrywallPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
       <nav className="text-xs text-gray-500 mb-4">
         <a href="/" className="hover:text-blue-600">Home</a>
@@ -37,7 +49,7 @@ export default function DrywallPage() {
         <span className="text-gray-700">Drywall Calculator</span>
       </nav>
 
-      <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Drywall Calculator</h1>
+      <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Free Drywall Calculator</h1>
       <p className="text-gray-600 mb-6">
         Calculate how many 4×8 drywall sheets you need for any room, including ceiling and waste factor.
       </p>
@@ -90,6 +102,21 @@ export default function DrywallPage() {
             Always add 10% waste. Cuts around outlets, light fixtures, and irregular angles
             consume more material than you expect.
           </span>
+        </div>
+
+        <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          {[
+            { q: "How many sheets of drywall do I need for a 12×12 room?", a: "A 12×12 room with 8-foot ceilings has approximately 384 sq ft of wall area. Minus 2 doors (42 sq ft), you need about 342 sq ft of drywall, which equals 11 sheets of 4×8 drywall (32 sq ft each) plus waste." },
+            { q: "What thickness drywall should I use for walls?", a: "½-inch drywall is standard for most interior walls and ceilings. Use ⅝-inch for fire-rated walls (garages, between floors), soundproofing, and commercial applications. ¼-inch is for curved surfaces only." },
+            { q: "How much does drywall cost per sheet?", a: "Standard ½-inch 4×8 drywall sheets cost $12–$20 each at home centers depending on type and location. Moisture-resistant (green board) and fire-rated (type X) varieties cost $15–$25 per sheet." },
+            { q: "Do I need special drywall for a bathroom?", a: "Yes. Use moisture-resistant drywall (greenboard) in bathrooms — but not in shower or tub areas, which require cement board. Paperless drywall or glass-mat drywall is even more mold-resistant in humid areas." },
+          ].map(({ q, a }) => (
+            <div key={q}>
+              <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
+              <p className="text-gray-600">{a}</p>
+            </div>
+          ))}
         </div>
       </article>
     </div>

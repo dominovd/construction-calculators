@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { BoardFootCalculator } from "./BoardFootCalculator";
 
 export const metadata: Metadata = {
-  title: "Board Foot Calculator — Free Lumber Volume Tool",
+  title: "Free Board Foot Calculator — Lumber Volume Tool",
   description:
     "Calculate board feet of lumber instantly. Enter thickness, width, and length to get exact volume. Free tool for carpenters, woodworkers, and builders.",
   alternates: { canonical: "https://easybuildcalc.com/board-foot-calculator" },
@@ -30,12 +30,27 @@ const jsonLd = {
   ],
 };
 
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "What is a board foot of lumber?", acceptedAnswer: { "@type": "Answer", text: "A board foot is a unit of lumber volume equal to 1 inch thick × 12 inches wide × 12 inches long. It equals 144 cubic inches. This is the standard unit used by hardwood dealers and sawmills across North America." } },
+    { "@type": "Question", name: "How do you calculate board feet?", acceptedAnswer: { "@type": "Answer", text: "Use the formula: Board Feet = (Thickness in inches × Width in inches × Length in feet) ÷ 12. For example, a 2×6 board that is 10 feet long equals (2 × 6 × 10) ÷ 12 = 10 board feet." } },
+    { "@type": "Question", name: "Is framing lumber sold by the board foot?", acceptedAnswer: { "@type": "Answer", text: "No. Framing lumber (2×4, 2×6, etc.) is sold by the linear foot or per board at home improvement stores. Board feet are primarily used for hardwood lumber at specialty dealers." } },
+    { "@type": "Question", name: "How many board feet in a 2x4x8?", acceptedAnswer: { "@type": "Answer", text: "A standard 2×4 that is 8 feet long contains (1.5 × 3.5 × 8) ÷ 12 = 3.5 board feet using actual dimensions. Using nominal dimensions: (2 × 4 × 8) ÷ 12 = 5.33 board feet." } },
+  ],
+};
+
 export default function BoardFootPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
 
       <div className="max-w-3xl mx-auto px-4 py-8">
@@ -48,7 +63,7 @@ export default function BoardFootPage() {
 
         {/* Title */}
         <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
-          Board Foot Calculator
+          Free Board Foot Calculator
         </h1>
         <p className="text-gray-600 mb-6">
           Calculate the volume of lumber in board feet. Enter dimensions below — results update instantly.
@@ -127,6 +142,21 @@ export default function BoardFootPage() {
               Always add 10–15% waste factor when ordering lumber for any project.
               Cuts, knots, and defects always reduce usable yield.
             </span>
+          </div>
+
+          <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            {[
+              { q: "What is a board foot of lumber?", a: "A board foot is a unit of lumber volume equal to 1 inch thick × 12 inches wide × 12 inches long. It equals 144 cubic inches. This is the standard unit used by hardwood dealers and sawmills across North America." },
+              { q: "How do you calculate board feet?", a: "Use the formula: Board Feet = (Thickness in inches × Width in inches × Length in feet) ÷ 12. For example, a 2×6 board that is 10 feet long equals (2 × 6 × 10) ÷ 12 = 10 board feet." },
+              { q: "Is framing lumber sold by the board foot?", a: "No. Framing lumber (2×4, 2×6, etc.) is sold by the linear foot or per board at home improvement stores. Board feet are primarily used for hardwood lumber at specialty dealers." },
+              { q: "How many board feet in a 2x4x8?", a: "A standard 2×4 that is 8 feet long contains (1.5 × 3.5 × 8) ÷ 12 = 3.5 board feet, using actual dimensions. Using nominal dimensions (2 × 4 × 8) ÷ 12 = 5.33 board feet." },
+            ].map(({ q, a }) => (
+              <div key={q}>
+                <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
+                <p className="text-gray-600">{a}</p>
+              </div>
+            ))}
           </div>
         </article>
       </div>

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { MulchCalculator } from "./MulchCalculator";
 
 export const metadata: Metadata = {
-  title: "Mulch Calculator — Cubic Yards & Bags for Garden Beds",
+  title: "Free Mulch Calculator — Cubic Yards & Bags for Garden Beds",
   description:
-    "Calculate how much mulch, wood chips, or compost you need for any garden bed or landscape area. Get cubic yards, bags, and bulk delivery cost instantly.",
+    "Calculate how much mulch, wood chips, or compost you need for any garden bed or landscape area. Get cubic yards, bags, and bulk delivery cost instantly. Free online tool.",
   alternates: { canonical: "https://easybuildcalc.com/mulch-calculator" },
   openGraph: {
     title: "Mulch Calculator",
@@ -26,10 +26,22 @@ const jsonLd = {
   ],
 };
 
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "How much mulch do I need for a 100 sq ft garden bed?", acceptedAnswer: { "@type": "Answer", text: "For 3-inch depth: 100 x (3/12) / 27 = 0.93 cubic yards, or about 1 cubic yard. That's roughly 14 bags of 2 cu ft mulch. For a 2-inch layer, you need about 0.62 cubic yards or 9–10 bags." } },
+    { "@type": "Question", name: "How deep should mulch be?", acceptedAnswer: { "@type": "Answer", text: "Apply 2–3 inches of mulch for weed suppression and moisture retention in most beds. Do not exceed 4 inches — deep mulch can prevent water penetration, cause root rot, and harbor pests. Keep mulch 2–3 inches away from plant stems and tree trunks." } },
+    { "@type": "Question", name: "How much does a yard of mulch cost?", acceptedAnswer: { "@type": "Answer", text: "Bulk mulch delivered typically costs $25–$55 per cubic yard depending on type and region. Shredded hardwood is $30–$45/yd; cedar is $45–$65/yd; colored mulch is $40–$60/yd. Bagged mulch at home centers costs more per yard but is convenient for small areas." } },
+    { "@type": "Question", name: "How many bags of mulch equal a yard?", acceptedAnswer: { "@type": "Answer", text: "One cubic yard equals 27 cubic feet. A standard 2 cu ft bag: 27 / 2 = 13.5 bags per yard. A 3 cu ft bag: 27 / 3 = 9 bags per yard. Bulk delivery is more economical above 2–3 cubic yards." } },
+  ],
+};
+
 export default function MulchPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 
       <nav className="text-xs text-gray-500 mb-4">
         <a href="/" className="hover:text-blue-600">Home</a>
@@ -37,7 +49,7 @@ export default function MulchPage() {
         <span className="text-gray-700">Mulch Calculator</span>
       </nav>
 
-      <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Mulch Calculator</h1>
+      <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Free Mulch Calculator</h1>
       <p className="text-gray-600 mb-6">
         Calculate cubic yards and bags of mulch, wood chips, or compost for any landscape area.
       </p>
@@ -92,6 +104,21 @@ export default function MulchPage() {
             Keep mulch 2–3 inches away from plant stems and tree trunks — mulch piled against
             wood causes rot and pest problems.
           </span>
+        </div>
+
+        <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          {[
+            { q: "How much mulch do I need for a 100 sq ft garden bed?", a: "For 3-inch depth: 100 × (3/12) ÷ 27 = 0.93 cubic yards, or about 1 cubic yard. That's roughly 14 bags of 2 cu ft mulch. For a 2-inch layer, you need about 0.62 cubic yards or 9–10 bags." },
+            { q: "How deep should mulch be?", a: "Apply 2–3 inches of mulch for weed suppression and moisture retention in most beds. Do not exceed 4 inches — deep mulch can prevent water penetration, cause root rot, and harbor pests. Keep mulch 2–3 inches away from plant stems and tree trunks." },
+            { q: "How much does a yard of mulch cost?", a: "Bulk mulch delivered typically costs $25–$55 per cubic yard depending on type and region. Shredded hardwood is $30–$45/yd; cedar is $45–$65/yd; colored mulch is $40–$60/yd. Bagged mulch at home centers costs more per yard but is convenient for small areas." },
+            { q: "How many bags of mulch equal a yard?", a: "One cubic yard equals 27 cubic feet. A standard 2 cu ft bag: 27 ÷ 2 = 13.5 bags per yard. A 3 cu ft bag: 27 ÷ 3 = 9 bags per yard. Bulk delivery is more economical above 2–3 cubic yards." },
+          ].map(({ q, a }) => (
+            <div key={q}>
+              <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
+              <p className="text-gray-600">{a}</p>
+            </div>
+          ))}
         </div>
       </article>
     </div>

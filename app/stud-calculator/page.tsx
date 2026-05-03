@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { StudCalculator } from "./StudCalculator";
 
 export const metadata: Metadata = {
-  title: "Stud Calculator — Wall Framing Stud Count",
+  title: "Free Stud Calculator — Wall Framing Stud Count",
   description:
-    "Calculate how many studs you need for wall framing. Enter wall length and stud spacing (16\" or 24\" OC) to get an exact stud count with extras.",
+    "Calculate how many studs you need for wall framing. Enter wall length and stud spacing (16\" or 24\" OC) to get an exact stud count with extras. Free online tool.",
   alternates: { canonical: "https://easybuildcalc.com/stud-calculator" },
   openGraph: { url: "https://easybuildcalc.com/stud-calculator" },
 };
@@ -22,12 +22,27 @@ const jsonLd = {
   ],
 };
 
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "How many studs do I need for a 10-foot wall?", acceptedAnswer: { "@type": "Answer", text: "For a 10-foot wall at 16-inch OC spacing: (10 × 12) ÷ 16 + 1 = 8.5, rounded up to 9 studs. Add 2–3 extra for corners and any openings." } },
+    { "@type": "Question", name: "What does 16 OC mean for studs?", acceptedAnswer: { "@type": "Answer", text: "OC stands for 'on center' — the distance measured from the center of one stud to the center of the next. 16-inch OC is the standard for most residential walls. 24-inch OC uses fewer studs and is used for non-load-bearing walls." } },
+    { "@type": "Question", name: "What length studs do I need for an 8-foot ceiling?", acceptedAnswer: { "@type": "Answer", text: "Use pre-cut 92⅝-inch studs (also called 'pre-cuts' or '8-foot studs'). This accounts for a double top plate (3 inches) and single bottom plate (1.5 inches), resulting in exactly 8-foot finished ceiling height." } },
+    { "@type": "Question", name: "How many extra studs should I buy?", acceptedAnswer: { "@type": "Answer", text: "Add at least 10–15% extra. You'll need additional studs for corners (3-stud corners), T-intersections, and blocking around doors and windows. The calculator already includes a 10% buffer." } },
+  ],
+};
+
 export default function StudPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <div className="max-w-3xl mx-auto px-4 py-8">
         <nav className="text-xs text-gray-500 mb-4">
@@ -37,7 +52,7 @@ export default function StudPage() {
         </nav>
 
         <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
-          Stud Calculator
+          Free Stud Calculator
         </h1>
         <p className="text-gray-600 mb-6">
           Calculate how many wall studs you need for any framing project. Supports 16&quot; and 24&quot; OC spacing.
@@ -108,6 +123,21 @@ export default function StudPage() {
             <li><strong>9 ft ceiling</strong> → 104⅝&quot; or 9 ft studs</li>
             <li><strong>10 ft ceiling</strong> → 116⅝&quot; or 10 ft studs</li>
           </ul>
+
+          <h2 className="text-xl font-semibold text-gray-900">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            {[
+              { q: "How many studs do I need for a 10-foot wall?", a: "For a 10-foot wall at 16-inch OC spacing: (10 × 12) ÷ 16 + 1 = 8.5, rounded up to 9 studs. Add 2–3 extra for corners and any openings." },
+              { q: "What does 16 OC mean for studs?", a: "OC stands for 'on center' — the distance measured from the center of one stud to the center of the next. 16-inch OC is the standard for most residential walls. 24-inch OC uses fewer studs and is used for non-load-bearing walls." },
+              { q: "What length studs do I need for an 8-foot ceiling?", a: "Use pre-cut 92⅝-inch studs (also called 'pre-cuts' or '8-foot studs'). This accounts for a double top plate (3 inches) and single bottom plate (1.5 inches), resulting in exactly 8-foot finished ceiling height." },
+              { q: "How many extra studs should I buy?", a: "Add at least 10–15% extra. You'll need additional studs for corners (3-stud corners), T-intersections, and blocking around doors and windows. The calculator already includes a 10% buffer." },
+            ].map(({ q, a }) => (
+              <div key={q}>
+                <h3 className="font-semibold text-gray-800 mb-1">{q}</h3>
+                <p className="text-gray-600">{a}</p>
+              </div>
+            ))}
+          </div>
         </article>
       </div>
     </>
