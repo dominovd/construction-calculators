@@ -41,14 +41,31 @@ function Header() {
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
       <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
-        <a href="/" className="text-lg font-semibold text-blue-700 hover:text-blue-800">
+        <a href="/" className="text-lg font-semibold text-blue-700 hover:text-blue-800 shrink-0">
           🔧 EasyBuildCalc
         </a>
-        <nav className="hidden sm:flex gap-5 text-sm text-gray-600">
-          <a href="/board-foot-calculator" className="hover:text-blue-600">Board Foot</a>
-          <a href="/stud-calculator" className="hover:text-blue-600">Stud / Framing</a>
-          <a href="/roof-pitch-calculator" className="hover:text-blue-600">Roof Pitch</a>
-          <a href="/rebar-calculator" className="hover:text-blue-600">Rebar</a>
+        <nav className="hidden sm:flex gap-1 text-sm">
+          <a href="/" className="px-3 py-1.5 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors">
+            Calculators
+          </a>
+          <a href="/material-prices" className="px-3 py-1.5 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors">
+            Material Prices
+          </a>
+          <a href="/housing-starts" className="px-3 py-1.5 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors">
+            Housing Starts
+          </a>
+          <a href="/lumber-market" className="px-3 py-1.5 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors">
+            Lumber Market
+          </a>
+          <a href="/about" className="px-3 py-1.5 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors">
+            About
+          </a>
+        </nav>
+        {/* Mobile: hamburger replaced with simple icon links */}
+        <nav className="sm:hidden flex gap-3 text-xs text-gray-500">
+          <a href="/material-prices" className="hover:text-blue-600">📊</a>
+          <a href="/housing-starts" className="hover:text-blue-600">🏠</a>
+          <a href="/lumber-market" className="hover:text-blue-600">🪵</a>
         </nav>
       </div>
     </header>
