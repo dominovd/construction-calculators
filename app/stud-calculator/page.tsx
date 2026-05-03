@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
 import { StudCalculator } from "./StudCalculator";
+import { localeAlternates } from "@/lib/locale-meta";
 
-export const metadata: Metadata = {
-  title: "Stud Calculator — Wall Framing Stud Count",
-  description:
-    "Calculate how many studs you need for wall framing. Enter wall length and stud spacing (16\" or 24\" OC) to get an exact stud count with extras.",
-  alternates: { canonical: "https://easybuildcalc.com/stud-calculator" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const { canonical, languages } = await localeAlternates("stud-calculator");
+  return {
+    title: "Stud Calculator — Wall Framing Stud Count",
+    description:
+      "Calculate how many studs you need for wall framing. Enter wall length and stud spacing (16\" or 24\" OC) to get an exact stud count with extras.",
+    alternates: { canonical, languages },
+  };
+}
 
 const jsonLd = {
   "@context": "https://schema.org",

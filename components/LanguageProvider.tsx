@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  createContext,
-  useContext,
-  ReactNode,
-} from "react";
+import { createContext, useContext, useState, ReactNode } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { Locale, LOCALES, getT } from "@/lib/i18n";
 
@@ -20,31 +16,32 @@ const LangContext = createContext<LangContextValue>({
   t: (k) => k,
 });
 
-/** Extract locale from pathname like /ru/board-foot-calculator → "ru" */
-function localeFromPath(pathname: string): Locale {
-  const segment = pathname.split("/")[1];
-  const found = LOCALES.find((l) => l.code === segment);
-  return found ? (found.code as Locale) : "en";
-}
+const LOCALE_CODES = LOCALES.map((l) => l.code);
 
-/** Strip locale prefix from pathname: /ru/board-foot-calculator → /board-foot-calculator */
-function stripLocale(pathname: string): string {
-  const segment = pathname.split("/")[1];
-  if (LOCALES.some((l) => l.code === segment)) {
-    const rest = pathname.slice(segment.length + 1) || "/";
-    return rest;
+function stripLocalePrefix(pathname: string): string {
+  const seg = pathname.split("/")[1];
+  if (LOCALE_CODES.includes(seg as Locale)) {
+    const rest = pathname.slice(seg.length + 1);
+    return rest || "/";
   }
   return pathname;
 }
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const pathname = usePathname();
+interface Props {
+  children: ReactNode;
+  initialLocale: Locale;
+}
+
+export function LanguageProvider({ children, initialLocale }: Props) {
+  // initialLocale comes from the server (middleware x-locale header) — no SSR mismatch
+  const [locale, setLocaleState] = useState<Locale>(initialLocale);
+  const pathname = usePathname(); // used only for navigation, client-only
   const router = useRouter();
 
-  const locale = localeFromPath(pathname);
-
   function setLocale(next: Locale) {
-    const clean = stripLocale(pathname);
+    setLocaleState(next);
+    // Navigate to locale-prefixed URL without page reload
+    const clean = stripLocalePrefix(pathname);
     if (next === "en") {
       router.push(clean);
     } else {

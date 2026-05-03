@@ -1,17 +1,21 @@
 import type { Metadata } from "next";
 import { RebarCalculator } from "./RebarCalculator";
+import { localeAlternates } from "@/lib/locale-meta";
 
-export const metadata: Metadata = {
-  title: "Rebar Calculator — Quantity, Spacing & Weight for Concrete Slabs",
-  description:
-    "Calculate rebar quantity, linear feet, and weight for concrete slabs and footings. Enter slab dimensions and spacing to get exact rebar counts.",
-  alternates: { canonical: "https://easybuildcalc.com/rebar-calculator" },
-  openGraph: {
-    title: "Rebar Calculator",
-    description: "Calculate rebar quantity and weight for concrete slabs and footings.",
-    url: "https://easybuildcalc.com/rebar-calculator",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const { canonical, languages } = await localeAlternates("rebar-calculator");
+  return {
+    title: "Rebar Calculator — Quantity, Spacing & Weight for Concrete Slabs",
+    description:
+      "Calculate rebar quantity, linear feet, and weight for concrete slabs and footings. Enter slab dimensions and spacing to get exact rebar counts.",
+    alternates: { canonical, languages },
+    openGraph: {
+      title: "Rebar Calculator",
+      description: "Calculate rebar quantity and weight for concrete slabs and footings.",
+      url: canonical,
+    },
+  };
+}
 
 const jsonLd = {
   "@context": "https://schema.org",

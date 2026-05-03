@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import "./globals.css";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import type { Locale } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://easybuildcalc.com"),
@@ -25,25 +27,21 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const headersList = await headers();
+  const locale = (headersList.get("x-locale") as Locale) || "en";
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <head>
-        {/* Google Search Console verification */}
         <meta name="google-site-verification" content="ZQ1waCH9VzWxNtRgULBPxZ3yTGbg4VLAroLQpsnlsdQ" />
-        {/* Google AdSense — раскомментируй после одобрения */}
-        {/* <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
-          crossOrigin="anonymous"
-        /> */}
       </head>
       <body className="min-h-screen flex flex-col">
-        <LanguageProvider>
+        <LanguageProvider initialLocale={locale}>
           <SiteHeader />
           <main className="flex-1">{children}</main>
           <SiteFooter />
