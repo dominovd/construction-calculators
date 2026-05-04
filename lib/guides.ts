@@ -51,7 +51,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "osb-vs-plywood",
     title: "OSB vs Plywood: Cost, Strength & When to Use Each",
-    metaTitle: "OSB vs Plywood — Cost, Strength & When to Use Each (2025)",
+    metaTitle: "OSB vs Plywood — Cost, Strength & When to Use Each (2026)",
     metaDesc:
       "Compare OSB and plywood for roofing, walls, and subfloors. See cost per sheet, structural strength, moisture resistance, and which to choose for your project.",
     tags: ["Roofing", "Framing"],
@@ -98,7 +98,7 @@ export const GUIDES: Guide[] = [
     ],
     costSection: [
       {
-        heading: "Price per sheet (2025)",
+        heading: "Price per sheet (2026)",
         body: "OSB (7/16\", 4×8) runs $12–16 per sheet at most lumber yards. Plywood (½\", 4×8 CDX) runs $18–28. On a 2,000 sq ft house needing ~600 sheets of sheathing, OSB saves $3,600–7,200 in materials alone. That difference matters on large projects.",
       },
       {
@@ -123,7 +123,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "metal-roofing-vs-asphalt-shingles",
     title: "Metal Roofing vs Asphalt Shingles: 10-Year Cost Comparison",
-    metaTitle: "Metal Roofing vs Asphalt Shingles — 10-Year Cost Comparison (2025)",
+    metaTitle: "Metal Roofing vs Asphalt Shingles — 10-Year Cost Comparison (2026)",
     metaDesc:
       "Compare metal roofing and asphalt shingles on upfront cost, lifespan, maintenance, energy savings, and 10-year total cost of ownership. Which is worth the premium?",
     tags: ["Roofing"],
@@ -199,7 +199,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "concrete-block-vs-poured-foundation",
     title: "Concrete Block vs Poured Foundation: Pros, Cons & Cost",
-    metaTitle: "Concrete Block vs Poured Foundation — Pros, Cons & Cost (2025)",
+    metaTitle: "Concrete Block vs Poured Foundation — Pros, Cons & Cost (2026)",
     metaDesc:
       "Compare CMU block and poured concrete foundations on strength, waterproofing, cost, and crack resistance. Which is right for your home or addition?",
     tags: ["Foundation"],
@@ -275,7 +275,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "gravel-vs-asphalt-driveway",
     title: "Gravel vs Asphalt Driveway: Which Is Cheaper Long-Term?",
-    metaTitle: "Gravel vs Asphalt Driveway — Long-Term Cost Comparison (2025)",
+    metaTitle: "Gravel vs Asphalt Driveway — Long-Term Cost Comparison (2026)",
     metaDesc:
       "Compare gravel and asphalt driveways on upfront cost, maintenance, lifespan, and total 20-year cost. Which material is right for your driveway?",
     tags: ["Driveway"],
@@ -351,7 +351,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "vinyl-vs-hardwood-flooring",
     title: "Vinyl vs Hardwood Flooring: Cost, Durability & Resale Value",
-    metaTitle: "Vinyl vs Hardwood Flooring — Cost, Durability & Resale Value (2025)",
+    metaTitle: "Vinyl vs Hardwood Flooring — Cost, Durability & Resale Value (2026)",
     metaDesc:
       "Compare luxury vinyl plank (LVP) and hardwood flooring on cost, durability, water resistance, and home resale value. Which floors are worth the investment?",
     tags: ["Flooring"],
@@ -426,7 +426,7 @@ export const GUIDES: Guide[] = [
   {
     slug: "spray-foam-vs-fiberglass-insulation",
     title: "Spray Foam vs Fiberglass Insulation: R-Value, Cost & Payback",
-    metaTitle: "Spray Foam vs Fiberglass Insulation — R-Value, Cost & Payback (2025)",
+    metaTitle: "Spray Foam vs Fiberglass Insulation — R-Value, Cost & Payback (2026)",
     metaDesc:
       "Compare spray foam and fiberglass batt insulation on R-value per inch, air sealing, moisture control, cost, and energy payback period. Which insulation is worth it?",
     tags: ["Insulation", "Framing"],

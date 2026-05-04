@@ -34,7 +34,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-many-gallons-of-paint-for-12x12-room",
     question: "How many gallons of paint for a 12×12 room?",
-    metaTitle: "How Many Gallons of Paint for a 12×12 Room? (2025 Answer)",
+    metaTitle: "How Many Gallons of Paint for a 12×12 Room? (2026 Answer)",
     metaDesc:
       "A 12×12 room needs about 1–2 gallons of paint for walls (one coat). See the exact calculation, a quick table for other room sizes, and a free paint calculator.",
     category: "Paint",
@@ -69,7 +69,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-much-rebar-for-10x10-slab",
     question: "How much rebar for a 10×10 slab?",
-    metaTitle: "How Much Rebar for a 10×10 Slab? (2025 Answer)",
+    metaTitle: "How Much Rebar for a 10×10 Slab? (2026 Answer)",
     metaDesc:
       "A 10×10 concrete slab with rebar on 12-inch centers needs about 220 linear feet of #4 rebar (11 bars each direction). See the exact layout and cost estimate.",
     category: "Concrete",
@@ -104,7 +104,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-many-bags-of-concrete-for-10x10-slab",
     question: "How many bags of concrete for a 10×10 slab?",
-    metaTitle: "How Many Bags of Concrete for a 10×10 Slab? (2025 Answer)",
+    metaTitle: "How Many Bags of Concrete for a 10×10 Slab? (2026 Answer)",
     metaDesc:
       "A 10×10 slab at 4 inches thick needs 1.23 cubic yards of concrete — about 56 bags of 80-lb mix or 74 bags of 60-lb mix. See exact counts for 4\" and 6\" thickness.",
     category: "Concrete",
@@ -139,7 +139,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-many-sheets-of-drywall-for-12x12-room",
     question: "How many sheets of drywall for a 12×12 room?",
-    metaTitle: "How Many Sheets of Drywall for a 12×12 Room? (2025 Answer)",
+    metaTitle: "How Many Sheets of Drywall for a 12×12 Room? (2026 Answer)",
     metaDesc:
       "A 12×12 room with 8-foot ceilings needs about 16–18 sheets of 4×8 drywall including walls and ceiling. Get the exact breakdown and a free drywall calculator.",
     category: "Framing",
@@ -174,7 +174,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-many-studs-for-16-foot-wall",
     question: "How many studs for a 16-foot wall?",
-    metaTitle: "How Many Studs for a 16-Foot Wall? (2025 Answer)",
+    metaTitle: "How Many Studs for a 16-Foot Wall? (2026 Answer)",
     metaDesc:
       "A 16-foot wall on 16-inch centers needs 13 studs plus 3 plates. On 24-inch centers it needs 9 studs. See the quick table for all common wall lengths.",
     category: "Framing",
@@ -209,7 +209,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-much-mulch-for-100-square-feet",
     question: "How much mulch for 100 square feet?",
-    metaTitle: "How Much Mulch for 100 Square Feet? (2025 Answer)",
+    metaTitle: "How Much Mulch for 100 Square Feet? (2026 Answer)",
     metaDesc:
       "100 square feet of mulch at 3 inches deep needs 0.93 cubic yards — about 7 bags of 2-cubic-foot mulch. See a quick table for all common areas and depths.",
     category: "Landscaping",
@@ -244,7 +244,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-many-pavers-for-10x10-patio",
     question: "How many pavers for a 10×10 patio?",
-    metaTitle: "How Many Pavers for a 10×10 Patio? (2025 Answer)",
+    metaTitle: "How Many Pavers for a 10×10 Patio? (2026 Answer)",
     metaDesc:
       "A 10×10 patio needs 100–450 pavers depending on size. Standard 4×8 brick pavers: 450 pieces. 12×12 concrete pavers: 100 pieces. See the full table and calculator.",
     category: "Masonry",
@@ -279,7 +279,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-many-shingles-for-1500-sq-ft-roof",
     question: "How many shingles for a 1,500 sq ft roof?",
-    metaTitle: "How Many Shingles for a 1,500 Sq Ft Roof? (2025 Answer)",
+    metaTitle: "How Many Shingles for a 1,500 Sq Ft Roof? (2026 Answer)",
     metaDesc:
       "A 1,500 sq ft roof footprint needs 17–22 squares of shingles depending on pitch, plus 10% waste. That's 51–66 bundles of 3-tab or architectural shingles.",
     category: "Roofing",
@@ -314,7 +314,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-many-concrete-blocks-for-40-foot-wall",
     question: "How many concrete blocks for a 40-foot wall?",
-    metaTitle: "How Many Concrete Blocks for a 40-Foot Wall? (2025 Answer)",
+    metaTitle: "How Many Concrete Blocks for a 40-Foot Wall? (2026 Answer)",
     metaDesc:
       "A 40-foot wall built 4 feet high with standard 8×16 CMU blocks needs 240 blocks (6 rows × 40 blocks). See counts for other heights and block sizes.",
     category: "Masonry",
@@ -349,7 +349,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-many-rolls-of-sod-for-1000-sq-ft",
     question: "How many rolls of sod for 1,000 sq ft?",
-    metaTitle: "How Many Rolls of Sod for 1,000 Sq Ft? (2025 Answer)",
+    metaTitle: "How Many Rolls of Sod for 1,000 Sq Ft? (2026 Answer)",
     metaDesc:
       "1,000 sq ft of lawn needs about 100–111 rolls of sod (standard rolls cover 9 sq ft each) or 3 pallets. See counts for common lawn sizes and a cost estimate.",
     category: "Landscaping",
@@ -384,7 +384,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-much-gravel-for-200-foot-driveway",
     question: "How much gravel for a 200-foot driveway?",
-    metaTitle: "How Much Gravel for a 200-Foot Driveway? (2025 Answer)",
+    metaTitle: "How Much Gravel for a 200-Foot Driveway? (2026 Answer)",
     metaDesc:
       "A 200-foot driveway 12 feet wide and 6 inches deep needs about 14.8 cubic yards or 20 tons of gravel. See the full calculation and cost estimate.",
     category: "Landscaping",
@@ -419,7 +419,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-many-tiles-for-12x12-room",
     question: "How many tiles for a 12×12 room?",
-    metaTitle: "How Many Tiles for a 12×12 Room? (2025 Answer)",
+    metaTitle: "How Many Tiles for a 12×12 Room? (2026 Answer)",
     metaDesc:
       "A 12×12 room needs 144–160 tiles if using 12×12 inch tiles (1 tile per sq ft plus 10% waste). For 18×18 tiles you need 67 tiles. See the full table by tile size.",
     category: "Flooring",
@@ -489,7 +489,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-many-80lb-bags-of-concrete-in-a-yard",
     question: "How many 80lb bags of concrete in a yard?",
-    metaTitle: "How Many 80lb Bags of Concrete in a Yard? (2025 Answer)",
+    metaTitle: "How Many 80lb Bags of Concrete in a Yard? (2026 Answer)",
     metaDesc:
       "It takes 45 bags of 80lb concrete mix to make one cubic yard. For 60lb bags you need 60, and for 40lb bags you need 90. See the full breakdown and cost comparison.",
     category: "Concrete",
@@ -522,7 +522,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-many-gallons-of-paint-for-a-bedroom",
     question: "How many gallons of paint for a bedroom?",
-    metaTitle: "How Many Gallons of Paint for a Bedroom? (2025 Answer)",
+    metaTitle: "How Many Gallons of Paint for a Bedroom? (2026 Answer)",
     metaDesc:
       "Most bedrooms need 1–2 gallons of paint for two coats on the walls. A typical 12×12 bedroom uses about 1.5–2 gallons. See estimates by room size.",
     category: "Paint",
@@ -627,7 +627,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-much-does-a-square-of-shingles-cover",
     question: "How much does a square of shingles cover?",
-    metaTitle: "How Much Does a Square of Shingles Cover? (2025)",
+    metaTitle: "How Much Does a Square of Shingles Cover? (2026)",
     metaDesc:
       "One roofing square covers exactly 100 square feet of roof surface. It takes 3 bundles to make one square. See how to convert your roof to squares.",
     category: "Roofing",
@@ -662,7 +662,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-many-bags-of-concrete-for-a-fence-post",
     question: "How many bags of concrete for a fence post?",
-    metaTitle: "How Many Bags of Concrete for a Fence Post? (2025)",
+    metaTitle: "How Many Bags of Concrete for a Fence Post? (2026)",
     metaDesc:
       "Most fence posts need 1–2 bags of 80lb concrete mix. A standard 4×4 post in a 10-inch diameter hole needs about 1.5 bags. See counts by hole size.",
     category: "Concrete",
@@ -732,7 +732,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-many-deck-screws-per-board",
     question: "How many deck screws per board?",
-    metaTitle: "How Many Deck Screws Per Board? (2025 Guide)",
+    metaTitle: "How Many Deck Screws Per Board? (2026 Guide)",
     metaDesc:
       "Use 2 deck screws per joist crossing per board. A 16-foot deck board crossing joists at 16\" spacing needs 26 screws. See counts by board length.",
     category: "Framing",
@@ -802,7 +802,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-many-bags-of-quikrete-per-fence-post",
     question: "How many bags of Quikrete per fence post?",
-    metaTitle: "How Many Bags of Quikrete Per Fence Post? (2025)",
+    metaTitle: "How Many Bags of Quikrete Per Fence Post? (2026)",
     metaDesc:
       "Most fence posts need 1–2 bags of Quikrete 80lb fast-setting mix. A standard 4×4 post in a 10-inch hole at 24 inches deep uses about 1.5 bags.",
     category: "Concrete",
@@ -837,7 +837,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-many-gallons-of-paint-for-a-10x10-room",
     question: "How many gallons of paint for a 10×10 room?",
-    metaTitle: "How Many Gallons of Paint for a 10×10 Room? (2025)",
+    metaTitle: "How Many Gallons of Paint for a 10×10 Room? (2026)",
     metaDesc:
       "A 10×10 room needs about 1–1.5 gallons of paint for two coats on the walls. With 8-foot ceilings, the net wall area is about 285 sq ft after deducting a door and window.",
     category: "Paint",
@@ -872,7 +872,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-much-mulch-for-200-square-feet",
     question: "How much mulch for 200 square feet?",
-    metaTitle: "How Much Mulch for 200 Square Feet? (2025 Answer)",
+    metaTitle: "How Much Mulch for 200 Square Feet? (2026 Answer)",
     metaDesc:
       "200 square feet of mulch at 3 inches deep needs 1.85 cubic yards — about 13 bags of 2-cubic-foot mulch. See amounts for 2-inch and 4-inch depths too.",
     category: "Landscaping",
@@ -941,7 +941,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-many-bags-of-concrete-for-a-12x12-slab",
     question: "How many bags of concrete for a 12×12 slab?",
-    metaTitle: "How Many Bags of Concrete for a 12×12 Slab? (2025)",
+    metaTitle: "How Many Bags of Concrete for a 12×12 Slab? (2026)",
     metaDesc:
       "A 12×12 slab at 4 inches thick needs 1.78 cubic yards — about 80 bags of 80-lb concrete mix. At 6 inches thick: 119 bags. Order ready-mix instead.",
     category: "Concrete",
@@ -976,7 +976,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-much-concrete-for-a-20x20-slab",
     question: "How much concrete for a 20×20 slab?",
-    metaTitle: "How Much Concrete for a 20×20 Slab? (2025 Answer)",
+    metaTitle: "How Much Concrete for a 20×20 Slab? (2026 Answer)",
     metaDesc:
       "A 20×20 concrete slab at 4 inches thick needs 4.94 cubic yards of concrete. At 6 inches: 7.41 yards. Always order ready-mix for a slab this size.",
     category: "Concrete",
@@ -1078,7 +1078,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-many-deck-boards-for-a-12x12-deck",
     question: "How many deck boards for a 12×12 deck?",
-    metaTitle: "How Many Deck Boards for a 12×12 Deck? (2025)",
+    metaTitle: "How Many Deck Boards for a 12×12 Deck? (2026)",
     metaDesc:
       "A 12×12 deck needs about 28 deck boards using standard 5/4×6 decking at 12 feet long with 1/8-inch gaps. See counts for different board widths and lengths.",
     category: "Framing",
@@ -1112,7 +1112,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-many-deck-boards-for-a-16x20-deck",
     question: "How many deck boards for a 16×20 deck?",
-    metaTitle: "How Many Deck Boards for a 16×20 Deck? (2025)",
+    metaTitle: "How Many Deck Boards for a 16×20 Deck? (2026)",
     metaDesc:
       "A 16×20 deck needs about 44 boards using 5/4×6 decking at 16 feet long. See counts for different board sizes and layout patterns.",
     category: "Framing",
@@ -1146,7 +1146,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-many-fence-pickets-for-100-feet",
     question: "How many fence pickets for 100 feet of fence?",
-    metaTitle: "How Many Fence Pickets for 100 Feet of Fence? (2025)",
+    metaTitle: "How Many Fence Pickets for 100 Feet of Fence? (2026)",
     metaDesc:
       "100 feet of privacy fence needs 200 pickets using standard 3.5-inch pickets with no gaps, or 150 pickets at 6-inch spacing. See counts by picket width.",
     category: "Framing",
@@ -1181,7 +1181,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-many-shingles-for-a-24x24-garage",
     question: "How many shingles for a 24×24 garage?",
-    metaTitle: "How Many Shingles for a 24×24 Garage? (2025 Answer)",
+    metaTitle: "How Many Shingles for a 24×24 Garage? (2026 Answer)",
     metaDesc:
       "A 24×24 garage with a 4:12 gable roof needs about 15–18 squares of shingles (45–54 bundles). See full breakdown by pitch including waste.",
     category: "Roofing",
@@ -1215,7 +1215,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-many-studs-for-a-12x12-room",
     question: "How many studs do I need for a 12×12 room?",
-    metaTitle: "How Many Studs for a 12×12 Room? (2025 Answer)",
+    metaTitle: "How Many Studs for a 12×12 Room? (2026 Answer)",
     metaDesc:
       "Framing a 12×12 room requires about 52 studs at 16-inch centers (for all 4 walls) plus 12 plates. See the full breakdown including corners and openings.",
     category: "Framing",
@@ -1352,7 +1352,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-much-drywall-for-a-2000-sq-ft-house",
     question: "How much drywall for a 2,000 sq ft house?",
-    metaTitle: "How Much Drywall for a 2,000 Sq Ft House? (2025)",
+    metaTitle: "How Much Drywall for a 2,000 Sq Ft House? (2026)",
     metaDesc:
       "A 2,000 sq ft house typically needs 8,000–8,500 sq ft of drywall (250–265 sheets of 4×8). See the breakdown for walls, ceilings, and waste.",
     category: "Framing",
@@ -1386,7 +1386,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-much-paint-for-a-12x15-room",
     question: "How much paint do I need for a 12×15 room?",
-    metaTitle: "How Much Paint for a 12×15 Room? (2025 Answer)",
+    metaTitle: "How Much Paint for a 12×15 Room? (2026 Answer)",
     metaDesc:
       "A 12×15 room with 8-foot ceilings needs about 2 gallons of paint for two coats on the walls. With a door and two windows, the net wall area is about 372 sq ft.",
     category: "Paint",
@@ -1420,7 +1420,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-much-rebar-for-a-driveway",
     question: "How much rebar do I need for a driveway?",
-    metaTitle: "How Much Rebar for a Concrete Driveway? (2025)",
+    metaTitle: "How Much Rebar for a Concrete Driveway? (2026)",
     metaDesc:
       "A 10×20 ft driveway with #4 rebar on 18-inch centers needs about 330 linear feet of rebar. Most residential driveways use #3 or #4 rebar at 18\" OC.",
     category: "Concrete",
@@ -1489,7 +1489,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-many-bundles-of-shingles-for-1000-sq-ft",
     question: "How many bundles of shingles for 1,000 sq ft?",
-    metaTitle: "How Many Bundles of Shingles for 1,000 Sq Ft? (2025)",
+    metaTitle: "How Many Bundles of Shingles for 1,000 Sq Ft? (2026)",
     metaDesc:
       "A 1,000 sq ft flat footprint with 4:12 pitch needs about 35 bundles of shingles including 10% waste. See counts by pitch and how to add ridge cap.",
     category: "Roofing",
@@ -1524,7 +1524,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-much-pea-gravel-for-a-10x10-area",
     question: "How much pea gravel for a 10×10 area?",
-    metaTitle: "How Much Pea Gravel for a 10×10 Area? (2025 Answer)",
+    metaTitle: "How Much Pea Gravel for a 10×10 Area? (2026 Answer)",
     metaDesc:
       "A 10×10 area filled 2 inches deep needs 0.62 cubic yards of pea gravel — about 1 ton, or 50 bags of 50-lb pea gravel. See amounts for different depths.",
     category: "Landscaping",
@@ -1558,7 +1558,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-many-bricks-for-a-10x10-patio",
     question: "How many bricks for a 10×10 patio?",
-    metaTitle: "How Many Bricks for a 10×10 Patio? (2025 Answer)",
+    metaTitle: "How Many Bricks for a 10×10 Patio? (2026 Answer)",
     metaDesc:
       "A 10×10 patio using standard 4×8 bricks needs about 450 bricks. For larger 4×8×2-1/4\" pavers laid flat: the same 450 count. Add 10% waste.",
     category: "Masonry",
@@ -1626,7 +1626,7 @@ export const FAQS: Faq[] = [
   {
     slug: "how-many-bags-of-quikrete-for-a-10x10-slab",
     question: "How many bags of Quikrete for a 10×10 slab?",
-    metaTitle: "How Many Bags of Quikrete for a 10×10 Slab? (2025)",
+    metaTitle: "How Many Bags of Quikrete for a 10×10 Slab? (2026)",
     metaDesc:
       "A 10×10 slab at 4 inches thick needs about 56 bags of 80-lb Quikrete — but ready-mix is cheaper. See bag counts for 4\" and 6\" thickness.",
     category: "Concrete",
