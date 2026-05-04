@@ -11,6 +11,7 @@ const TAG_COLORS: Record<Tag, string> = {
   Driveway:   "bg-gray-100 text-gray-700",
   Framing:    "bg-orange-100 text-orange-700",
   Insulation: "bg-green-100 text-green-700",
+  Concrete:   "bg-yellow-100 text-yellow-800",
 };
 
 const VERDICT_BADGE: Record<string, { label: string; cls: string }> = {

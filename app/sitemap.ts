@@ -68,6 +68,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/guides/gravel-vs-asphalt-driveway`,             lastModified: now, changeFrequency: "yearly", priority: 0.8 },
     { url: `${BASE}/guides/vinyl-vs-hardwood-flooring`,             lastModified: now, changeFrequency: "yearly", priority: 0.8 },
     { url: `${BASE}/guides/spray-foam-vs-fiberglass-insulation`,    lastModified: now, changeFrequency: "yearly", priority: 0.8 },
+    { url: `${BASE}/guides/concrete-patio-cost`,                   lastModified: now, changeFrequency: "yearly", priority: 0.8 },
+    { url: `${BASE}/guides/how-to-frame-a-wall`,                   lastModified: now, changeFrequency: "yearly", priority: 0.8 },
     { url: `${BASE}/faq`,                                           lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/faq/how-many-gallons-of-paint-for-12x12-room`,              lastModified: now, changeFrequency: "yearly", priority: 0.9 },
     { url: `${BASE}/faq/how-much-rebar-for-10x10-slab`,                         lastModified: now, changeFrequency: "yearly", priority: 0.9 },
