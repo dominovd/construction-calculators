@@ -14,7 +14,7 @@ const TAG_COLORS: Record<Tag, string> = {
 };
 
 export async function generateStaticParams() {
-  return GUIDES.filter(g => (g.section ?? "guides") === "guides").map(g => ({ slug: g.slug }));
+  return GUIDES.filter(g => g.section === "howto").map(g => ({ slug: g.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -24,26 +24,26 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: guide.metaTitle,
     description: guide.metaDesc,
-    alternates: { canonical: `https://easybuildcalc.com/guides/${guide.slug}` },
+    alternates: { canonical: `https://easybuildcalc.com/howto/${guide.slug}` },
     openGraph: {
       title: guide.metaTitle,
       description: guide.metaDesc,
-      url: `https://easybuildcalc.com/guides/${guide.slug}`,
+      url: `https://easybuildcalc.com/howto/${guide.slug}`,
     },
   };
 }
 
-export default async function GuidePage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function HowToPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const guide = getGuide(slug);
-  if (!guide) notFound();
+  if (!guide || guide.section !== "howto") notFound();
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: guide.title,
     description: guide.metaDesc,
-    url: `https://easybuildcalc.com/guides/${guide.slug}`,
+    url: `https://easybuildcalc.com/howto/${guide.slug}`,
   };
 
   const faqLd = {
@@ -60,9 +60,9 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home",   item: "https://easybuildcalc.com" },
-      { "@type": "ListItem", position: 2, name: "Guides", item: "https://easybuildcalc.com/guides" },
-      { "@type": "ListItem", position: 3, name: guide.title, item: `https://easybuildcalc.com/guides/${guide.slug}` },
+      { "@type": "ListItem", position: 1, name: "Home",           item: "https://easybuildcalc.com" },
+      { "@type": "ListItem", position: 2, name: "Planning Guides", item: "https://easybuildcalc.com/howto" },
+      { "@type": "ListItem", position: 3, name: guide.title,      item: `https://easybuildcalc.com/howto/${guide.slug}` },
     ],
   };
 
@@ -87,9 +87,9 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
       <nav className="text-xs text-gray-500 mb-4">
         <a href="/" className="hover:text-blue-600">Home</a>
         <span className="mx-1.5">›</span>
-        <a href="/guides" className="hover:text-blue-600">Guides</a>
+        <a href="/howto" className="hover:text-blue-600">Planning Guides</a>
         <span className="mx-1.5">›</span>
-        <span className="text-gray-700">{guide.optionA} vs {guide.optionB}</span>
+        <span className="text-gray-700">{guide.title}</span>
       </nav>
 
       {/* Tags */}
@@ -105,12 +105,14 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
 
       {/* Comparison table */}
       <section className="mb-8">
-        <h2 className="text-xl font-semibold text-gray-900 mb-3">Head-to-Head Comparison</h2>
+        <h2 className="text-xl font-semibold text-gray-900 mb-3">
+          {guide.optionA} vs {guide.optionB}
+        </h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm border-collapse">
             <thead>
               <tr className="bg-gray-50">
-                <th className="border border-gray-200 px-4 py-2.5 text-left text-gray-600 font-medium w-1/3">Aspect</th>
+                <th className="border border-gray-200 px-4 py-2.5 text-left text-gray-600 font-medium w-1/3">Factor</th>
                 <th className="border border-gray-200 px-4 py-2.5 text-left text-blue-700 font-semibold">{guide.optionA}</th>
                 <th className="border border-gray-200 px-4 py-2.5 text-left text-emerald-700 font-semibold">{guide.optionB}</th>
               </tr>
@@ -132,7 +134,6 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
       <section className="mb-8">
         <h2 className="text-xl font-semibold text-gray-900 mb-4">Pros & Cons</h2>
         <div className="grid sm:grid-cols-2 gap-4">
-          {/* Option A */}
           <div className="border border-gray-200 rounded-xl p-4">
             <h3 className="font-semibold text-blue-700 mb-3">{guide.optionA}</h3>
             <ul className="space-y-1.5 mb-4">
@@ -150,7 +151,6 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
               ))}
             </ul>
           </div>
-          {/* Option B */}
           <div className="border border-gray-200 rounded-xl p-4">
             <h3 className="font-semibold text-emerald-700 mb-3">{guide.optionB}</h3>
             <ul className="space-y-1.5 mb-4">
@@ -171,9 +171,9 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
         </div>
       </section>
 
-      {/* Cost sections */}
+      {/* Cost / detail sections */}
       <section className="mb-8 space-y-4">
-        <h2 className="text-xl font-semibold text-gray-900">Cost Breakdown</h2>
+        <h2 className="text-xl font-semibold text-gray-900">Details & Cost Breakdown</h2>
         {guide.costSection.map(s => (
           <div key={s.heading}>
             <h3 className="font-semibold text-gray-800 mb-1">{s.heading}</h3>
@@ -182,7 +182,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
         ))}
       </section>
 
-      {/* Verdict */}
+      {/* Bottom line */}
       <div className={`border rounded-xl p-5 mb-8 ${verdictColors[guide.verdictFavors]}`}>
         <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-1">Bottom Line</p>
         <p className={`text-sm leading-relaxed font-medium ${verdictTextColors[guide.verdictFavors]}`}>
@@ -225,8 +225,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
         </div>
       </section>
 
-      {/* Back link */}
-      <Link href="/guides" className="text-sm text-blue-600 hover:underline">← All Guides</Link>
+      <Link href="/howto" className="text-sm text-blue-600 hover:underline">← All Planning Guides</Link>
     </div>
   );
 }

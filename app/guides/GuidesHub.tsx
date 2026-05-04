@@ -23,9 +23,11 @@ const VERDICT_BADGE: Record<string, { label: string; cls: string }> = {
 export function GuidesHub() {
   const [activeTag, setActiveTag] = useState<Tag | null>(null);
 
+  const comparisonGuides = GUIDES.filter(g => (g.section ?? "guides") === "guides");
+
   const filtered = activeTag
-    ? GUIDES.filter(g => g.tags.includes(activeTag))
-    : GUIDES;
+    ? comparisonGuides.filter(g => g.tags.includes(activeTag))
+    : comparisonGuides;
 
   return (
     <div className="space-y-6">

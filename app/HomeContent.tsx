@@ -46,7 +46,8 @@ const MARKET_PAGES = [
   { href: "/material-prices",  emoji: "📈", title: "Material Price Index",       desc: "Monthly lumber, steel & concrete price trends from BLS data." },
   { href: "/housing-starts",   emoji: "🏠", title: "Global Housing Starts",      desc: "Annual new construction starts for 20+ countries via OECD." },
   { href: "/lumber-market",    emoji: "🪵", title: "Lumber Market: US vs World", desc: "US lumber PPI vs global softwood prices, indexed to 2019=100." },
-  { href: "/guides",           emoji: "📖", title: "Construction Guides",         desc: "Material comparisons, cost breakdowns, and how-to framing guides." },
+  { href: "/guides",           emoji: "📖", title: "Material Comparison Guides",  desc: "OSB vs plywood, metal vs asphalt, concrete block vs poured foundation, and more." },
+  { href: "/howto",            emoji: "🔨", title: "Project Planning Guides",     desc: "Concrete patio cost breakdown, how to frame a wall, lumber lists." },
   { href: "/faq",              emoji: "❓", title: "Construction FAQ",            desc: "How many bags of concrete, gallons of paint, tiles, studs — quick answers." },
 ];
 

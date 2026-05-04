@@ -25,6 +25,7 @@ export type FAQ = {
 
 export type Guide = {
   slug: string;
+  section?: "guides" | "howto"; // defaults to "guides"
   title: string;
   metaTitle: string;
   metaDesc: string;
@@ -501,6 +502,7 @@ export const GUIDES: Guide[] = [
   // ─── 7. Concrete patio cost ───────────────────────────────────────────────
   {
     slug: "concrete-patio-cost",
+    section: "howto",
     title: "Concrete Patio Cost: DIY vs Contractor — What Affects the Final Price",
     metaTitle: "Concrete Patio Cost: DIY vs Contractor (2026 Price Guide)",
     metaDesc:
@@ -577,6 +579,7 @@ export const GUIDES: Guide[] = [
   // ─── 8. How to frame a wall ───────────────────────────────────────────────
   {
     slug: "how-to-frame-a-wall",
+    section: "howto",
     title: "How to Frame a Wall: Stud Count, Lumber List & Cost",
     metaTitle: "How to Frame a Wall — Stud Count, Lumber List & Cost (2026)",
     metaDesc:

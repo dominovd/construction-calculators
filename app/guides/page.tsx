@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { GuidesHub } from "./GuidesHub";
 
 export const metadata: Metadata = {
-  title: "Construction Guides — Materials, Costs & How-To — EasyBuildCalc",
+  title: "Construction Material Comparison Guides — EasyBuildCalc",
   description:
-    "In-depth construction guides: material comparisons, cost breakdowns, and how-to framing guides. OSB vs plywood, metal vs asphalt, concrete patio cost, how to frame a wall, and more.",
+    "Side-by-side comparisons of construction materials: OSB vs plywood, metal roofing vs asphalt, gravel vs asphalt driveway, spray foam vs fiberglass, and more.",
   alternates: { canonical: "https://easybuildcalc.com/guides" },
   openGraph: {
-    title: "Construction Guides — Materials, Costs & How-To",
-    description: "Material comparisons, cost breakdowns, and how-to guides for contractors and DIYers.",
+    title: "Construction Material Comparison Guides",
+    description: "Compare materials side-by-side: cost, durability, and when to use each.",
     url: "https://easybuildcalc.com/guides",
   },
 };
@@ -30,9 +30,9 @@ export default function GuidesPage() {
         <a href="/" className="hover:text-blue-600">Home</a><span className="mx-1.5">›</span>
         <span className="text-gray-700">Guides</span>
       </nav>
-      <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Construction Guides</h1>
+      <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Material Comparison Guides</h1>
       <p className="text-gray-600 mb-6">
-        Material comparisons, cost breakdowns, and how-to guides — everything you need to plan and price your project.
+        Side-by-side comparisons of common construction materials — cost, durability, and when to use each.
       </p>
       <GuidesHub />
     </div>
