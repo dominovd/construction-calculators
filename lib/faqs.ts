@@ -1654,6 +1654,1330 @@ export const FAQS: Faq[] = [
       { slug: "how-many-80lb-bags-of-concrete-in-a-yard", question: "How many 80lb bags of concrete in a yard?" },
     ],
   },
+
+  // ─── 48. How much does a yard of concrete weigh ──────────────────────────
+  {
+    slug: "how-much-does-a-yard-of-concrete-weigh",
+    question: "How much does a yard of concrete weigh?",
+    metaTitle: "How Much Does a Yard of Concrete Weigh? (Wet & Cured)",
+    metaDesc:
+      "A cubic yard of freshly mixed concrete weighs approximately 4,050 lbs (about 2 tons). Cured concrete is slightly lighter at 3,900–4,000 lbs. See weight by mix type.",
+    category: "Concrete",
+    directAnswer:
+      "A cubic yard of standard ready-mix concrete weighs approximately 4,050 pounds (about 2 tons) when freshly mixed. After curing, the weight drops slightly to 3,900–4,000 lbs as water evaporates. Lightweight concrete mixes weigh 3,000–3,500 lbs/yd³; heavyweight mixes can reach 5,000+ lbs/yd³.",
+    tableHeading: "Weight per cubic yard",
+    tableLabel: "Concrete type",
+    table: [
+      { label: "Standard ready-mix (wet)",    value: "~4,050 lbs (2.0 tons)" },
+      { label: "Standard ready-mix (cured)",  value: "~3,900 lbs (1.95 tons)" },
+      { label: "Lightweight concrete",        value: "3,000–3,500 lbs" },
+      { label: "Heavyweight concrete",        value: "5,000–6,000 lbs" },
+      { label: "Fiber-reinforced mix",        value: "~4,050 lbs (same as standard)" },
+    ],
+    howToSteps: [
+      { text: "Standard concrete density is approximately 150 lbs per cubic foot." },
+      { text: "One cubic yard = 27 cubic feet." },
+      { text: "Multiply: 27 × 150 = 4,050 lbs per cubic yard." },
+      { text: "To convert to tons: 4,050 ÷ 2,000 = 2.025 tons." },
+    ],
+    proTip:
+      "Concrete trucks carry 8–10 cubic yards per load — that's up to 40,500 lbs, which is why residential driveways must support heavy truck weight. If your driveway can't handle it, ask for a short-load delivery or pump truck.",
+    relatedCalc: { slug: "concrete-calculator", name: "Concrete Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-bags-of-concrete-in-a-cubic-yard", question: "How many bags of concrete in a cubic yard?" },
+      { slug: "how-many-80lb-bags-of-concrete-in-a-yard", question: "How many 80lb bags of concrete in a yard?" },
+    ],
+  },
+
+  // ─── 49. How thick should a concrete driveway be ─────────────────────────
+  {
+    slug: "how-thick-should-a-concrete-driveway-be",
+    question: "How thick should a concrete driveway be?",
+    metaTitle: "How Thick Should a Concrete Driveway Be? (4 vs 6 Inch)",
+    metaDesc:
+      "A standard residential concrete driveway should be 4 inches thick. For heavy vehicles (RVs, trucks), use 5–6 inches. See thickness by use case.",
+    category: "Concrete",
+    directAnswer:
+      "A standard residential concrete driveway should be 4 inches thick for normal passenger vehicles. If you park heavy vehicles like RVs, pickup trucks with trailers, or commercial vehicles, use 5–6 inches. Driveways with poor soil base should also use 6 inches for added strength.",
+    tableHeading: "Recommended thickness",
+    tableLabel: "Use case",
+    table: [
+      { label: "Passenger cars (standard)",        value: "4 inches" },
+      { label: "Pickup trucks / SUVs",             value: "4–5 inches" },
+      { label: "RVs / heavy trucks / trailers",    value: "5–6 inches" },
+      { label: "Commercial / delivery vehicles",   value: "6 inches" },
+      { label: "Poor soil / expansive clay",       value: "6 inches + gravel base" },
+    ],
+    howToSteps: [
+      { text: "Determine your heaviest expected vehicle (passenger car, truck, RV)." },
+      { text: "Choose thickness: 4\" for cars, 5–6\" for heavy vehicles." },
+      { text: "Prepare 4\" compacted gravel base under the slab for drainage and stability." },
+      { text: "Calculate volume: length × width × (thickness ÷ 12) = cubic feet ÷ 27 = cubic yards." },
+      { text: "For a 20×20 driveway at 4\": 20 × 20 × 0.333 = 133 cu ft ÷ 27 = 5 yd³." },
+    ],
+    proTip:
+      "Use 3,500–4,000 PSI concrete mix for driveways. Add fiber reinforcement instead of wire mesh — it's cheaper, easier to install, and equally effective for residential slabs.",
+    relatedCalc: { slug: "concrete-calculator", name: "Concrete Calculator" },
+    relatedFaqs: [
+      { slug: "how-much-does-a-yard-of-concrete-weigh", question: "How much does a yard of concrete weigh?" },
+      { slug: "how-many-bags-of-concrete-for-a-20x20-slab", question: "How many bags of concrete for a 20×20 slab?" },
+    ],
+  },
+
+  // ─── 50. How many square feet does a bundle of shingles cover ────────────
+  {
+    slug: "how-many-square-feet-does-a-bundle-of-shingles-cover",
+    question: "How many square feet does a bundle of shingles cover?",
+    metaTitle: "How Many Square Feet Does a Bundle of Shingles Cover?",
+    metaDesc:
+      "One bundle of asphalt shingles covers approximately 33 square feet. You need 3 bundles to cover one roofing square (100 sq ft). See coverage by shingle type.",
+    category: "Roofing",
+    directAnswer:
+      "One bundle of standard asphalt shingles covers approximately 33 square feet of roof area. Three bundles equal one roofing square, which covers 100 square feet. This applies to both 3-tab and architectural (dimensional) shingles — the bundle count is the same, though architectural shingles have fewer but larger pieces per bundle.",
+    tableHeading: "Bundle coverage",
+    tableLabel: "Shingle type",
+    table: [
+      { label: "3-Tab asphalt",              value: "33 sq ft per bundle" },
+      { label: "Architectural (dimensional)", value: "33 sq ft per bundle" },
+      { label: "Impact-resistant",           value: "32–33 sq ft per bundle" },
+      { label: "Hip & ridge caps",           value: "~20 lin ft per bundle" },
+      { label: "1 roofing square",           value: "100 sq ft = 3 bundles" },
+    ],
+    howToSteps: [
+      { text: "Measure your roof footprint: length × width for each section." },
+      { text: "Multiply by the pitch multiplier (e.g., 6/12 pitch = ×1.118) to get actual roof area." },
+      { text: "Divide by 100 to get roofing squares." },
+      { text: "Multiply by 3 to get bundles. Add 10–15% for waste and hip/ridge cuts." },
+      { text: "Example: 1,500 sq ft roof → 15 squares → 45 bundles + 10% = 50 bundles." },
+    ],
+    proTip:
+      "Always order an extra 10% for waste, especially for cut areas around valleys, hips, and ridges. Leftover shingles are useful for future repairs — keep them if they're undamaged.",
+    relatedCalc: { slug: "shingles-calculator", name: "Shingles Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-shingles-in-a-bundle", question: "How many shingles in a bundle?" },
+      { slug: "how-much-does-a-square-of-shingles-cover", question: "How much does a square of shingles cover?" },
+    ],
+  },
+
+  // ─── 51. How many bags of concrete in a cubic yard ───────────────────────
+  {
+    slug: "how-many-bags-of-concrete-in-a-cubic-yard",
+    question: "How many bags of concrete in a cubic yard?",
+    metaTitle: "How Many Bags of Concrete in a Cubic Yard? (40, 60, 80 lb)",
+    metaDesc:
+      "One cubic yard of concrete requires 45 bags of 80-lb Quikrete, 60 bags of 60-lb, or 90 bags of 40-lb. Use ready-mix for anything over 0.5 cubic yards.",
+    category: "Concrete",
+    directAnswer:
+      "One cubic yard of concrete requires approximately 45 bags of 80-lb concrete mix, 60 bags of 60-lb mix, or 90 bags of 40-lb mix. For projects larger than half a cubic yard, ready-mix concrete is more cost-effective and easier to work with.",
+    tableHeading: "Bags per cubic yard",
+    tableLabel: "Bag size",
+    table: [
+      { label: "80-lb bag (Quikrete / Sakrete)", value: "45 bags" },
+      { label: "60-lb bag",                      value: "60 bags" },
+      { label: "50-lb bag",                      value: "72 bags" },
+      { label: "40-lb bag",                      value: "90 bags" },
+    ],
+    howToSteps: [
+      { text: "One 80-lb bag of concrete mix yields about 0.60 cubic feet when mixed." },
+      { text: "One cubic yard = 27 cubic feet." },
+      { text: "27 ÷ 0.60 = 45 bags of 80-lb mix per cubic yard." },
+      { text: "For 60-lb bags: each yields ~0.45 cu ft → 27 ÷ 0.45 = 60 bags." },
+      { text: "For 40-lb bags: each yields ~0.30 cu ft → 27 ÷ 0.30 = 90 bags." },
+    ],
+    proTip:
+      "At ~$7 per 80-lb bag, one cubic yard via bags costs $315 vs $150–180 for ready-mix delivered. For anything over 1 cubic yard, order ready-mix — you'll save money and time.",
+    relatedCalc: { slug: "concrete-calculator", name: "Concrete Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-80lb-bags-of-concrete-in-a-yard", question: "How many 80lb bags of concrete in a yard?" },
+      { slug: "how-much-does-a-yard-of-concrete-weigh", question: "How much does a yard of concrete weigh?" },
+    ],
+  },
+
+  // ─── 52. How many board feet in a 2x4x8 ─────────────────────────────────
+  {
+    slug: "how-many-board-feet-in-a-2x4x8",
+    question: "How many board feet in a 2x4x8?",
+    metaTitle: "How Many Board Feet in a 2x4x8? (Formula + Other Sizes)",
+    metaDesc:
+      "A standard 2×4×8 contains 5.33 board feet. Board feet = (thickness × width × length in inches) ÷ 144. See board foot count for common lumber sizes.",
+    category: "Framing",
+    directAnswer:
+      "A 2×4×8 board contains 5.33 board feet. The formula is: thickness (inches) × width (inches) × length (inches) ÷ 144. For a 2×4×8: 2 × 4 × 96 ÷ 144 = 5.33 board feet. Note that nominal dimensions (2×4) are used in the calculation, not actual dimensions (1.5×3.5).",
+    tableHeading: "Board feet",
+    tableLabel: "Lumber size × length",
+    table: [
+      { label: "2×4×8",   value: "5.33 bd ft" },
+      { label: "2×4×10",  value: "6.67 bd ft" },
+      { label: "2×4×12",  value: "8.00 bd ft" },
+      { label: "2×6×8",   value: "8.00 bd ft" },
+      { label: "2×6×10",  value: "10.00 bd ft" },
+      { label: "2×8×8",   value: "10.67 bd ft" },
+      { label: "4×4×8",   value: "10.67 bd ft" },
+    ],
+    howToSteps: [
+      { text: "Write down nominal thickness × width × length (all in inches)." },
+      { text: "For a 2×4×8: thickness = 2\", width = 4\", length = 8 ft = 96\"." },
+      { text: "Multiply: 2 × 4 × 96 = 768." },
+      { text: "Divide by 144: 768 ÷ 144 = 5.33 board feet." },
+      { text: "For lengths in feet: use the simplified formula T(in) × W(in) × L(ft) ÷ 12." },
+    ],
+    proTip:
+      "Board feet use nominal dimensions (2×4), not actual dimensions (1.5×3.5). This is the industry standard for pricing and ordering lumber — always use nominal dimensions in your calculations.",
+    relatedCalc: { slug: "board-foot-calculator", name: "Board Foot Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-studs-for-a-8-foot-wall", question: "How many studs for an 8-foot wall?" },
+      { slug: "how-many-studs-for-16-foot-wall", question: "How many studs for a 16-foot wall?" },
+    ],
+  },
+
+  // ─── 53. How thick should asphalt be for a driveway ──────────────────────
+  {
+    slug: "how-thick-should-asphalt-be-for-a-driveway",
+    question: "How thick should asphalt be for a driveway?",
+    metaTitle: "How Thick Should Asphalt Be for a Driveway? (2 to 4 Inches)",
+    metaDesc:
+      "A residential asphalt driveway should be 2–3 inches thick for cars and 3–4 inches for heavy vehicles, laid over a 6–8 inch compacted gravel base.",
+    category: "Masonry",
+    directAnswer:
+      "A residential asphalt driveway should be 2–3 inches thick of compacted asphalt for standard passenger vehicles, installed over a 6–8 inch compacted gravel base. For heavy vehicles (trucks, RVs), use 3–4 inches of asphalt. The total pavement depth including base is typically 8–12 inches.",
+    tableHeading: "Asphalt thickness by use",
+    tableLabel: "Use case",
+    table: [
+      { label: "Residential cars",           value: "2–3 inches asphalt" },
+      { label: "Pickup trucks / SUVs",       value: "3 inches asphalt" },
+      { label: "Heavy trucks / RVs",         value: "3–4 inches asphalt" },
+      { label: "Gravel base (all types)",    value: "6–8 inches compacted" },
+    ],
+    howToSteps: [
+      { text: "Excavate 10–12 inches below final grade." },
+      { text: "Compact 6–8 inches of crushed gravel base (Class II aggregate)." },
+      { text: "Apply binder course: 1.5–2 inches of binder (base) asphalt." },
+      { text: "Apply surface course: 1–1.5 inches of fine surface asphalt. Compact each layer." },
+      { text: "Total asphalt: 2.5–3.5 inches in two lifts for best results." },
+    ],
+    proTip:
+      "Never pour asphalt in a single 3-inch lift — always use two lifts (binder + surface) for better compaction and longevity. Single-lift installations crack and rut within a few years.",
+    relatedCalc: { slug: "asphalt-calculator", name: "Asphalt Calculator" },
+    relatedFaqs: [
+      { slug: "how-much-gravel-under-concrete-slab", question: "How much gravel under a concrete slab?" },
+      { slug: "how-many-square-feet-does-a-ton-of-asphalt-cover", question: "How many square feet does a ton of asphalt cover?" },
+    ],
+  },
+
+  // ─── 54. How much gravel under concrete slab ─────────────────────────────
+  {
+    slug: "how-much-gravel-under-concrete-slab",
+    question: "How much gravel under a concrete slab?",
+    metaTitle: "How Much Gravel Under a Concrete Slab? (4 Inch Base Guide)",
+    metaDesc:
+      "Place 4 inches of compacted gravel under a concrete slab for driveways and patios. Use 6 inches in areas with poor drainage or freeze-thaw cycles.",
+    category: "Concrete",
+    directAnswer:
+      "You need a minimum 4-inch compacted gravel base under a concrete slab for patios and driveways. In cold climates with freeze-thaw cycles, or on poor/clay soils, use 6 inches. The gravel should be compacted crushed stone (not pea gravel) to prevent settling.",
+    tableHeading: "Recommended base depth",
+    tableLabel: "Application",
+    table: [
+      { label: "Patio slab (mild climate)",     value: "4 inches crushed stone" },
+      { label: "Driveway (standard)",           value: "4–6 inches crushed stone" },
+      { label: "Cold climate / freeze-thaw",    value: "6–8 inches" },
+      { label: "Clay or expansive soil",        value: "6–8 inches + geotextile fabric" },
+      { label: "Walkway / sidewalk",            value: "4 inches" },
+    ],
+    howToSteps: [
+      { text: "Excavate to a depth of 4\" gravel + 4\" concrete (8\" total for standard patio)." },
+      { text: "Spread 3/4\" crushed stone (not pea gravel — it doesn't compact well)." },
+      { text: "Compact in 2\" lifts with a plate compactor. Don't compact more than 2\" at a time." },
+      { text: "Check with a level; the base should slope 1/8\" per foot away from structures for drainage." },
+      { text: "Pour concrete within 24 hours of compacting to avoid the base shifting." },
+    ],
+    proTip:
+      "Use 3/4\" crushed angular stone, not pea gravel or sand. Angular stone locks together when compacted; round stones shift under load and cause slab cracking.",
+    relatedCalc: { slug: "gravel-calculator", name: "Gravel Calculator" },
+    relatedFaqs: [
+      { slug: "how-thick-should-a-concrete-driveway-be", question: "How thick should a concrete driveway be?" },
+      { slug: "how-much-gravel-for-a-100-foot-driveway", question: "How much gravel for a 100-foot driveway?" },
+    ],
+  },
+
+  // ─── 55. How much paint for kitchen cabinets ─────────────────────────────
+  {
+    slug: "how-much-paint-for-kitchen-cabinets",
+    question: "How much paint for kitchen cabinets?",
+    metaTitle: "How Much Paint for Kitchen Cabinets? (Quarts & Gallons)",
+    metaDesc:
+      "Paint an average kitchen's cabinets with 1 quart of primer and 1–2 quarts of paint per coat. Most kitchens need 1 gallon total for two coats on all surfaces.",
+    category: "Paint",
+    directAnswer:
+      "An average kitchen with 20–25 linear feet of cabinets needs approximately 1 quart of primer and 1–1.5 quarts of paint per coat. For two coats (recommended), plan on 1 gallon of paint total. Larger kitchens (30+ linear feet) may need 1.5–2 gallons.",
+    tableHeading: "Paint needed (2 coats)",
+    tableLabel: "Kitchen size",
+    table: [
+      { label: "Small (10–15 lin ft of cabinets)",  value: "1 qt primer + 1 qt paint" },
+      { label: "Medium (20–25 lin ft)",             value: "1 qt primer + 1 gal paint" },
+      { label: "Large (30+ lin ft)",                value: "1 gal primer + 1.5 gal paint" },
+      { label: "Upper cabinets only",               value: "1 qt primer + 1 qt paint" },
+      { label: "Lower cabinets only",               value: "1 qt primer + 1 qt paint" },
+    ],
+    howToSteps: [
+      { text: "Remove all doors and drawers. Count total pieces: doors + drawer fronts + face frames." },
+      { text: "Estimate paintable area: each standard door ≈ 5 sq ft; drawer front ≈ 2 sq ft." },
+      { text: "Total area = (# doors × 5) + (# drawer fronts × 2) + face frame area." },
+      { text: "One quart covers ~100 sq ft per coat. Divide total area by 100 for quarts needed." },
+      { text: "Multiply by 2 for two coats (always use 2 coats on cabinets)." },
+    ],
+    proTip:
+      "Use a cabinet-specific paint (Sherwin-Williams Emerald Urethane or Benjamin Moore Advance) rather than regular latex wall paint. Cabinet paints cure harder and resist grease, moisture, and chipping far better.",
+    relatedCalc: { slug: "paint-calculator", name: "Paint Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-gallons-of-paint-for-a-20x20-room", question: "How many gallons of paint for a 20×20 room?" },
+      { slug: "how-much-paint-for-a-front-door", question: "How much paint for a front door?" },
+    ],
+  },
+
+  // ─── 56. How many tons of gravel for a driveway ──────────────────────────
+  {
+    slug: "how-many-tons-of-gravel-for-a-driveway",
+    question: "How many tons of gravel for a driveway?",
+    metaTitle: "How Many Tons of Gravel for a Driveway? (Per Linear Foot)",
+    metaDesc:
+      "A 200-foot gravel driveway (12 ft wide, 4 in deep) needs about 30 tons of gravel. Use 1.5 tons per 10 linear feet for a standard single-lane driveway.",
+    category: "Landscaping",
+    directAnswer:
+      "A standard single-lane gravel driveway (12 feet wide, 4 inches deep) requires approximately 1.5 tons of gravel per 10 linear feet, or 15 tons per 100 linear feet. For a 200-foot driveway, plan on 30 tons. Gravel weighs about 1.4 tons per cubic yard.",
+    tableHeading: "Tons of gravel needed",
+    tableLabel: "Driveway length (12 ft wide, 4\" deep)",
+    table: [
+      { label: "50 feet",  value: "~7.5 tons" },
+      { label: "100 feet", value: "~15 tons" },
+      { label: "150 feet", value: "~22 tons" },
+      { label: "200 feet", value: "~30 tons" },
+      { label: "300 feet", value: "~45 tons" },
+    ],
+    howToSteps: [
+      { text: "Measure driveway length × width in feet." },
+      { text: "Multiply by depth in feet (4\" = 0.333 ft): length × 12 × 0.333 = cubic feet." },
+      { text: "Divide by 27 to get cubic yards." },
+      { text: "Multiply cubic yards by 1.4 to get tons (crushed stone density)." },
+      { text: "Example: 200 ft × 12 ft × 0.333 = 800 cu ft ÷ 27 = 29.6 yd³ × 1.4 = 41 tons." },
+    ],
+    proTip:
+      "Order gravel in layers: 6 inches of large base stone (2–3\" crusher run), then 4 inches of 3/4\" crushed stone on top. This two-layer system lasts decades vs. a single layer of uniform stone.",
+    relatedCalc: { slug: "gravel-calculator", name: "Gravel Calculator" },
+    relatedFaqs: [
+      { slug: "how-much-gravel-for-a-100-foot-driveway", question: "How much gravel for a 100-foot driveway?" },
+      { slug: "how-much-gravel-under-concrete-slab", question: "How much gravel under a concrete slab?" },
+    ],
+  },
+
+  // ─── 57. How many pallets of sod for 1 acre ──────────────────────────────
+  {
+    slug: "how-many-pallets-of-sod-for-1-acre",
+    question: "How many pallets of sod for 1 acre?",
+    metaTitle: "How Many Pallets of Sod for 1 Acre? (Rolls & Square Feet)",
+    metaDesc:
+      "One acre (43,560 sq ft) requires 87–109 pallets of sod, depending on pallet size. Most pallets cover 400–504 sq ft. Add 5% for waste.",
+    category: "Landscaping",
+    directAnswer:
+      "One acre equals 43,560 square feet. A standard pallet of sod covers 400–504 square feet depending on the supplier. You'll need approximately 87–109 pallets per acre. Most suppliers sell pallets at 400–450 sq ft, so plan on 97–109 pallets plus 5% waste.",
+    tableHeading: "Pallets per acre",
+    tableLabel: "Pallet size",
+    table: [
+      { label: "400 sq ft pallet",  value: "109 pallets per acre" },
+      { label: "450 sq ft pallet",  value: "97 pallets per acre" },
+      { label: "500 sq ft pallet",  value: "87 pallets per acre" },
+      { label: "504 sq ft pallet",  value: "86 pallets per acre" },
+    ],
+    howToSteps: [
+      { text: "Measure your lawn area in square feet." },
+      { text: "Add 5% for waste, overlapping edges, and irregular cuts." },
+      { text: "Ask your supplier for their pallet size in square feet." },
+      { text: "Divide total sq ft by pallet coverage to get pallet count." },
+      { text: "Example: 43,560 sq ft (1 acre) × 1.05 ÷ 450 sq ft/pallet = 102 pallets." },
+    ],
+    proTip:
+      "Sod is perishable — install within 24 hours of delivery in warm weather, 48 hours in cool weather. Arrange pallets in the shade and water them if you can't install immediately.",
+    relatedCalc: { slug: "sod-calculator", name: "Sod Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-rolls-of-sod-for-1000-sq-ft", question: "How many rolls of sod for 1,000 sq ft?" },
+      { slug: "how-many-rolls-of-sod-for-500-sq-ft", question: "How many rolls of sod for 500 sq ft?" },
+    ],
+  },
+
+  // ─── 58. How many studs for an 8-foot wall ───────────────────────────────
+  {
+    slug: "how-many-studs-for-a-8-foot-wall",
+    question: "How many studs for an 8-foot wall?",
+    metaTitle: "How Many Studs for an 8-Foot Wall? (16\" and 24\" OC)",
+    metaDesc:
+      "An 8-foot wall with studs 16\" on center needs 7 studs. At 24\" on center, you need 5 studs. Add 2 top plates and 1 bottom plate plus corner and door framing.",
+    category: "Framing",
+    directAnswer:
+      "An 8-foot wall requires 7 studs spaced 16 inches on center, or 5 studs at 24 inches on center. You'll also need a double top plate (2 boards × 8 ft) and a single bottom plate (1 board × 8 ft) — that's 3 more 2×4s. Total for a basic 8-foot wall: 10 boards at 16\" OC.",
+    tableHeading: "Studs for 8-foot wall",
+    tableLabel: "Stud spacing",
+    table: [
+      { label: "12\" on center", value: "9 studs" },
+      { label: "16\" on center", value: "7 studs" },
+      { label: "24\" on center", value: "5 studs" },
+    ],
+    howToSteps: [
+      { text: "Divide wall length by spacing: 8 ft ÷ (16\" ÷ 12) = 8 ÷ 1.333 = 6 spaces." },
+      { text: "Add 1 for the starting stud: 6 + 1 = 7 studs." },
+      { text: "Add plates: 2 top plates + 1 bottom plate = 3 more boards." },
+      { text: "Add corner framing: 2–3 extra studs per corner." },
+      { text: "For doors/windows: add 2 jack studs + 2 king studs + header lumber per opening." },
+    ],
+    proTip:
+      "Order 10% extra studs for waste, cuts, blocking, and mistakes. Use the formula: (wall length in inches ÷ spacing in inches) + 1 = stud count, then round up.",
+    relatedCalc: { slug: "stud-calculator", name: "Stud / Framing Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-studs-for-a-20-foot-wall", question: "How many studs for a 20-foot wall?" },
+      { slug: "how-many-studs-for-16-foot-wall", question: "How many studs for a 16-foot wall?" },
+    ],
+  },
+
+  // ─── 59. How much mulch for 300 square feet ──────────────────────────────
+  {
+    slug: "how-much-mulch-for-300-square-feet",
+    question: "How much mulch for 300 square feet?",
+    metaTitle: "How Much Mulch for 300 Square Feet? (Bags & Cubic Yards)",
+    metaDesc:
+      "300 square feet of mulch at 3 inches deep needs 2.8 cubic yards or about 19 bags (2 cu ft each). At 2 inches deep, you need 1.9 cubic yards or 13 bags.",
+    category: "Landscaping",
+    directAnswer:
+      "For 300 square feet at the standard 3-inch depth, you need approximately 2.8 cubic yards of mulch, or about 19 bags (2 cu ft bags). At 2 inches deep, you need 1.9 cubic yards or 13 bags. Most landscapers apply 2–3 inches for weed suppression and moisture retention.",
+    tableHeading: "Mulch needed for 300 sq ft",
+    tableLabel: "Depth",
+    table: [
+      { label: "2 inches", value: "1.9 cu yd / 13 bags (2 cu ft)" },
+      { label: "3 inches", value: "2.8 cu yd / 19 bags (2 cu ft)" },
+      { label: "4 inches", value: "3.7 cu yd / 25 bags (2 cu ft)" },
+    ],
+    howToSteps: [
+      { text: "Calculate volume: 300 sq ft × (3\" ÷ 12) = 300 × 0.25 = 75 cubic feet." },
+      { text: "Convert to cubic yards: 75 ÷ 27 = 2.78 cubic yards." },
+      { text: "Convert to bags: 75 cu ft ÷ 2 cu ft per bag = 37.5 → 38 bags... wait, that's wrong. Let me redo." },
+      { text: "75 cubic feet ÷ 2 cubic feet per bag = 37.5 bags. Round up to 38." },
+      { text: "Or buy in bulk: order 3 cubic yards for a standard delivery minimum." },
+    ],
+    proTip:
+      "Bulk mulch is typically half the price of bagged mulch per cubic yard. If you need 3+ cubic yards, buy bulk. Most suppliers have a 3 cubic yard minimum for delivery.",
+    relatedCalc: { slug: "mulch-calculator", name: "Mulch Calculator" },
+    relatedFaqs: [
+      { slug: "how-much-mulch-for-100-square-feet", question: "How much mulch for 100 square feet?" },
+      { slug: "how-much-mulch-for-500-square-feet", question: "How much mulch for 500 square feet?" },
+    ],
+  },
+
+  // ─── 60. How many bags of mulch for 100 square feet ──────────────────────
+  {
+    slug: "how-many-bags-of-mulch-for-100-square-feet",
+    question: "How many bags of mulch for 100 square feet?",
+    metaTitle: "How Many Bags of Mulch for 100 Square Feet?",
+    metaDesc:
+      "100 square feet of mulch at 3 inches deep needs about 6–7 bags (2 cu ft each) or 1 cubic yard bulk. At 2 inches deep, you need 4–5 bags.",
+    category: "Landscaping",
+    directAnswer:
+      "For 100 square feet at 3 inches deep, you need about 6–7 bags of mulch (2 cubic foot bags) or roughly 0.93 cubic yards in bulk. At 2 inches deep, you need 4–5 bags. Standard 2 cu ft bags cover about 8 sq ft at 3\" deep.",
+    tableHeading: "Bags for 100 sq ft",
+    tableLabel: "Depth",
+    table: [
+      { label: "2 inches", value: "4–5 bags (2 cu ft bags)" },
+      { label: "3 inches", value: "6–7 bags (2 cu ft bags)" },
+      { label: "4 inches", value: "9–10 bags (2 cu ft bags)" },
+    ],
+    howToSteps: [
+      { text: "Calculate cubic feet: 100 sq ft × (3\" ÷ 12) = 100 × 0.25 = 25 cu ft." },
+      { text: "Divide by bag size: 25 cu ft ÷ 2 cu ft per bag = 12.5 → 13 bags." },
+      { text: "Alternatively in cubic yards: 25 ÷ 27 = 0.93 yd³ — order 1 cubic yard bulk." },
+    ],
+    proTip:
+      "A 2 cubic foot bag covers about 8 square feet at 3 inches deep. For quick math: divide your square footage by 8 to get bag count at 3-inch depth.",
+    relatedCalc: { slug: "mulch-calculator", name: "Mulch Calculator" },
+    relatedFaqs: [
+      { slug: "how-much-mulch-for-100-square-feet", question: "How much mulch for 100 square feet?" },
+      { slug: "how-much-mulch-for-300-square-feet", question: "How much mulch for 300 square feet?" },
+    ],
+  },
+
+  // ─── 61. How many pounds of grass seed for 1000 sq ft ────────────────────
+  {
+    slug: "how-many-pounds-of-grass-seed-for-1000-sq-ft",
+    question: "How many pounds of grass seed for 1,000 sq ft?",
+    metaTitle: "How Many Pounds of Grass Seed for 1,000 Sq Ft?",
+    metaDesc:
+      "New lawn seeding needs 3–8 lbs of grass seed per 1,000 sq ft depending on grass type. Overseeding an existing lawn takes 1–3 lbs per 1,000 sq ft.",
+    category: "Landscaping",
+    directAnswer:
+      "New lawns need 3–8 pounds of grass seed per 1,000 square feet depending on the grass species. Kentucky bluegrass and fine fescue require about 3–4 lbs; tall fescue and ryegrass need 6–8 lbs. For overseeding an existing lawn, use half the new-lawn rate (1–4 lbs per 1,000 sq ft).",
+    tableHeading: "Seed rate per 1,000 sq ft",
+    tableLabel: "Grass type",
+    table: [
+      { label: "Kentucky Bluegrass",    value: "3–4 lbs (new), 1–2 lbs (overseed)" },
+      { label: "Fine Fescue",           value: "3–5 lbs (new), 1–2 lbs (overseed)" },
+      { label: "Tall Fescue",           value: "6–8 lbs (new), 3–4 lbs (overseed)" },
+      { label: "Perennial Ryegrass",    value: "6–8 lbs (new), 3–4 lbs (overseed)" },
+      { label: "Bermuda (hulled)",      value: "1–2 lbs (new)" },
+      { label: "Zoysia",               value: "1–2 lbs (new)" },
+    ],
+    howToSteps: [
+      { text: "Identify your grass species from the seed bag or your existing lawn." },
+      { text: "Determine if you're seeding a new lawn or overseeding." },
+      { text: "Multiply your area (sq ft) by the seeding rate (lbs per 1,000 sq ft) ÷ 1,000." },
+      { text: "Example: 5,000 sq ft of new tall fescue lawn → 5,000 × 7 ÷ 1,000 = 35 lbs." },
+    ],
+    proTip:
+      "Split seeding into two passes at right angles to each other for more even coverage. Use a broadcast spreader — hand-throwing leads to bare patches and clumps.",
+    relatedCalc: { slug: "sod-calculator", name: "Sod Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-pallets-of-sod-for-1-acre", question: "How many pallets of sod for 1 acre?" },
+      { slug: "how-many-rolls-of-sod-for-1000-sq-ft", question: "How many rolls of sod for 1,000 sq ft?" },
+    ],
+  },
+
+  // ─── 62. How many wheelbarrow loads in a cubic yard ──────────────────────
+  {
+    slug: "how-many-wheelbarrow-loads-in-a-cubic-yard",
+    question: "How many wheelbarrow loads in a cubic yard?",
+    metaTitle: "How Many Wheelbarrow Loads in a Cubic Yard?",
+    metaDesc:
+      "A standard 3-cubic-foot wheelbarrow holds about 1/9 of a cubic yard. You need 9 wheelbarrow loads to move 1 cubic yard of material.",
+    category: "Concrete",
+    directAnswer:
+      "A standard 3-cubic-foot wheelbarrow takes approximately 9 full loads to move 1 cubic yard of material. A larger 6-cubic-foot contractor wheelbarrow requires only 4–5 loads per cubic yard. One cubic yard = 27 cubic feet.",
+    tableHeading: "Loads per cubic yard",
+    tableLabel: "Wheelbarrow size",
+    table: [
+      { label: "2 cu ft (small)",         value: "13–14 loads per yard" },
+      { label: "3 cu ft (standard)",      value: "9 loads per yard" },
+      { label: "4 cu ft (medium)",        value: "7 loads per yard" },
+      { label: "6 cu ft (contractor)",    value: "4–5 loads per yard" },
+    ],
+    howToSteps: [
+      { text: "One cubic yard = 27 cubic feet." },
+      { text: "Find your wheelbarrow capacity in cubic feet (usually printed on the tray or in the manual)." },
+      { text: "Divide 27 by wheelbarrow capacity: 27 ÷ 3 = 9 loads." },
+      { text: "Keep in mind that heavy materials (concrete, wet soil) should only be filled 75% to avoid tipping." },
+      { text: "At 75% capacity: 3 cu ft × 0.75 = 2.25 cu ft per load → 27 ÷ 2.25 = 12 loads." },
+    ],
+    proTip:
+      "Wet concrete or saturated soil at full capacity makes a wheelbarrow very hard to control. Fill to 75% for safety and maneuverability, especially on slopes.",
+    relatedCalc: { slug: "cubic-yard-calculator", name: "Cubic Yard Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-cubic-yards-in-a-dump-truck-load", question: "How many cubic yards in a dump truck load?" },
+      { slug: "how-much-does-a-yard-of-concrete-weigh", question: "How much does a yard of concrete weigh?" },
+    ],
+  },
+
+  // ─── 63. How much concrete for a 6x6 post ────────────────────────────────
+  {
+    slug: "how-much-concrete-for-a-6x6-post",
+    question: "How much concrete for a 6×6 post?",
+    metaTitle: "How Much Concrete for a 6×6 Post? (Bags by Depth)",
+    metaDesc:
+      "A 6×6 post in a 12\" diameter hole 36\" deep needs about 1.5 bags of 80-lb concrete. For a 48\" deep hole, use 2 bags. See exact bag counts by hole size.",
+    category: "Concrete",
+    directAnswer:
+      "A 6×6 post set in a 12-inch diameter hole 36 inches deep requires approximately 1.5 bags of 80-lb concrete mix. For a 48-inch deep hole (code minimum for frost-prone areas), use 2 bags. The 6×6 post itself displaces about 0.1 cubic feet of volume in the hole.",
+    tableHeading: "Bags of 80-lb concrete",
+    tableLabel: "Hole diameter × depth",
+    table: [
+      { label: "10\" dia × 30\" deep", value: "1 bag (80-lb)" },
+      { label: "12\" dia × 36\" deep", value: "1.5 bags" },
+      { label: "12\" dia × 48\" deep", value: "2 bags" },
+      { label: "14\" dia × 42\" deep", value: "2.5 bags" },
+      { label: "16\" dia × 48\" deep", value: "3.5 bags" },
+    ],
+    howToSteps: [
+      { text: "Calculate hole volume: π × (radius in ft)² × depth in ft." },
+      { text: "For 12\" diameter: radius = 0.5 ft → π × 0.25 × 3 ft = 2.36 cu ft." },
+      { text: "Subtract post volume: 0.5 ft × 0.5 ft × 3 ft = 0.75 cu ft." },
+      { text: "Net concrete needed: 2.36 − 0.75 = 1.61 cu ft." },
+      { text: "One 80-lb bag yields ~0.60 cu ft → 1.61 ÷ 0.60 = 2.7 → round up to 3 bags." },
+    ],
+    proTip:
+      "For 6×6 structural posts (decks, pergolas), dig below the frost line in your area (often 36–48\"). Use fast-setting concrete (Quikrete Fast-Setting) — pour dry mix into the hole, add water on top, no mixing required.",
+    relatedCalc: { slug: "concrete-calculator", name: "Concrete Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-bags-of-concrete-for-a-fence-post", question: "How many bags of concrete for a fence post?" },
+      { slug: "how-many-bags-of-quikrete-per-fence-post", question: "How many bags of Quikrete per fence post?" },
+    ],
+  },
+
+  // ─── 64. How much sand for a 4x4 sandbox ─────────────────────────────────
+  {
+    slug: "how-much-sand-for-a-4x4-sandbox",
+    question: "How much sand for a 4×4 sandbox?",
+    metaTitle: "How Much Sand for a 4×4 Sandbox? (Bags & Depth Guide)",
+    metaDesc:
+      "A 4×4 sandbox filled 6 inches deep needs 8 cubic feet of sand — about 8 bags (50-lb each) or 4 bags of 100-lb play sand. See amounts by fill depth.",
+    category: "Landscaping",
+    directAnswer:
+      "A 4×4 foot sandbox filled 6 inches deep needs 8 cubic feet of sand, which is approximately 8 bags of 50-lb play sand (each covers ~1 cu ft) or 4–5 large bags of 100-lb play sand. At a shallower 4-inch depth, you need about 5 cubic feet.",
+    tableHeading: "Sand for 4×4 sandbox",
+    tableLabel: "Fill depth",
+    table: [
+      { label: "3 inches",  value: "4 cu ft ≈ 4 bags (50-lb)" },
+      { label: "4 inches",  value: "5.3 cu ft ≈ 6 bags (50-lb)" },
+      { label: "6 inches",  value: "8 cu ft ≈ 8 bags (50-lb)" },
+      { label: "8 inches",  value: "10.7 cu ft ≈ 11 bags (50-lb)" },
+    ],
+    howToSteps: [
+      { text: "Calculate sandbox volume: 4 ft × 4 ft × (6\" ÷ 12) = 4 × 4 × 0.5 = 8 cubic feet." },
+      { text: "One 50-lb bag of play sand fills about 0.5 cubic feet (check the bag label)." },
+      { text: "Divide: 8 cu ft ÷ 0.5 cu ft per bag = 16 bags of 50-lb sand." },
+      { text: "Or use 50-lb bags: 8 ÷ 0.5 = 16 bags. For 100-lb bags: 8 ÷ 1.0 = 8 bags." },
+    ],
+    proTip:
+      "Use washed play sand (labeled \"play sand\"), not builder's sand or sandbox sand from big-box stores that isn't specifically labeled as play-safe. Play sand is washed to remove silica dust.",
+    relatedCalc: { slug: "sand-calculator", name: "Sand Calculator" },
+    relatedFaqs: [
+      { slug: "how-much-sand-for-a-10x10-patio", question: "How much sand for a 10×10 patio?" },
+      { slug: "how-many-bags-of-sand-for-pavers", question: "How many bags of sand for pavers?" },
+    ],
+  },
+
+  // ─── 65. How many bags of concrete for a 20x20 slab ──────────────────────
+  {
+    slug: "how-many-bags-of-concrete-for-a-20x20-slab",
+    question: "How many bags of concrete for a 20×20 slab?",
+    metaTitle: "How Many Bags of Concrete for a 20×20 Slab?",
+    metaDesc:
+      "A 20×20 slab at 4\" thick needs 6.17 cubic yards or about 278 bags of 80-lb concrete. Order ready-mix — using bags is impractical at this size.",
+    category: "Concrete",
+    directAnswer:
+      "A 20×20 foot slab at 4 inches thick requires approximately 6.17 cubic yards of concrete, which equals about 278 bags of 80-lb mix. At this volume, ready-mix concrete is strongly recommended — it costs about $150–180 per cubic yard delivered vs. $7 per bag ($1,946 total for bags).",
+    tableHeading: "Concrete for 20×20 slab",
+    tableLabel: "Thickness",
+    table: [
+      { label: "3.5 inches (minimal)", value: "5.4 yd³ / 243 bags 80-lb" },
+      { label: "4 inches (standard)",  value: "6.17 yd³ / 278 bags 80-lb" },
+      { label: "5 inches (heavy use)", value: "7.7 yd³ / 347 bags 80-lb" },
+      { label: "6 inches (garage)",    value: "9.26 yd³ / 417 bags 80-lb" },
+    ],
+    howToSteps: [
+      { text: "Calculate volume: 20 × 20 × (4 ÷ 12) = 400 × 0.333 = 133.3 cubic feet." },
+      { text: "Convert to cubic yards: 133.3 ÷ 27 = 4.94 yd³. Add 10% waste: × 1.10 = 5.43 yd³." },
+      { text: "In bags: 5.43 yd³ × 45 bags/yd³ = 244 bags of 80-lb." },
+      { text: "Call a ready-mix supplier: 5.5–6 yards delivered costs $825–1,080 vs. $1,700+ in bags." },
+    ],
+    proTip:
+      "For a 20×20 slab, always use ready-mix. Mixing 250+ bags by hand takes 15+ hours and produces inconsistent concrete quality. A 6-yard ready-mix truck can pour it in under 2 hours.",
+    relatedCalc: { slug: "concrete-calculator", name: "Concrete Calculator" },
+    relatedFaqs: [
+      { slug: "how-much-concrete-for-a-20x20-slab", question: "How much concrete for a 20×20 slab?" },
+      { slug: "how-many-bags-of-concrete-in-a-cubic-yard", question: "How many bags of concrete in a cubic yard?" },
+    ],
+  },
+
+  // ─── 66. How many bags of concrete for a mailbox post ────────────────────
+  {
+    slug: "how-many-bags-of-concrete-for-a-mailbox-post",
+    question: "How many bags of concrete for a mailbox post?",
+    metaTitle: "How Many Bags of Concrete for a Mailbox Post?",
+    metaDesc:
+      "A mailbox post needs 1 bag of 50-lb fast-setting concrete in a 6–8 inch diameter hole 24 inches deep. Use 2 bags if the hole is wider or deeper.",
+    category: "Concrete",
+    directAnswer:
+      "One 50-lb bag of fast-setting concrete is typically enough for a mailbox post set in a 6–8 inch diameter hole 24 inches deep. If you're using a 4×4 wood post with a wider or deeper hole, use 1–2 bags of 80-lb mix. Mailbox posts don't need large footings — USPS guidelines require the post to break away easily in a collision.",
+    tableHeading: "Concrete bags for mailbox post",
+    tableLabel: "Hole size",
+    table: [
+      { label: "6\" dia × 18\" deep", value: "0.5 bag (50-lb)" },
+      { label: "6\" dia × 24\" deep", value: "1 bag (50-lb)" },
+      { label: "8\" dia × 24\" deep", value: "1 bag (80-lb)" },
+      { label: "8\" dia × 30\" deep", value: "1–2 bags (80-lb)" },
+    ],
+    howToSteps: [
+      { text: "Dig a hole 6\" in diameter and 24\" deep with a post hole digger or auger." },
+      { text: "Place the post in the center; check for plumb with a level." },
+      { text: "Pour 1 bag of Quikrete Fast-Setting concrete dry into the hole." },
+      { text: "Add water (about 1 gallon) per the bag instructions — no mixing required." },
+      { text: "Hold plumb for 4 minutes; support with stakes for 4 hours before mounting the mailbox." },
+    ],
+    proTip:
+      "Use fast-setting concrete (Quikrete 5000 or Fast-Setting) — you pour it dry into the hole, add water on top, and it sets hard enough in 4 hours. No mixing, no tools.",
+    relatedCalc: { slug: "concrete-calculator", name: "Concrete Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-bags-of-concrete-for-a-fence-post", question: "How many bags of concrete for a fence post?" },
+      { slug: "how-much-concrete-for-a-6x6-post", question: "How much concrete for a 6×6 post?" },
+    ],
+  },
+
+  // ─── 67. How many bags of sand for pavers ────────────────────────────────
+  {
+    slug: "how-many-bags-of-sand-for-pavers",
+    question: "How many bags of sand for pavers?",
+    metaTitle: "How Many Bags of Sand for Pavers? (Bedding + Jointing Sand)",
+    metaDesc:
+      "A 10×10 paver patio needs about 14 bags of 50-lb bedding sand for the 1-inch base layer, plus 3–4 bags of polymeric jointing sand to fill the joints.",
+    category: "Masonry",
+    directAnswer:
+      "A 10×10 paver patio (100 sq ft) needs approximately 14 bags of 50-lb coarse bedding sand for the 1-inch setting layer, plus 3–4 bags of polymeric sand for joint filling. For larger areas, plan on 0.5 cubic feet of bedding sand per square foot (at 1-inch depth).",
+    tableHeading: "Sand bags for paver projects",
+    tableLabel: "Patio size (1\" bedding layer)",
+    table: [
+      { label: "10×10 ft (100 sq ft)",  value: "14 bags bedding + 4 bags jointing" },
+      { label: "12×12 ft (144 sq ft)",  value: "20 bags bedding + 5 bags jointing" },
+      { label: "10×20 ft (200 sq ft)",  value: "28 bags bedding + 7 bags jointing" },
+      { label: "20×20 ft (400 sq ft)",  value: "55 bags bedding + 14 bags jointing" },
+    ],
+    howToSteps: [
+      { text: "Calculate bedding sand volume: area × 1\" depth = area × 0.083 ft = cubic feet." },
+      { text: "For 100 sq ft: 100 × 0.083 = 8.3 cubic feet of sand." },
+      { text: "One 50-lb bag of coarse sand = ~0.5 cubic feet → 8.3 ÷ 0.5 = 16.6 → 17 bags." },
+      { text: "Jointing sand: estimate 1 bag per 25 sq ft of paver surface (joint width varies)." },
+      { text: "100 sq ft ÷ 25 = 4 bags of polymeric jointing sand." },
+    ],
+    proTip:
+      "Use coarse concrete sand (not play sand or stone dust) for the bedding layer — it compacts firmly and drains well. Never use polymeric sand as bedding — it's only for filling joints after pavers are laid.",
+    relatedCalc: { slug: "paver-calculator", name: "Paver Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-pavers-for-a-12x12-patio", question: "How many pavers for a 12×12 patio?" },
+      { slug: "how-much-sand-for-a-10x10-patio", question: "How much sand for a 10×10 patio?" },
+    ],
+  },
+
+  // ─── 68. How many bricks for a 20x20 patio ───────────────────────────────
+  {
+    slug: "how-many-bricks-for-a-20x20-patio",
+    question: "How many bricks for a 20×20 patio?",
+    metaTitle: "How Many Bricks for a 20×20 Patio?",
+    metaDesc:
+      "A 20×20 foot patio requires approximately 1,800–2,000 standard bricks (4×8 inch). Add 10% for waste and cuts. See brick count by size.",
+    category: "Masonry",
+    directAnswer:
+      "A 20×20 foot patio (400 sq ft) requires approximately 1,800–2,000 standard 4×8-inch bricks laid flat, including a 10% waste allowance. Larger bricks (6×9\") reduce the count to about 1,100. Always add 10–15% extra for cuts, breakage, and future repairs.",
+    tableHeading: "Bricks for 20×20 patio",
+    tableLabel: "Brick size",
+    table: [
+      { label: "Standard 4×8\"",   value: "~1,800 bricks (+10% waste)" },
+      { label: "Queen 3×7.6\"",   value: "~2,400 bricks" },
+      { label: "6×9\" paver",     value: "~1,100 bricks" },
+      { label: "4×4\" paver",     value: "~3,600 bricks" },
+    ],
+    howToSteps: [
+      { text: "Calculate patio area: 20 × 20 = 400 sq ft." },
+      { text: "Find brick coverage: a 4×8\" brick = 0.222 sq ft." },
+      { text: "Divide: 400 ÷ 0.222 = 1,802 bricks." },
+      { text: "Add 10% for waste: 1,802 × 1.10 = 1,982 → order 2,000 bricks." },
+    ],
+    proTip:
+      "For a patio, use paving bricks (SW grade — Severe Weathering) rated for ground contact. Standard facing bricks are not freeze-thaw resistant when laid flat and will crack within a few winters.",
+    relatedCalc: { slug: "brick-calculator", name: "Brick Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-bricks-for-a-10x10-patio", question: "How many bricks for a 10×10 patio?" },
+      { slug: "how-many-bricks-per-square-foot", question: "How many bricks per square foot?" },
+    ],
+  },
+
+  // ─── 69. How many cinder blocks for a 10x10 shed ─────────────────────────
+  {
+    slug: "how-many-cinder-blocks-for-a-10x10-shed",
+    question: "How many cinder blocks for a 10×10 shed?",
+    metaTitle: "How Many Cinder Blocks for a 10×10 Shed? (Foundation Guide)",
+    metaDesc:
+      "A 10×10 shed on a concrete block foundation uses 9 corner/pier blocks for a simple skid foundation, or 40–50 CMU blocks for a full perimeter wall foundation.",
+    category: "Masonry",
+    directAnswer:
+      "For a simple pier/skid foundation, a 10×10 shed uses 9 solid concrete blocks (typically 4×8×16\") placed in a 3×3 grid pattern. For a full perimeter block wall foundation (2 courses high), you'll need approximately 44 standard 8×8×16 CMU blocks.",
+    tableHeading: "Block count for 10×10 shed",
+    tableLabel: "Foundation type",
+    table: [
+      { label: "Pier/skid (3×3 grid)",           value: "9 solid concrete blocks" },
+      { label: "Perimeter wall, 1 course",        value: "22 CMU blocks (8×8×16\")" },
+      { label: "Perimeter wall, 2 courses",       value: "44 CMU blocks" },
+      { label: "Full perimeter, 3 courses",       value: "66 CMU blocks" },
+    ],
+    howToSteps: [
+      { text: "For pier foundation: place blocks in a 3×3 grid (corners, midpoints, center)." },
+      { text: "For perimeter wall: perimeter = 4 × 10 = 40 linear feet." },
+      { text: "One 16\" block = 1.33 linear feet → 40 ÷ 1.33 = 30 blocks per course." },
+      { text: "Subtract corners already counted once, net ~22 blocks per course." },
+      { text: "Multiply by number of courses: 2 courses = 44 blocks." },
+    ],
+    proTip:
+      "For most residential sheds, a 9-block pier/skid foundation is adequate and much cheaper than a perimeter wall. Ensure blocks are level — use a string line and adjust gravel or sand base under each block.",
+    relatedCalc: { slug: "block-calculator", name: "Block Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-concrete-blocks-for-40-foot-wall", question: "How many concrete blocks for a 40-foot wall?" },
+      { slug: "how-many-bricks-per-square-foot", question: "How many bricks per square foot?" },
+    ],
+  },
+
+  // ─── 70. How many cubic yards in a dump truck load ────────────────────────
+  {
+    slug: "how-many-cubic-yards-in-a-dump-truck-load",
+    question: "How many cubic yards in a dump truck load?",
+    metaTitle: "How Many Cubic Yards in a Dump Truck Load?",
+    metaDesc:
+      "A standard 10-wheel dump truck holds 10–14 cubic yards. Tandem axle trucks carry 14–16 yards. Small single-axle trucks haul 5–7 yards.",
+    category: "Concrete",
+    directAnswer:
+      "A standard 10-wheel (tri-axle) dump truck holds 10–14 cubic yards of material. Tandem axle trucks carry 14–16 cubic yards. Small single-axle trucks haul 5–7 cubic yards. The actual capacity depends on the material's weight — heavier materials like gravel or wet soil fill trucks by weight before reaching full volume.",
+    tableHeading: "Cubic yards by truck size",
+    tableLabel: "Truck type",
+    table: [
+      { label: "Small single-axle",        value: "5–7 cubic yards" },
+      { label: "Standard 10-wheel",        value: "10–14 cubic yards" },
+      { label: "Tandem axle",              value: "14–16 cubic yards" },
+      { label: "Semi-trailer (end dump)",  value: "20–26 cubic yards" },
+    ],
+    howToSteps: [
+      { text: "Calculate your material volume in cubic yards." },
+      { text: "Contact local haulers to ask their truck capacity (volume and weight limit)." },
+      { text: "Divide your total yards by truck capacity to get number of loads." },
+      { text: "Account for weight: a tandem truck may hold 14 yards of mulch but only 10 yards of gravel (weight limit reached first)." },
+    ],
+    proTip:
+      "Always clarify with your supplier whether the price is per cubic yard or per truckload. Loose materials (topsoil, mulch) settle 10–20% after delivery — order 10% extra to account for compaction.",
+    relatedCalc: { slug: "cubic-yard-calculator", name: "Cubic Yard Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-wheelbarrow-loads-in-a-cubic-yard", question: "How many wheelbarrow loads in a cubic yard?" },
+      { slug: "how-many-tons-in-a-cubic-yard-of-dirt", question: "How many tons in a cubic yard of dirt?" },
+    ],
+  },
+
+  // ─── 71. How many deck boards for a 10x10 deck ───────────────────────────
+  {
+    slug: "how-many-deck-boards-for-a-10x10-deck",
+    question: "How many deck boards for a 10×10 deck?",
+    metaTitle: "How Many Deck Boards for a 10×10 Deck?",
+    metaDesc:
+      "A 10×10 deck (100 sq ft) needs about 28 pieces of 5/4×6×12 decking boards. At 10-foot lengths, you need 20 boards. Add 10% for waste.",
+    category: "Framing",
+    directAnswer:
+      "A 10×10 foot deck (100 sq ft) requires approximately 20 boards of 5/4×6×10 decking (10-foot boards across 10-foot span) or 14 boards of 5/4×6×12 laid in the other direction. With 10% waste, order 22–25 boards. This is for decking only — add rim boards, joists, and posts separately.",
+    tableHeading: "Deck boards for 10×10 deck",
+    tableLabel: "Board size",
+    table: [
+      { label: "5/4×6×10 (run parallel)",  value: "20 boards + 10% = 22" },
+      { label: "5/4×6×12",                value: "14 boards + 10% = 16" },
+      { label: "2×6×10 (thicker)",         value: "20 boards + 10% = 22" },
+      { label: "Composite 1\"×6×12",       value: "14 boards + 10% = 16" },
+    ],
+    howToSteps: [
+      { text: "Determine the deck area: 10 × 10 = 100 sq ft." },
+      { text: "A 5/4×6 board has a nominal 6\" width; actual face width is 5.5\"." },
+      { text: "With 1/8\" gap between boards, effective width per board = 5.625\"." },
+      { text: "For 10 ft span: 120\" ÷ 5.625\" = 21.3 → 22 boards." },
+      { text: "Add 10% for waste and end cuts: 22 × 1.10 = 25 boards." },
+    ],
+    proTip:
+      "Buy boards in the longest length that avoids a seam on your deck surface. Seams on deck boards are a common weak point — full-length boards with no butt joints are stronger and look better.",
+    relatedCalc: { slug: "deck-calculator", name: "Deck Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-deck-boards-for-a-12x12-deck", question: "How many deck boards for a 12×12 deck?" },
+      { slug: "how-many-deck-boards-for-a-20x20-deck", question: "How many deck boards for a 20×20 deck?" },
+    ],
+  },
+
+  // ─── 72. How many deck boards for a 20x20 deck ───────────────────────────
+  {
+    slug: "how-many-deck-boards-for-a-20x20-deck",
+    question: "How many deck boards for a 20×20 deck?",
+    metaTitle: "How Many Deck Boards for a 20×20 Deck?",
+    metaDesc:
+      "A 20×20 deck (400 sq ft) needs about 85–90 pieces of 5/4×6 decking at 20-foot lengths, or 57 boards at 16-foot lengths. Add 10% for waste.",
+    category: "Framing",
+    directAnswer:
+      "A 20×20 foot deck (400 sq ft) requires approximately 85–90 boards of 5/4×6 decking at 20-foot lengths, or about 57 boards at 16-foot lengths (with a butt joint mid-span). With 10% waste, order 95–100 boards at 20-foot length. This covers decking boards only.",
+    tableHeading: "Deck boards for 20×20 deck",
+    tableLabel: "Board size",
+    table: [
+      { label: "5/4×6×20 (no seam)",   value: "43 boards + 10% = 47" },
+      { label: "5/4×6×16 (with seam)", value: "57 boards + 10% = 63" },
+      { label: "5/4×6×12",            value: "76 boards + 10% = 84" },
+      { label: "2×6×20",              value: "43 boards + 10% = 47" },
+    ],
+    howToSteps: [
+      { text: "Area: 20 × 20 = 400 sq ft." },
+      { text: "Effective board width (5/4×6 with 1/8\" gap): 5.625\"." },
+      { text: "For 20 ft span: 240\" ÷ 5.625\" = 42.7 → 43 boards." },
+      { text: "Add 10%: 43 × 1.10 = 47 boards (running the full 20-ft length)." },
+      { text: "If using shorter boards: double the count and add 15% for seams." },
+    ],
+    proTip:
+      "For a 20×20 deck, use 20-foot boards to avoid mid-span butt joints. Joints weaken the deck surface and are a tripping hazard. If 20-ft boards are too expensive, stagger joints so they never align on adjacent boards.",
+    relatedCalc: { slug: "deck-calculator", name: "Deck Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-deck-boards-for-a-16x20-deck", question: "How many deck boards for a 16×20 deck?" },
+      { slug: "how-many-deck-boards-for-a-10x10-deck", question: "How many deck boards for a 10×10 deck?" },
+    ],
+  },
+
+  // ─── 73. How many gallons of paint for a 20x20 room ──────────────────────
+  {
+    slug: "how-many-gallons-of-paint-for-a-20x20-room",
+    question: "How many gallons of paint for a 20×20 room?",
+    metaTitle: "How Many Gallons of Paint for a 20×20 Room?",
+    metaDesc:
+      "A 20×20 room with 8-foot ceilings needs about 3 gallons of paint for walls (2 coats) plus 1 gallon for the ceiling. Total: 4 gallons for two coats.",
+    category: "Paint",
+    directAnswer:
+      "A 20×20 room with 8-foot ceilings requires about 3 gallons of wall paint for two coats (after deducting doors and windows) and 1 gallon for the ceiling. Plan on 4 gallons total for a complete two-coat paint job including ceiling, or 2 gallons for walls only.",
+    tableHeading: "Paint for 20×20 room (8 ft ceilings)",
+    tableLabel: "Area painted",
+    table: [
+      { label: "Walls only, 1 coat",           value: "1.5 gallons" },
+      { label: "Walls only, 2 coats",          value: "3 gallons" },
+      { label: "Ceiling only, 1 coat",         value: "0.6 gallons" },
+      { label: "Ceiling only, 2 coats",        value: "1.2 gallons" },
+      { label: "Walls + ceiling, 2 coats",     value: "~4 gallons" },
+    ],
+    howToSteps: [
+      { text: "Wall area: perimeter 80 ft × 8 ft ceiling = 640 sq ft." },
+      { text: "Subtract doors (2 × 20 sq ft = 40 sq ft) and windows (3 × 15 sq ft = 45 sq ft): 640 − 85 = 555 sq ft." },
+      { text: "At 350 sq ft per gallon: 555 ÷ 350 = 1.58 gallons per coat → 3.2 gallons for 2 coats." },
+      { text: "Ceiling: 20 × 20 = 400 sq ft ÷ 350 = 1.14 gallons per coat → 2.3 gallons for 2 coats." },
+      { text: "Total: 3.2 + 2.3 = 5.5 gallons for walls + ceiling, 2 coats. Buy 6 gallons." },
+    ],
+    proTip:
+      "If changing from dark to light color, you may need a primer coat first, adding another gallon. Buying 5-gallon pails saves 20–30% vs. buying individual gallons.",
+    relatedCalc: { slug: "paint-calculator", name: "Paint Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-gallons-of-paint-for-12x12-room", question: "How many gallons of paint for a 12×12 room?" },
+      { slug: "how-many-gallons-of-paint-for-a-10x10-room", question: "How many gallons of paint for a 10×10 room?" },
+    ],
+  },
+
+  // ─── 74. How many nails for a square of shingles ─────────────────────────
+  {
+    slug: "how-many-nails-for-a-square-of-shingles",
+    question: "How many nails for a square of shingles?",
+    metaTitle: "How Many Nails for a Square of Shingles?",
+    metaDesc:
+      "One roofing square (100 sq ft) of 3-tab shingles requires 320 nails (4 per shingle × 26 shingles × 3 bundles). Architectural shingles: 160–240 nails per square.",
+    category: "Roofing",
+    directAnswer:
+      "One roofing square (100 sq ft, 3 bundles) of standard 3-tab shingles requires approximately 320 nails — 4 nails per shingle, with 26 shingles per bundle and 3 bundles per square. For architectural (dimensional) shingles, use 4–6 nails per shingle, totaling 250–400 nails per square depending on wind zone.",
+    tableHeading: "Nails per roofing square",
+    tableLabel: "Shingle type",
+    table: [
+      { label: "3-Tab (standard wind zone)",     value: "320 nails (4 per shingle)" },
+      { label: "3-Tab (high wind zone)",         value: "384 nails (6 per shingle)" },
+      { label: "Architectural (standard)",       value: "252–336 nails" },
+      { label: "Architectural (high wind)",      value: "336–420 nails" },
+    ],
+    howToSteps: [
+      { text: "Count shingles per square: 3 bundles × 26 shingles = 78 shingles per square (3-tab)." },
+      { text: "Multiply by nails per shingle: 78 × 4 = 312 nails (standard) or 78 × 6 = 468 (high wind)." },
+      { text: "For architectural shingles: ~63 shingles per square × 4–6 nails = 252–378 nails." },
+      { text: "Add 10% for starter strip nails and ridge cap nails." },
+    ],
+    proTip:
+      "Use 1-1/4\" roofing nails for new decking; 1-3/4\" or 2\" nails when re-roofing over existing shingles. Nails must penetrate at least 3/4\" into the roof deck to meet code.",
+    relatedCalc: { slug: "shingles-calculator", name: "Shingles Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-nails-per-shingle", question: "How many nails per shingle?" },
+      { slug: "how-many-square-feet-does-a-bundle-of-shingles-cover", question: "How many sq ft does a bundle of shingles cover?" },
+    ],
+  },
+
+  // ─── 75. How many pavers for a 12x12 patio ───────────────────────────────
+  {
+    slug: "how-many-pavers-for-a-12x12-patio",
+    question: "How many pavers for a 12×12 patio?",
+    metaTitle: "How Many Pavers for a 12×12 Patio?",
+    metaDesc:
+      "A 12×12 patio (144 sq ft) needs about 198 standard 4×8\" pavers or 96 square 12×12\" pavers. Add 10% for cuts and waste.",
+    category: "Masonry",
+    directAnswer:
+      "A 12×12 foot patio (144 square feet) requires approximately 648 standard 4×8-inch brick pavers (+10% = 713) or 144 square 12×12-inch concrete pavers (+10% = 158). Always add 10% for edge cuts and breakage.",
+    tableHeading: "Pavers for 12×12 patio",
+    tableLabel: "Paver size",
+    table: [
+      { label: "4×8\" brick paver",        value: "648 pavers (+10% = 713)" },
+      { label: "6×9\" brick paver",        value: "384 pavers (+10% = 422)" },
+      { label: "12×12\" concrete paver",   value: "144 pavers (+10% = 158)" },
+      { label: "16×16\" concrete paver",   value: "81 pavers (+10% = 89)" },
+      { label: "12×18\" paver",            value: "96 pavers (+10% = 106)" },
+    ],
+    howToSteps: [
+      { text: "Calculate patio area: 12 × 12 = 144 sq ft." },
+      { text: "Pavers per sq ft: 144 sq in per sq ft ÷ paver area in sq in." },
+      { text: "For 4×8\" paver: 144 ÷ 32 = 4.5 pavers/sq ft → 144 × 4.5 = 648 pavers." },
+      { text: "For 12×12\" paver: 144 ÷ 144 = 1.0 per sq ft → 144 pavers." },
+      { text: "Add 10% for waste: 648 × 1.10 = 713 (4×8\") or 144 × 1.10 = 158 (12×12\")." },
+    ],
+    proTip:
+      "Use polymeric sand in the joints to prevent weeds and ant infiltration. Sweep it in dry, then mist with water to activate the binding agents. Redo every 3–5 years.",
+    relatedCalc: { slug: "paver-calculator", name: "Paver Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-pavers-for-10x10-patio", question: "How many pavers for a 10×10 patio?" },
+      { slug: "how-many-bags-of-sand-for-pavers", question: "How many bags of sand for pavers?" },
+    ],
+  },
+
+  // ─── 76. How many rolls of sod for 500 sq ft ─────────────────────────────
+  {
+    slug: "how-many-rolls-of-sod-for-500-sq-ft",
+    question: "How many rolls of sod for 500 sq ft?",
+    metaTitle: "How Many Rolls of Sod for 500 Sq Ft?",
+    metaDesc:
+      "500 square feet of lawn needs about 56 rolls of sod (each roll covers 9 sq ft). Add 5% for waste and cuts, making it 59 rolls total.",
+    category: "Landscaping",
+    directAnswer:
+      "You need approximately 56 rolls of sod to cover 500 square feet. A standard sod roll is 2 feet wide × 5 feet long (10 sq ft) or 16 inches × 81 inches (9 sq ft) depending on the supplier. With 5% waste, order 59–62 rolls. Confirm your supplier's roll dimensions before ordering.",
+    tableHeading: "Rolls of sod for 500 sq ft",
+    tableLabel: "Roll size",
+    table: [
+      { label: "9 sq ft roll (16\"×81\")",   value: "56 rolls + 5% = 59" },
+      { label: "10 sq ft roll (2'×5')",       value: "50 rolls + 5% = 53" },
+      { label: "0.5 pallet (200–252 sq ft)",  value: "2 pallets needed" },
+    ],
+    howToSteps: [
+      { text: "Confirm your sod supplier's roll size (usually 9–10 sq ft per roll)." },
+      { text: "Divide 500 sq ft by roll size: 500 ÷ 9 = 55.6 → 56 rolls." },
+      { text: "Add 5% for cuts and irregular edges: 56 × 1.05 = 58.8 → 59 rolls." },
+      { text: "Alternatively: order 1.25 pallets if pallets are 400 sq ft each." },
+    ],
+    proTip:
+      "Measure your lawn on a clear day and sketch the shape. Odd-shaped lawns waste more sod — add 10% instead of 5% for complex shapes with curves and angles.",
+    relatedCalc: { slug: "sod-calculator", name: "Sod Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-rolls-of-sod-for-1000-sq-ft", question: "How many rolls of sod for 1,000 sq ft?" },
+      { slug: "how-many-square-feet-does-a-roll-of-sod-cover", question: "How many square feet does a roll of sod cover?" },
+    ],
+  },
+
+  // ─── 77. How many shingles for a 12x12 shed ──────────────────────────────
+  {
+    slug: "how-many-shingles-for-a-12x12-shed",
+    question: "How many shingles for a 12×12 shed?",
+    metaTitle: "How Many Shingles for a 12×12 Shed? (Bundles & Squares)",
+    metaDesc:
+      "A 12×12 shed with a simple gable roof needs 3–4 bundles of shingles (1–1.3 squares) depending on roof pitch. Steeper pitches require more material.",
+    category: "Roofing",
+    directAnswer:
+      "A 12×12 shed (144 sq ft footprint) with a standard gable roof at 4/12 pitch needs approximately 3–4 bundles of shingles. The actual roof area is larger than the footprint: at 4/12 pitch, multiply by 1.054, giving about 152 sq ft of roof area = 1.5 squares = ~5 bundles. Add 10% waste.",
+    tableHeading: "Shingle bundles for 12×12 shed",
+    tableLabel: "Roof pitch",
+    table: [
+      { label: "3/12 pitch (low)",  value: "~4 bundles (1.3 squares)" },
+      { label: "4/12 pitch",        value: "~5 bundles (1.6 squares)" },
+      { label: "6/12 pitch",        value: "~6 bundles (2.0 squares)" },
+      { label: "8/12 pitch (steep)", value: "~7 bundles (2.3 squares)" },
+    ],
+    howToSteps: [
+      { text: "Footprint area: 12 × 12 = 144 sq ft (both slopes together)." },
+      { text: "Apply pitch multiplier for 4/12 pitch: 144 × 1.054 = 151.8 sq ft." },
+      { text: "Convert to roofing squares: 151.8 ÷ 100 = 1.52 squares." },
+      { text: "Multiply by 3 bundles/square: 1.52 × 3 = 4.56 → 5 bundles." },
+      { text: "Add 10% for ridge, starter, and waste: 5 × 1.10 = 5.5 → 6 bundles to be safe." },
+    ],
+    proTip:
+      "Don't forget the ridge cap — a 12×12 shed gable has about 12 linear feet of ridge, requiring 1 bundle of ridge cap shingles (covers ~20 linear feet).",
+    relatedCalc: { slug: "shingles-calculator", name: "Shingles Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-bundles-of-shingles-for-a-10x10-shed", question: "How many bundles of shingles for a 10×10 shed?" },
+      { slug: "how-many-bundles-of-shingles-for-a-12x16-shed", question: "How many bundles for a 12×16 shed?" },
+    ],
+  },
+
+  // ─── 78. How many square feet does a roll of sod cover ───────────────────
+  {
+    slug: "how-many-square-feet-does-a-roll-of-sod-cover",
+    question: "How many square feet does a roll of sod cover?",
+    metaTitle: "How Many Square Feet Does a Roll of Sod Cover?",
+    metaDesc:
+      "A standard sod roll covers 9–10 square feet. Most rolls measure 2 feet × 5 feet (10 sq ft) or 16 inches × 81 inches (9 sq ft). Pallets cover 400–504 sq ft.",
+    category: "Landscaping",
+    directAnswer:
+      "A standard sod roll covers 9–10 square feet. The most common sizes are 2 feet wide × 5 feet long (10 sq ft) and 16 inches wide × 81 inches long (approximately 9 sq ft). Supplier roll sizes vary, so confirm before ordering. A full pallet typically holds 50–56 rolls and covers 400–504 sq ft.",
+    tableHeading: "Sod roll coverage",
+    tableLabel: "Roll dimensions",
+    table: [
+      { label: "16\" × 81\" (standard)",  value: "9 sq ft per roll" },
+      { label: "2' × 5' (common)",         value: "10 sq ft per roll" },
+      { label: "2' × 4' (small)",          value: "8 sq ft per roll" },
+      { label: "Full pallet",              value: "400–504 sq ft" },
+    ],
+    howToSteps: [
+      { text: "Ask your sod supplier for their roll dimensions (they vary by farm)." },
+      { text: "Calculate roll area: width × length = sq ft per roll." },
+      { text: "Divide your lawn area by roll coverage to get roll count." },
+      { text: "Add 5% for waste: (area ÷ sq ft per roll) × 1.05 = rolls to order." },
+    ],
+    proTip:
+      "Sod rolls are heavy (20–40 lbs each) and should be installed within 24–48 hours of delivery. Order only what you can install in one day during hot weather.",
+    relatedCalc: { slug: "sod-calculator", name: "Sod Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-rolls-of-sod-for-500-sq-ft", question: "How many rolls of sod for 500 sq ft?" },
+      { slug: "how-many-rolls-of-sod-for-1000-sq-ft", question: "How many rolls of sod for 1,000 sq ft?" },
+    ],
+  },
+
+  // ─── 79. How many square feet does a ton of asphalt cover ────────────────
+  {
+    slug: "how-many-square-feet-does-a-ton-of-asphalt-cover",
+    question: "How many square feet does a ton of asphalt cover?",
+    metaTitle: "How Many Square Feet Does a Ton of Asphalt Cover?",
+    metaDesc:
+      "One ton of asphalt covers approximately 80 square feet at 2 inches thick, or 40 sq ft at 4 inches thick. Coverage varies by mix type and compaction.",
+    category: "Masonry",
+    directAnswer:
+      "One ton of asphalt covers approximately 80 square feet at 2 inches thick, 54 square feet at 3 inches thick, or 40 square feet at 4 inches thick. Asphalt weighs about 145 lbs per cubic foot when compacted. A standard residential driveway at 2–3 inches thick uses 1 ton per 54–80 sq ft.",
+    tableHeading: "Asphalt coverage per ton",
+    tableLabel: "Compacted thickness",
+    table: [
+      { label: "1 inch",   value: "160 sq ft per ton" },
+      { label: "1.5 inch", value: "107 sq ft per ton" },
+      { label: "2 inches", value: "80 sq ft per ton" },
+      { label: "3 inches", value: "54 sq ft per ton" },
+      { label: "4 inches", value: "40 sq ft per ton" },
+    ],
+    howToSteps: [
+      { text: "Asphalt density (compacted) = ~145 lbs per cubic foot." },
+      { text: "One ton = 2,000 lbs ÷ 145 lbs/cu ft = 13.8 cubic feet per ton." },
+      { text: "At 2\" thick (0.167 ft): 13.8 ÷ 0.167 = 82.6 sq ft per ton." },
+      { text: "At 3\" thick (0.25 ft): 13.8 ÷ 0.25 = 55.2 sq ft per ton." },
+      { text: "Add 10% to your tonnage estimate for compaction and waste." },
+    ],
+    proTip:
+      "Hot mix asphalt compacts 15–20% when rolled — always order 15% more than your calculated volume. Cold patch asphalt compacts less uniformly and is only suitable for small repairs.",
+    relatedCalc: { slug: "asphalt-calculator", name: "Asphalt Calculator" },
+    relatedFaqs: [
+      { slug: "how-thick-should-asphalt-be-for-a-driveway", question: "How thick should asphalt be for a driveway?" },
+      { slug: "how-many-tons-of-gravel-for-a-driveway", question: "How many tons of gravel for a driveway?" },
+    ],
+  },
+
+  // ─── 80. How many square feet in a roll of carpet ────────────────────────
+  {
+    slug: "how-many-square-feet-in-a-roll-of-carpet",
+    question: "How many square feet in a roll of carpet?",
+    metaTitle: "How Many Square Feet in a Roll of Carpet?",
+    metaDesc:
+      "A standard carpet roll is 12 feet wide and 100 feet long (1,200 sq ft). Rolls also come in 13.5-foot and 15-foot widths. Carpet is sold by the square yard.",
+    category: "Flooring",
+    directAnswer:
+      "A standard carpet roll is 12 feet wide and typically 100 feet long, covering 1,200 square feet per roll. Rolls also come in 13.5-foot and 15-foot widths. Carpet is usually sold by the linear yard (3 feet of length from a 12-foot roll = 4 square yards = 36 sq ft), not by the roll.",
+    tableHeading: "Carpet roll dimensions",
+    tableLabel: "Roll width",
+    table: [
+      { label: "12 ft wide (standard)",     value: "100 ft long = 1,200 sq ft" },
+      { label: "13.5 ft wide",              value: "100 ft long = 1,350 sq ft" },
+      { label: "15 ft wide",               value: "100 ft long = 1,500 sq ft" },
+      { label: "1 linear yard (12 ft wide)", value: "36 sq ft = 4 sq yd" },
+    ],
+    howToSteps: [
+      { text: "Carpet is sold in linear yards from a 12-foot wide roll." },
+      { text: "Convert room dimensions to linear yards: room length (ft) ÷ 3 = linear yards." },
+      { text: "Add 10% for seams and waste." },
+      { text: "In square yards: room area (sq ft) ÷ 9 × 1.10 = sq yd to order." },
+      { text: "Example: 15×20 room = 300 sq ft ÷ 9 = 33.3 sq yd + 10% = 37 sq yd." },
+    ],
+    proTip:
+      "Always measure in the direction the carpet will run — the 12-foot roll width may or may not align with your room's longer dimension. Minimize seams by running the carpet lengthwise in the room.",
+    relatedCalc: { slug: "carpet-calculator", name: "Carpet Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-square-yards-of-carpet-for-a-12x12-room", question: "How many sq yd of carpet for a 12×12 room?" },
+      { slug: "how-many-square-feet-in-a-box-of-laminate-flooring", question: "How many sq ft in a box of laminate flooring?" },
+    ],
+  },
+
+  // ─── 81. How many yards of concrete for a 30x30 slab ─────────────────────
+  {
+    slug: "how-many-yards-of-concrete-for-a-30x30-slab",
+    question: "How many yards of concrete for a 30×30 slab?",
+    metaTitle: "How Many Yards of Concrete for a 30×30 Slab?",
+    metaDesc:
+      "A 30×30 slab at 4 inches thick needs 11.1 cubic yards of concrete. At 6 inches thick, you need 16.7 yards. Always order 5–10% extra.",
+    category: "Concrete",
+    directAnswer:
+      "A 30×30 foot slab at 4 inches thick requires approximately 11.1 cubic yards of concrete. At 6 inches thick (for a garage or heavy-use area), you need 16.7 cubic yards. Add 5–10% for waste and uneven subgrade, so order 12–13 yards at 4\" or 17–18 yards at 6\".",
+    tableHeading: "Concrete for 30×30 slab",
+    tableLabel: "Thickness",
+    table: [
+      { label: "4 inches",   value: "11.1 yd³ (+10% = 12.2 yd³)" },
+      { label: "5 inches",   value: "13.9 yd³ (+10% = 15.3 yd³)" },
+      { label: "6 inches",   value: "16.7 yd³ (+10% = 18.3 yd³)" },
+    ],
+    howToSteps: [
+      { text: "Calculate volume: 30 × 30 × (4 ÷ 12) = 900 × 0.333 = 300 cubic feet." },
+      { text: "Convert to cubic yards: 300 ÷ 27 = 11.11 yd³." },
+      { text: "Add 10% for waste: 11.11 × 1.10 = 12.2 yd³." },
+      { text: "A 30×30 slab requires 2 full concrete truck loads (typically 8–10 yd per load)." },
+    ],
+    proTip:
+      "For a garage floor (30×30), use 6-inch thickness with rebar on 18\" centers and 4,000 PSI concrete. This supports vehicle traffic for decades without cracking.",
+    relatedCalc: { slug: "concrete-calculator", name: "Concrete Calculator" },
+    relatedFaqs: [
+      { slug: "how-much-concrete-for-a-20x20-slab", question: "How much concrete for a 20×20 slab?" },
+      { slug: "how-thick-should-a-concrete-driveway-be", question: "How thick should a concrete driveway be?" },
+    ],
+  },
+
+  // ─── 82. How much concrete for deck footings ─────────────────────────────
+  {
+    slug: "how-much-concrete-for-deck-footings",
+    question: "How much concrete for deck footings?",
+    metaTitle: "How Much Concrete for Deck Footings? (Per Footing Guide)",
+    metaDesc:
+      "A typical 12-inch diameter deck footing 42 inches deep needs 2.5 bags of 80-lb concrete. An 8-foot deck with 4 footings needs about 10 bags total.",
+    category: "Concrete",
+    directAnswer:
+      "A standard 12-inch diameter deck footing 42 inches deep (typical frost depth) requires about 2.5 bags of 80-lb concrete mix per footing. A typical 12×16-foot deck with 6 footings needs 15 bags total. Larger 16-inch diameter footings use 4–5 bags each.",
+    tableHeading: "Concrete bags per footing",
+    tableLabel: "Footing diameter × depth",
+    table: [
+      { label: "10\" dia × 36\" deep",  value: "1.5 bags (80-lb)" },
+      { label: "12\" dia × 42\" deep",  value: "2.5 bags (80-lb)" },
+      { label: "12\" dia × 48\" deep",  value: "3 bags (80-lb)" },
+      { label: "16\" dia × 42\" deep",  value: "4.5 bags (80-lb)" },
+      { label: "16\" dia × 48\" deep",  value: "5 bags (80-lb)" },
+    ],
+    howToSteps: [
+      { text: "Find your local frost depth (required footing depth) — usually 36–48\" in northern states." },
+      { text: "Choose footing diameter: minimum 10\" for typical decks, 12–16\" for heavy spans." },
+      { text: "Calculate volume: π × (radius)² × depth (all in feet)." },
+      { text: "12\" dia × 42\" deep: π × 0.25 × 3.5 = 2.75 cu ft ÷ 0.60 cu ft/bag = 4.6 bags." },
+      { text: "Multiply by number of footings and add 10% for spillage." },
+    ],
+    proTip:
+      "Use Quikrete Fast-Setting Concrete for deck footings — pour it dry, add water on top, no mixing needed. Set time is 20–40 minutes and you can install posts the same day.",
+    relatedCalc: { slug: "concrete-calculator", name: "Concrete Calculator" },
+    relatedFaqs: [
+      { slug: "how-much-concrete-for-a-6x6-post", question: "How much concrete for a 6×6 post?" },
+      { slug: "how-many-bags-of-concrete-for-a-fence-post", question: "How many bags for a fence post?" },
+    ],
+  },
+
+  // ─── 83. How much gravel for a 100-foot driveway ─────────────────────────
+  {
+    slug: "how-much-gravel-for-a-100-foot-driveway",
+    question: "How much gravel for a 100-foot driveway?",
+    metaTitle: "How Much Gravel for a 100-Foot Driveway? (Tons & Yards)",
+    metaDesc:
+      "A 100-foot driveway (12 ft wide, 4 in deep) needs 14.8 cubic yards or about 21 tons of gravel. See amounts by width and depth.",
+    category: "Landscaping",
+    directAnswer:
+      "A 100-foot driveway that is 12 feet wide and 4 inches deep needs approximately 14.8 cubic yards or about 21 tons of gravel. At 6-inch depth (recommended for new driveways), plan on 22 cubic yards or 31 tons.",
+    tableHeading: "Gravel for 100-foot driveway",
+    tableLabel: "Width × depth",
+    table: [
+      { label: "10 ft wide × 4\" deep",  value: "12.4 yd³ / 17 tons" },
+      { label: "12 ft wide × 4\" deep",  value: "14.8 yd³ / 21 tons" },
+      { label: "12 ft wide × 6\" deep",  value: "22.2 yd³ / 31 tons" },
+      { label: "14 ft wide × 4\" deep",  value: "17.3 yd³ / 24 tons" },
+    ],
+    howToSteps: [
+      { text: "Calculate volume: 100 ft × 12 ft × (4\" ÷ 12) = 100 × 12 × 0.333 = 400 cu ft." },
+      { text: "Convert to cubic yards: 400 ÷ 27 = 14.8 yd³." },
+      { text: "Convert to tons: 14.8 × 1.4 (tons/yd³ for crushed stone) = 20.7 tons." },
+      { text: "Add 10% for spreading and compaction loss: 20.7 × 1.10 = 22.8 → 23 tons." },
+    ],
+    proTip:
+      "A 100-foot driveway is right on the edge of what's cost-effective to haul in a standard tri-axle truck (14 tons). You'll likely need 2 loads — ask your supplier about the cost difference between 1 large semi-load vs. 2 tri-axle loads.",
+    relatedCalc: { slug: "gravel-calculator", name: "Gravel Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-tons-of-gravel-for-a-driveway", question: "How many tons of gravel for a driveway?" },
+      { slug: "how-much-gravel-under-concrete-slab", question: "How much gravel under a concrete slab?" },
+    ],
+  },
+
+  // ─── 84. How much grout for tile floor ───────────────────────────────────
+  {
+    slug: "how-much-grout-for-tile-floor",
+    question: "How much grout for a tile floor?",
+    metaTitle: "How Much Grout for a Tile Floor? (Bags by Tile Size)",
+    metaDesc:
+      "A 10×10 tile floor (100 sq ft) needs 1–2 bags of grout depending on tile size and joint width. Larger tiles with narrow joints use less grout.",
+    category: "Flooring",
+    directAnswer:
+      "A 100 sq ft tile floor with 12×12-inch tiles and 3/16-inch joints needs about 1 bag (25 lbs) of sanded grout. Smaller tiles or wider joints require more grout — a floor with 4×4 tiles may need 3 bags. Use the tile manufacturer's grout coverage chart for exact quantities.",
+    tableHeading: "Grout bags for 100 sq ft",
+    tableLabel: "Tile size × joint width",
+    table: [
+      { label: "4×4\" tile, 1/8\" joint",   value: "3 bags (25 lbs each)" },
+      { label: "12×12\" tile, 3/16\" joint", value: "1 bag" },
+      { label: "12×12\" tile, 1/4\" joint",  value: "1.5 bags" },
+      { label: "18×18\" tile, 3/16\" joint", value: "0.75 bags" },
+      { label: "24×24\" tile, 1/8\" joint",  value: "0.5 bags" },
+    ],
+    howToSteps: [
+      { text: "Find the grout coverage on your grout bag label — it lists sq ft per bag by tile size and joint width." },
+      { text: "If unavailable, use the formula: lbs per sq ft = (tile perimeter × joint depth × joint width) ÷ (tile area × 144) × grout density." },
+      { text: "Simpler rule: add 10% to calculated amount for waste and touch-ups." },
+      { text: "Mix in small batches — grout has a 30-minute working time." },
+    ],
+    proTip:
+      "Buy grout from the same dye lot for consistency. Grout color shifts slightly between lots — even matching bags from different batches can show variation after installation.",
+    relatedCalc: { slug: "tile-calculator", name: "Tile Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-tiles-for-12x12-room", question: "How many tiles for a 12×12 room?" },
+      { slug: "how-many-bags-of-sand-for-pavers", question: "How many bags of sand for pavers?" },
+    ],
+  },
+
+  // ─── 85. How much mulch for 500 square feet ──────────────────────────────
+  {
+    slug: "how-much-mulch-for-500-square-feet",
+    question: "How much mulch for 500 square feet?",
+    metaTitle: "How Much Mulch for 500 Square Feet? (Bags & Cubic Yards)",
+    metaDesc:
+      "500 square feet of mulch at 3 inches deep needs 4.6 cubic yards or about 62 bags (2 cu ft each). At 2 inches, you need 3.1 cubic yards or 42 bags.",
+    category: "Landscaping",
+    directAnswer:
+      "For 500 square feet at 3 inches deep, you need approximately 4.6 cubic yards of mulch or about 62 bags (2 cu ft bags). At 2 inches deep, you need 3.1 cubic yards or 42 bags. Buying in bulk (by the cubic yard) is significantly cheaper than bagged mulch for this quantity.",
+    tableHeading: "Mulch for 500 sq ft",
+    tableLabel: "Depth",
+    table: [
+      { label: "2 inches", value: "3.1 yd³ / 42 bags (2 cu ft)" },
+      { label: "3 inches", value: "4.6 yd³ / 62 bags (2 cu ft)" },
+      { label: "4 inches", value: "6.2 yd³ / 83 bags (2 cu ft)" },
+    ],
+    howToSteps: [
+      { text: "Calculate volume: 500 sq ft × (3\" ÷ 12) = 500 × 0.25 = 125 cu ft." },
+      { text: "Convert to cubic yards: 125 ÷ 27 = 4.63 yd³." },
+      { text: "In bags: 125 cu ft ÷ 2 cu ft/bag = 62.5 → 63 bags." },
+      { text: "Order 5 cubic yards in bulk for a standard delivery (most companies have a 3 yd minimum)." },
+    ],
+    proTip:
+      "At 500 sq ft, bulk mulch saves significantly over bags. Expect to pay $25–45 per cubic yard for bulk vs. $4–6 per bag ($248–378 for 62 bags). You save $100+ by going bulk.",
+    relatedCalc: { slug: "mulch-calculator", name: "Mulch Calculator" },
+    relatedFaqs: [
+      { slug: "how-much-mulch-for-300-square-feet", question: "How much mulch for 300 square feet?" },
+      { slug: "how-much-mulch-for-100-square-feet", question: "How much mulch for 100 square feet?" },
+    ],
+  },
+
+  // ─── 86. How many tons in a cubic yard of dirt ───────────────────────────
+  {
+    slug: "how-many-tons-in-a-cubic-yard-of-dirt",
+    question: "How many tons in a cubic yard of dirt?",
+    metaTitle: "How Many Tons in a Cubic Yard of Dirt?",
+    metaDesc:
+      "A cubic yard of topsoil weighs about 1.1 tons (2,200 lbs). Compacted fill dirt weighs 1.25 tons per yard. Wet or clay soil can reach 1.5–1.7 tons per yard.",
+    category: "Concrete",
+    directAnswer:
+      "A cubic yard of average topsoil weighs approximately 1.1 tons (2,200 lbs). Dry fill dirt weighs about 1.0–1.1 tons per cubic yard, while compacted or wet clay-heavy soil can weigh 1.5–1.7 tons per yard. Sandy soil is on the lighter end at 1.0–1.1 tons per yard.",
+    tableHeading: "Weight per cubic yard",
+    tableLabel: "Soil type",
+    table: [
+      { label: "Dry topsoil",        value: "~1.1 tons (2,200 lbs)" },
+      { label: "Moist topsoil",      value: "~1.35 tons (2,700 lbs)" },
+      { label: "Dry fill dirt",      value: "~1.0–1.1 tons" },
+      { label: "Wet clay soil",      value: "~1.5–1.7 tons" },
+      { label: "Sandy loam",         value: "~1.1–1.3 tons" },
+      { label: "Compacted fill",     value: "~1.25–1.35 tons" },
+    ],
+    howToSteps: [
+      { text: "One cubic yard = 27 cubic feet." },
+      { text: "Typical topsoil density: 80–90 lbs per cubic foot." },
+      { text: "27 × 85 lbs/cu ft = 2,295 lbs ≈ 1.15 tons per cubic yard." },
+      { text: "For wet clay: 27 × 115 lbs/cu ft = 3,105 lbs ≈ 1.55 tons per yard." },
+      { text: "To convert tons to cubic yards: tons ÷ 1.1 = approximate cubic yards of topsoil." },
+    ],
+    proTip:
+      "When ordering topsoil or fill dirt, ask for the weight per yard from your supplier — it varies significantly with moisture content. Fresh-delivered soil is often much heavier than dry stored soil.",
+    relatedCalc: { slug: "topsoil-calculator", name: "Topsoil Calculator" },
+    relatedFaqs: [
+      { slug: "how-many-cubic-yards-in-a-dump-truck-load", question: "How many cubic yards in a dump truck load?" },
+      { slug: "how-many-wheelbarrow-loads-in-a-cubic-yard", question: "How many wheelbarrow loads in a cubic yard?" },
+    ],
+  },
 ];
 
 export const ALL_FAQ_CATEGORIES: FaqCategory[] = [
