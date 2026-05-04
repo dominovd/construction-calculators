@@ -1,24 +1,20 @@
 "use client";
 
 import Link from "next/link";
-import { GUIDES, type Tag } from "@/lib/guides";
+import { HOWTOS, type HowToTag } from "@/lib/howtos";
 
-const TAG_COLORS: Record<Tag, string> = {
-  Roofing:    "bg-blue-100 text-blue-700",
-  Foundation: "bg-stone-100 text-stone-700",
-  Flooring:   "bg-amber-100 text-amber-700",
-  Driveway:   "bg-gray-100 text-gray-700",
-  Framing:    "bg-orange-100 text-orange-700",
-  Insulation: "bg-green-100 text-green-700",
-  Concrete:   "bg-yellow-100 text-yellow-800",
+const TAG_COLORS: Record<HowToTag, string> = {
+  Concrete:    "bg-yellow-100 text-yellow-800",
+  Framing:     "bg-orange-100 text-orange-700",
+  Roofing:     "bg-blue-100 text-blue-700",
+  Landscaping: "bg-green-100 text-green-700",
+  Flooring:    "bg-amber-100 text-amber-700",
 };
 
 export function HowToHub() {
-  const guides = GUIDES.filter(g => g.section === "howto");
-
   return (
     <div className="space-y-3">
-      {guides.map(guide => (
+      {HOWTOS.map(guide => (
         <Link
           key={guide.slug}
           href={`/howto/${guide.slug}`}
@@ -30,7 +26,7 @@ export function HowToHub() {
                 {guide.title}
               </h2>
               <p className="text-sm text-gray-500 leading-relaxed mb-2">
-                {guide.summary}
+                {guide.intro}
               </p>
               <div className="flex flex-wrap gap-1.5">
                 {guide.tags.map(tag => (
