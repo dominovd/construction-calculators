@@ -46,6 +46,7 @@ const MARKET_PAGES = [
   { href: "/material-prices",  emoji: "📈", title: "Material Price Index",       desc: "Monthly lumber, steel & concrete price trends from BLS data." },
   { href: "/housing-starts",   emoji: "🏠", title: "Global Housing Starts",      desc: "Annual new construction starts for 20+ countries via OECD." },
   { href: "/lumber-market",    emoji: "🪵", title: "Lumber Market: US vs World", desc: "US lumber PPI vs global softwood prices, indexed to 2019=100." },
+  { href: "/guides",           emoji: "📖", title: "Material Comparison Guides", desc: "OSB vs plywood, metal vs asphalt, gravel vs asphalt driveway, and more." },
 ];
 
 export function HomeContent({ market }: { market: MarketData }) {

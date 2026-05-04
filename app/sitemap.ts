@@ -61,6 +61,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...countryPages,
     { url: `${BASE}/about`,                  lastModified: now, changeFrequency: "yearly",  priority: 0.5 },
     { url: `${BASE}/contact`,                lastModified: now, changeFrequency: "yearly",  priority: 0.4 },
+    { url: `${BASE}/guides`,                 lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/guides/osb-vs-plywood`,                         lastModified: now, changeFrequency: "yearly", priority: 0.8 },
+    { url: `${BASE}/guides/metal-roofing-vs-asphalt-shingles`,      lastModified: now, changeFrequency: "yearly", priority: 0.8 },
+    { url: `${BASE}/guides/concrete-block-vs-poured-foundation`,    lastModified: now, changeFrequency: "yearly", priority: 0.8 },
+    { url: `${BASE}/guides/gravel-vs-asphalt-driveway`,             lastModified: now, changeFrequency: "yearly", priority: 0.8 },
+    { url: `${BASE}/guides/vinyl-vs-hardwood-flooring`,             lastModified: now, changeFrequency: "yearly", priority: 0.8 },
+    { url: `${BASE}/guides/spray-foam-vs-fiberglass-insulation`,    lastModified: now, changeFrequency: "yearly", priority: 0.8 },
     { url: `${BASE}/privacy`,                lastModified: now, changeFrequency: "yearly",  priority: 0.3 },
     ...calculators.map(({ slug, priority, changeFreq }) => ({
       url: `${BASE}/${slug}`,
