@@ -449,7 +449,6 @@ export const FAQS: Faq[] = [
       { slug: "how-many-pavers-for-10x10-patio", question: "How many pavers for a 10×10 patio?" },
     ],
   },
-];
 
   // ─── 13. How many shingles in a bundle ───────────────────────────────────
   {
