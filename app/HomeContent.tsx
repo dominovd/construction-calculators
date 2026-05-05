@@ -39,7 +39,12 @@ const CALCS = [
   { slug: "metal-roofing-calculator", name: "Metal Roofing Calculator",  desc: "Calculate metal roofing panels, squares, and cost for any pitch and footprint.",          icon: "🏠" },
   { slug: "wallpaper-calculator",    name: "Wallpaper Calculator",       desc: "Calculate wallpaper rolls for any room, deducting doors and windows.",                     icon: "🎨" },
   { slug: "concrete-curb-calculator",name: "Concrete Curb Calculator",   desc: "Calculate concrete cubic yards for curbs and gutters by profile type.",                   icon: "🛣️" },
-  { slug: "window-calculator",       name: "Window Calculator",          desc: "Estimate window material and installation cost for any mix of window types.",               icon: "🪟" },
+  { slug: "window-calculator",               name: "Window Calculator",                  desc: "Estimate window material and installation cost for any mix of window types.",               icon: "🪟" },
+  { slug: "fence-post-concrete-calculator",  name: "Fence Post Concrete Calculator",      desc: "Calculate concrete bags needed per post hole by diameter, depth, and bag size.",              icon: "🪣" },
+  { slug: "window-rough-opening-calculator", name: "Window Rough Opening Calculator",     desc: "Calculate rough opening width, height, header size, and jack stud height for any window.",   icon: "📐" },
+  { slug: "basement-waterproofing-calculator", name: "Basement Waterproofing Estimator", desc: "Estimate basement waterproofing cost by method: interior drain, exterior, crack injection.", icon: "🏚️" },
+  { slug: "hvac-duct-calculator",            name: "HVAC Duct Size Calculator",           desc: "Calculate required CFM and round duct diameter for any room size and ceiling height.",        icon: "🌀" },
+  { slug: "septic-tank-calculator",          name: "Septic Tank Size Calculator",         desc: "Calculate minimum septic tank size and drain field area by bedrooms and soil type.",          icon: "🌿" },
 ];
 
 const MARKET_PAGES = [
