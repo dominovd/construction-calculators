@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DrywallCalculator } from "./DrywallCalculator";
+import { PriceUpdatedBadge, PriceDisclaimer } from "@/components/PriceUpdatedBadge";
 
 export const metadata: Metadata = {
   title: "Free Drywall Calculator — Sheets & Cost for Any Room",
@@ -64,7 +65,11 @@ export default function DrywallPage() {
         Calculate how many 4×8 drywall sheets you need for any room, including ceiling and waste factor.
       </p>
 
+      <div className="mb-2">
+        <PriceUpdatedBadge />
+      </div>
       <DrywallCalculator />
+      <PriceDisclaimer className="mt-3" />
 
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-xl font-semibold text-gray-900">How to Calculate Drywall</h2>

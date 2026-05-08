@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { getRetailDefault } from "@/lib/retail-prices";
 
 export function AsphaltCalculator() {
   const [length, setLength] = useState("50");
   const [width, setWidth] = useState("10");
   const [depth, setDepth] = useState("3");
-  const [pricePerTon, setPricePerTon] = useState("100");
+  const [pricePerTon, setPricePerTon] = useState(String(getRetailDefault("asphalt-ton")));
 
   const l = parseFloat(length) || 0;
   const w = parseFloat(width) || 0;

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { getRetailDefault } from "@/lib/retail-prices";
 
 const MATERIALS = [
   { label: "Sand (dry)", density: 1.35 },
@@ -15,7 +16,7 @@ export function SandCalculator() {
   const [width, setWidth] = useState("10");
   const [depth, setDepth] = useState("2");
   const [matIdx, setMatIdx] = useState(0);
-  const [pricePerTon, setPricePerTon] = useState("35");
+  const [pricePerTon, setPricePerTon] = useState(String(getRetailDefault("sand-mason-ton")));
 
   const l = parseFloat(length) || 0;
   const w = parseFloat(width) || 0;

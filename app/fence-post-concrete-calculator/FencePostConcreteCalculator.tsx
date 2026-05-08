@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { getRetailDefault } from "@/lib/retail-prices";
 
 const HOLE_DIAMETERS = [8, 10, 12, 14] as const;
 type HoleDiameter = (typeof HOLE_DIAMETERS)[number];
@@ -24,7 +25,7 @@ export function FencePostConcreteCalculator() {
   const [holeDepth, setHoleDepth] = useState("3");
   const [bagSizeIdx, setBagSizeIdx] = useState(2); // default 80 lb
   const [postSizeIdx, setPostSizeIdx] = useState(0); // default 4x4
-  const [pricePerBag, setPricePerBag] = useState("8");
+  const [pricePerBag, setPricePerBag] = useState(String(getRetailDefault("concrete-bag-80lb")));
 
   const posts = Math.max(0, Math.round(parseFloat(numPosts) || 0));
   const depth = parseFloat(holeDepth) || 0;

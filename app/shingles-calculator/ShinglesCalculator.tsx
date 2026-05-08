@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { getRetailDefault } from "@/lib/retail-prices";
 
 const PITCH_FACTORS: { label: string; factor: number }[] = [
   { label: "2:12 (flat)",   factor: 1.02 },
@@ -19,7 +20,7 @@ export function ShinglesCalculator() {
   const [footprintW, setFootprintW] = useState("30");
   const [pitchIdx, setPitchIdx] = useState(3);
   const [waste, setWaste] = useState("15");
-  const [pricePerSq, setPricePerSq] = useState("100");
+  const [pricePerSq, setPricePerSq] = useState(String(getRetailDefault("shingles-square")));
 
   const l = parseFloat(footprintL) || 0;
   const w = parseFloat(footprintW) || 0;

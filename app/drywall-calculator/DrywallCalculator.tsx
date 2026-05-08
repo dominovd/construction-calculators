@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { getRetailDefault } from "@/lib/retail-prices";
 
 export function DrywallCalculator() {
   const [length, setLength] = useState("12");
@@ -9,7 +10,9 @@ export function DrywallCalculator() {
   const [doors, setDoors] = useState("1");
   const [windows, setWindows] = useState("1");
   const [includeCeiling, setIncludeCeiling] = useState(true);
-  const [pricePerSheet, setPricePerSheet] = useState("14");
+  const [pricePerSheet, setPricePerSheet] = useState(
+    String(getRetailDefault("drywall-half-4x8")),
+  );
 
   const l = parseFloat(length) || 0;
   const w = parseFloat(width) || 0;

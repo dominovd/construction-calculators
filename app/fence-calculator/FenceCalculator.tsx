@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { getRetailDefault } from "@/lib/retail-prices";
 
 const FENCE_TYPES = [
   { label: "Wood Privacy",  postSpacingFt: 8,  panelWidthFt: 8 },
@@ -14,8 +15,8 @@ export function FenceCalculator() {
   const [totalLength, setTotalLength] = useState("100");
   const [typeIdx, setTypeIdx] = useState(0);
   const [customSpacing, setCustomSpacing] = useState("");
-  const [pricePerPanel, setPricePerPanel] = useState("50");
-  const [pricePerPost, setPricePerPost] = useState("20");
+  const [pricePerPanel, setPricePerPanel] = useState(String(getRetailDefault("fence-panel-6ft")));
+  const [pricePerPost, setPricePerPost] = useState(String(getRetailDefault("fence-post-4x4-8ft")));
 
   const ft = FENCE_TYPES[typeIdx];
   const spacing = parseFloat(customSpacing) || ft.postSpacingFt;

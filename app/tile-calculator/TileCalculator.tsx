@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { getRetailDefault } from "@/lib/retail-prices";
 
 const TILE_SIZES = [
   { label: '12"×12"', w: 12, h: 12 },
@@ -17,7 +18,7 @@ export function TileCalculator() {
   const [tileIdx, setTileIdx] = useState(0);
   const [waste, setWaste]     = useState("10");
   const [tilesPerBox, setTilesPerBox] = useState("6");
-  const [pricePerBox, setPricePerBox] = useState("35");
+  const [pricePerBox, setPricePerBox] = useState(String(getRetailDefault("tile-12x12-box")));
 
   const l = parseFloat(length) || 0;
   const w = parseFloat(width) || 0;

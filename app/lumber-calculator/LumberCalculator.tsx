@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { getRetailDefault } from "@/lib/retail-prices";
 
 const COMMON_SIZES = [
   { label: "2×4",   thickIn: 1.5, widthIn: 3.5 },
@@ -19,7 +20,7 @@ export function LumberCalculator() {
   const [customWidth, setCustomWidth] = useState("3.5");
   const [lengthFt, setLengthFt] = useState("8");
   const [quantity, setQuantity] = useState("10");
-  const [pricePerBF, setPricePerBF] = useState("5");
+  const [pricePerBF, setPricePerBF] = useState(String(getRetailDefault("lumber-bf-spf")));
 
   const size = COMMON_SIZES[sizeIdx];
   const isCustom = sizeIdx === COMMON_SIZES.length - 1;

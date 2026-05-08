@@ -1,13 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { getRetailDefault } from "@/lib/retail-prices";
 
 const FLOORING_TYPES = [
-  { label: "Hardwood",     coveragePerBox: 20, pricePerSqFt: 5   },
-  { label: "Laminate",     coveragePerBox: 22, pricePerSqFt: 2.5 },
-  { label: "Vinyl Plank",  coveragePerBox: 24, pricePerSqFt: 3   },
-  { label: "Tile (12×12)", coveragePerBox: 16, pricePerSqFt: 2   },
-  { label: "Carpet",       coveragePerBox: 0,  pricePerSqFt: 3.5 },
+  { label: "Hardwood",     coveragePerBox: 20, pricePerSqFt: getRetailDefault("flooring-hardwood-sqft")     },
+  { label: "Laminate",     coveragePerBox: 22, pricePerSqFt: getRetailDefault("flooring-laminate-sqft")     },
+  { label: "Vinyl Plank",  coveragePerBox: 24, pricePerSqFt: getRetailDefault("flooring-vinyl-plank-sqft")  },
+  { label: "Tile (12×12)", coveragePerBox: 16, pricePerSqFt: getRetailDefault("flooring-tile-sqft")         },
+  { label: "Carpet",       coveragePerBox: 0,  pricePerSqFt: getRetailDefault("flooring-carpet-sqft")       },
 ];
 
 export function FlooringCalculator() {

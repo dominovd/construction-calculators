@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { getRetailDefault } from "@/lib/retail-prices";
 
 const GRAVEL_TYPES = [
   { label: "Crushed Stone",    density: 1.50 },
@@ -16,7 +17,7 @@ export function GravelCalculator() {
   const [width, setWidth] = useState("12");
   const [depth, setDepth] = useState("4");
   const [typeIdx, setTypeIdx] = useState(0);
-  const [pricePerTon, setPricePerTon] = useState("45");
+  const [pricePerTon, setPricePerTon] = useState(String(getRetailDefault("gravel-3-4-ton")));
 
   const l = parseFloat(length) || 0;
   const w = parseFloat(width) || 0;

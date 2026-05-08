@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { getRetailDefault } from "@/lib/retail-prices";
 
 export function PaintCalculator() {
   const [length, setLength] = useState("12");
@@ -10,7 +11,7 @@ export function PaintCalculator() {
   const [doors, setDoors] = useState("1");
   const [windows, setWindows] = useState("1");
   const [includeCeiling, setIncludeCeiling] = useState(false);
-  const [pricePerGallon, setPricePerGallon] = useState("40");
+  const [pricePerGallon, setPricePerGallon] = useState(String(getRetailDefault("paint-gallon-interior")));
 
   const l = parseFloat(length) || 0;
   const w = parseFloat(width) || 0;

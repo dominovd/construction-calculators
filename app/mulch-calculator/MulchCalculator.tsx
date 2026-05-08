@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { getRetailDefault } from "@/lib/retail-prices";
 
 const MATERIALS = [
   { label: "Mulch",       density: 0.25 },
@@ -15,7 +16,7 @@ export function MulchCalculator() {
   const [width, setWidth] = useState("5");
   const [depth, setDepth] = useState("3");
   const [matIdx, setMatIdx] = useState(0);
-  const [pricePerYard, setPricePerYard] = useState("45");
+  const [pricePerYard, setPricePerYard] = useState(String(getRetailDefault("mulch-bulk-yd3")));
   const [bagCuFt, setBagCuFt] = useState("2");
 
   const l = parseFloat(length) || 0;

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { RebarCalculator } from "./RebarCalculator";
+import { PriceUpdatedBadge, PriceDisclaimer } from "@/components/PriceUpdatedBadge";
 
 export const metadata: Metadata = {
   title: "Free Rebar Calculator — Quantity, Spacing & Weight for Concrete Slabs",
@@ -57,7 +58,11 @@ export default function RebarPage() {
         Calculate rebar quantity, linear footage, and weight for concrete slabs and footings.
       </p>
 
+      <div className="mb-2">
+        <PriceUpdatedBadge />
+      </div>
       <RebarCalculator />
+      <PriceDisclaimer className="mt-3" />
 
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-lg font-semibold text-gray-900">How to Calculate Rebar</h2>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GravelCalculator } from "./GravelCalculator";
+import { PriceUpdatedBadge, PriceDisclaimer } from "@/components/PriceUpdatedBadge";
 
 export const metadata: Metadata = {
   title: "Free Gravel Calculator — Cubic Yards & Tons for Driveways & Paths",
@@ -64,7 +65,11 @@ export default function GravelPage() {
         Calculate cubic yards and tons of gravel, crushed stone, or rock for driveways, paths, and landscaping.
       </p>
 
+      <div className="mb-2">
+        <PriceUpdatedBadge />
+      </div>
       <GravelCalculator />
+      <PriceDisclaimer className="mt-3" />
 
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-xl font-semibold text-gray-900">Gravel Depth by Project</h2>

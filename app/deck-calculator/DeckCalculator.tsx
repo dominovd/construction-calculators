@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { getRetailDefault } from "@/lib/retail-prices";
 
 const BOARD_SIZES = [
   { label: "5/4×6 (5.5\")", widthIn: 5.5 },
@@ -15,7 +16,7 @@ export function DeckCalculator() {
   const [boardIdx, setBoardIdx] = useState(0);
   const [gap, setGap] = useState("0.25");
   const [waste, setWaste] = useState("10");
-  const [pricePerLf, setPricePerLf] = useState("1.50");
+  const [pricePerLf, setPricePerLf] = useState(String(getRetailDefault("deck-board-pt-1x6-lf")));
 
   const l = parseFloat(deckLength) || 0;
   const w = parseFloat(deckWidth) || 0;

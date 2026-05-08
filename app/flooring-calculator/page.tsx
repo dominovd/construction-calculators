@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { FlooringCalculator } from "./FlooringCalculator";
+import { PriceUpdatedBadge, PriceDisclaimer } from "@/components/PriceUpdatedBadge";
 
 export const metadata: Metadata = {
   title: "Free Flooring Calculator — Square Feet, Boxes & Cost",
@@ -57,7 +58,11 @@ export default function FlooringPage() {
         Calculate flooring for any room — hardwood, laminate, vinyl plank, tile, or carpet.
       </p>
 
+      <div className="mb-2">
+        <PriceUpdatedBadge />
+      </div>
       <FlooringCalculator />
+      <PriceDisclaimer className="mt-3" />
 
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-lg font-semibold text-gray-900">How to Calculate Flooring</h2>

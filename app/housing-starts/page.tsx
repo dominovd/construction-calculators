@@ -7,9 +7,9 @@ function codeToSlug(code: string): string {
 }
 
 export const metadata: Metadata = {
-  title: "Global Housing Starts by Country — 2024 Construction Data",
+  title: "Global Housing Starts by Country — Annual OECD Data",
   description:
-    "Compare housing starts across 20+ countries: US, Japan, Germany, UK, France, Canada, Australia and more. Annual data from the OECD, updated yearly.",
+    "Compare annual housing starts across 20+ countries: US, Japan, Germany, UK, France, Canada, Australia and more. Sourced from the OECD Housing dataset.",
   alternates: { canonical: "https://easybuildcalc.com/housing-starts" },
   openGraph: {
     title: "Global Housing Starts by Country",

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { getRetailDefault } from "@/lib/retail-prices";
 
 const BLOCK_TYPES = [
   { label: "Standard CMU (8\"×8\"×16\")",   w: 16, h: 8,  area: 0.889 }, // 128 sq in = 0.889 sq ft
@@ -18,8 +19,8 @@ export function BlockCalculator() {
   const [height, setHeight]     = useState("8");
   const [blockIdx, setBlockIdx] = useState(0);
   const [waste, setWaste]       = useState("5");
-  const [priceBlock, setPriceBlock] = useState("2.25");
-  const [priceMortar, setPriceMortar] = useState("12");
+  const [priceBlock, setPriceBlock] = useState(String(getRetailDefault("cmu-block-8x8x16")));
+  const [priceMortar, setPriceMortar] = useState(String(getRetailDefault("mortar-bag-70lb")));
 
   const l     = parseFloat(length)     || 0;
   const h     = parseFloat(height)     || 0;

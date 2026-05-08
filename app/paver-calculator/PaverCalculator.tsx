@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { getRetailDefault } from "@/lib/retail-prices";
 
 const PAVER_SIZES = [
   { label: '4"×8"',   w: 4,  h: 8  },
@@ -16,7 +17,7 @@ export function PaverCalculator() {
   const [width, setWidth]         = useState("15");
   const [paverIdx, setPaverIdx]   = useState(0);
   const [waste, setWaste]         = useState("10");
-  const [priceEach, setPriceEach] = useState("0.85");
+  const [priceEach, setPriceEach] = useState(String(getRetailDefault("paver-4x8-each")));
 
   const l    = parseFloat(length) || 0;
   const w    = parseFloat(width) || 0;

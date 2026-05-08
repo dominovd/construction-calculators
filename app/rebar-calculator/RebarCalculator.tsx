@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { getRetailDefault } from "@/lib/retail-prices";
 
 const REBAR_SIZES = [
   { label: "#3 (⅜\")", weightPerFt: 0.376 },
@@ -14,7 +15,7 @@ export function RebarCalculator() {
   const [width, setWidth] = useState("20");
   const [spacing, setSpacing] = useState("12");
   const [rebarIdx, setRebarIdx] = useState(1);
-  const [pricePerFt, setPricePerFt] = useState("0.65");
+  const [pricePerFt, setPricePerFt] = useState(String(getRetailDefault("rebar-no4-lf")));
 
   const l = parseFloat(length) || 0;
   const w = parseFloat(width) || 0;

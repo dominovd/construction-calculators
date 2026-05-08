@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { getRetailDefault } from "@/lib/retail-prices";
 
 const INSULATION_TYPES = [
   {
@@ -30,7 +31,7 @@ export function InsulationCalculator() {
   const [battOptIdx, setBattOptIdx] = useState(1); // R-13 default
   const [blownOptIdx, setBlownOptIdx] = useState(1); // R-30 default
   const [waste, setWaste] = useState("10");
-  const [pricePerBag, setPricePerBag] = useState("55");
+  const [pricePerBag, setPricePerBag] = useState(String(getRetailDefault("insulation-blown-bag")));
 
   const sqFt = parseFloat(area) || 0;
   const wasteP = parseFloat(waste) || 0;

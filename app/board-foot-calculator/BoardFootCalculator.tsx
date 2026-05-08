@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { getRetailDefault } from "@/lib/retail-prices";
 
 interface Board {
   id: number;
@@ -18,7 +19,7 @@ export function BoardFootCalculator() {
   const [boards, setBoards] = useState<Board[]>([
     { id: 1, thickness: "1", width: "6", length: "8", quantity: "1" },
   ]);
-  const [pricePerBF, setPricePerBF] = useState("5.00");
+  const [pricePerBF, setPricePerBF] = useState(String(getRetailDefault("lumber-bf-spf")));
 
   const updateBoard = (id: number, field: keyof Board, value: string) =>
     setBoards((prev) => prev.map((b) => (b.id === id ? { ...b, [field]: value } : b)));

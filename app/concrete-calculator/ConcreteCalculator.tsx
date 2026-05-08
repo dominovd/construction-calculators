@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { getRetailDefault } from "@/lib/retail-prices";
 
 export function ConcreteCalculator() {
   const [length, setLength] = useState("10");
   const [width, setWidth] = useState("10");
   const [depth, setDepth] = useState("4");
-  const [pricePerYard, setPricePerYard] = useState("150");
+  const [pricePerYard, setPricePerYard] = useState(String(getRetailDefault("concrete-readymix")));
 
   const l = parseFloat(length) || 0;
   const w = parseFloat(width) || 0;

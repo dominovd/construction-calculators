@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { TileCalculator } from "./TileCalculator";
+import { PriceUpdatedBadge, PriceDisclaimer } from "@/components/PriceUpdatedBadge";
 
 export const metadata: Metadata = {
   title: "Free Tile Calculator — How Many Tiles Do I Need?",
@@ -65,7 +66,11 @@ export default function TilePage() {
         Calculate exactly how many tiles and boxes you need for any floor or wall. Enter your room size, pick your tile format, and get an instant count with waste included.
       </p>
 
+      <div className="mb-2">
+        <PriceUpdatedBadge />
+      </div>
       <TileCalculator />
+      <PriceDisclaimer className="mt-3" />
 
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-xl font-semibold text-gray-900">How Much Tile Do I Need?</h2>
