@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CarpetCalculator } from "./CarpetCalculator";
+import { RelatedCalculators } from "@/components/RelatedCalculators";
 
 export const metadata: Metadata = {
   title: "Free Carpet Calculator — Square Yards & Cost for Any Room",
@@ -59,6 +60,7 @@ export default function CarpetPage() {
       <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Free Carpet Calculator</h1>
       <p className="text-gray-600 mb-6">Calculate square yards of carpet needed for any room, with waste included. Estimates total cost for carpet and pad.</p>
       <CarpetCalculator />
+      <RelatedCalculators currentSlug="carpet-calculator" />
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-xl font-semibold text-gray-900">Carpet Cost Breakdown</h2>
         <div className="overflow-x-auto">

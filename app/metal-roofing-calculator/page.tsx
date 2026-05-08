@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { MetalRoofingCalculator } from "./MetalRoofingCalculator";
+import { RelatedCalculators } from "@/components/RelatedCalculators";
 
 export const metadata: Metadata = {
   title: "Free Metal Roofing Calculator — Squares, Panels & Cost",
@@ -59,6 +60,7 @@ export default function MetalRoofingPage() {
       <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Free Metal Roofing Calculator</h1>
       <p className="text-gray-600 mb-6">Calculate metal roofing panels, squares, and material cost for any pitch and footprint. Supports standing seam, R-panel, and corrugated profiles.</p>
       <MetalRoofingCalculator />
+      <RelatedCalculators currentSlug="metal-roofing-calculator" />
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-xl font-semibold text-gray-900">Metal Roofing Panel Comparison</h2>
         <div className="overflow-x-auto">

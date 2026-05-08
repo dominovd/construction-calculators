@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SodCalculator } from "./SodCalculator";
+import { RelatedCalculators } from "@/components/RelatedCalculators";
 
 export const metadata: Metadata = {
   title: "Free Sod Calculator — How Many Rolls or Pallets of Sod Do I Need?",
@@ -66,6 +67,7 @@ export default function SodPage() {
       </p>
 
       <SodCalculator />
+      <RelatedCalculators currentSlug="sod-calculator" />
 
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-xl font-semibold text-gray-900">Choosing the Right Grass Type</h2>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { WindowRoughOpeningCalculator } from "./WindowRoughOpeningCalculator";
+import { RelatedCalculators } from "@/components/RelatedCalculators";
 
 export const metadata: Metadata = {
   title: "Free Window Rough Opening Calculator — Size & Header Chart",
@@ -98,6 +99,7 @@ export default function WindowRoughOpeningPage() {
       </p>
 
       <WindowRoughOpeningCalculator />
+      <RelatedCalculators currentSlug="window-rough-opening-calculator" />
 
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-xl font-semibold text-gray-900">Standard Rough Opening Formulas</h2>

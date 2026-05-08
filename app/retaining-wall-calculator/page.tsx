@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { RetainingWallCalculator } from "./RetainingWallCalculator";
+import { RelatedCalculators } from "@/components/RelatedCalculators";
 
 export const metadata: Metadata = {
   title: "Free Retaining Wall Calculator — Blocks, Cost & Materials",
@@ -59,6 +60,7 @@ export default function RetainingWallPage() {
       <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Free Retaining Wall Calculator</h1>
       <p className="text-gray-600 mb-6">Calculate blocks, rows, base gravel, and drainage materials for any retaining wall. Works with standard, large, and Allan Block styles.</p>
       <RetainingWallCalculator />
+      <RelatedCalculators currentSlug="retaining-wall-calculator" />
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-xl font-semibold text-gray-900">Retaining Wall Design Guidelines</h2>
         <div className="overflow-x-auto">

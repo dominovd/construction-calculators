@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { HvacDuctCalculator } from "./HvacDuctCalculator";
+import { RelatedCalculators } from "@/components/RelatedCalculators";
 
 export const metadata: Metadata = {
   title: "Free HVAC Duct Size Calculator — CFM & Diameter by Room",
@@ -129,6 +130,7 @@ export default function HvacDuctPage() {
       </p>
 
       <HvacDuctCalculator />
+      <RelatedCalculators currentSlug="hvac-duct-calculator" />
 
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <section>

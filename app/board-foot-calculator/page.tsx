@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { BoardFootCalculator } from "./BoardFootCalculator";
 import { PriceUpdatedBadge, PriceDisclaimer } from "@/components/PriceUpdatedBadge";
+import { RelatedCalculators } from "@/components/RelatedCalculators";
 
 export const metadata: Metadata = {
   title: "Free Board Foot Calculator — Lumber Volume Tool",
@@ -89,6 +90,7 @@ export default function BoardFootPage() {
       </div>
       <BoardFootCalculator />
       <PriceDisclaimer className="mt-3" />
+      <RelatedCalculators currentSlug="board-foot-calculator" />
 
         {/* SEO content */}
         <article className="mt-10 space-y-6 text-sm text-gray-700 leading-relaxed">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ConcreteCurbCalculator } from "./ConcreteCurbCalculator";
+import { RelatedCalculators } from "@/components/RelatedCalculators";
 
 export const metadata: Metadata = {
   title: "Free Concrete Curb Calculator — Cubic Yards & Cost",
@@ -59,6 +60,7 @@ export default function ConcreteCurbPage() {
       <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Free Concrete Curb Calculator</h1>
       <p className="text-gray-600 mb-6">Calculate concrete volume and cost for curbs and gutters. Choose from standard, curb-and-gutter, barrier, or mountable curb profiles.</p>
       <ConcreteCurbCalculator />
+      <RelatedCalculators currentSlug="concrete-curb-calculator" />
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-xl font-semibold text-gray-900">Curb Profile Reference</h2>
         <div className="overflow-x-auto">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { BlockCalculator } from "./BlockCalculator";
 import { PriceUpdatedBadge, PriceDisclaimer } from "@/components/PriceUpdatedBadge";
+import { RelatedCalculators } from "@/components/RelatedCalculators";
 
 export const metadata: Metadata = {
   title: "Free Block Calculator — CMU Blocks, Bricks & Mortar",
@@ -64,6 +65,7 @@ export default function BlockPage() {
       </div>
       <BlockCalculator />
       <PriceDisclaimer className="mt-3" />
+      <RelatedCalculators currentSlug="block-calculator" />
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-xl font-semibold text-gray-900">CMU Block Coverage Reference</h2>
         <div className="overflow-x-auto">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { StairCalculator } from "./StairCalculator";
+import { RelatedCalculators } from "@/components/RelatedCalculators";
 
 export const metadata: Metadata = {
   title: "Free Stair Calculator — Steps, Rise & Run for Any Staircase",
@@ -67,6 +68,7 @@ export default function StairPage() {
       </p>
 
       <StairCalculator />
+      <RelatedCalculators currentSlug="stair-calculator" />
 
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-xl font-semibold text-gray-900">IRC Stair Building Code Requirements</h2>

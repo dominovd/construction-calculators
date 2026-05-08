@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { StudCalculator } from "./StudCalculator";
+import { RelatedCalculators } from "@/components/RelatedCalculators";
 
 export const metadata: Metadata = {
   title: "Free Stud Calculator — Wall Framing Stud Count",
@@ -72,6 +73,7 @@ export default function StudPage() {
         </p>
 
         <StudCalculator />
+      <RelatedCalculators currentSlug="stud-calculator" />
 
         <article className="mt-10 space-y-6 text-sm text-gray-700 leading-relaxed">
           <h2 className="text-xl font-semibold text-gray-900">How Many Studs Do I Need?</h2>

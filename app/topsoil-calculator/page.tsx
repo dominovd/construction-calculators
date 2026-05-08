@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { TopsoilCalculator } from "./TopsoilCalculator";
+import { RelatedCalculators } from "@/components/RelatedCalculators";
 
 export const metadata: Metadata = {
   title: "Free Topsoil Calculator — Cubic Yards & Bags for Gardens and Lawns",
@@ -59,6 +60,7 @@ export default function TopsoilPage() {
       <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Free Topsoil Calculator</h1>
       <p className="text-gray-600 mb-6">Calculate cubic yards and bags of topsoil for lawns, garden beds, and landscaping. Compare bulk delivery vs. bagged topsoil instantly.</p>
       <TopsoilCalculator />
+      <RelatedCalculators currentSlug="topsoil-calculator" />
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-xl font-semibold text-gray-900">Recommended Topsoil Depth by Project</h2>
         <div className="overflow-x-auto">

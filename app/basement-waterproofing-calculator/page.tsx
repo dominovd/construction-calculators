@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { BasementWaterproofingCalculator } from "./BasementWaterproofingCalculator";
+import { RelatedCalculators } from "@/components/RelatedCalculators";
 
 export const metadata: Metadata = {
   title: "Free Basement Waterproofing Cost Calculator — Estimate by Method",
@@ -131,6 +132,7 @@ export default function BasementWaterproofingPage() {
       </p>
 
       <BasementWaterproofingCalculator />
+      <RelatedCalculators currentSlug="basement-waterproofing-calculator" />
 
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <section>

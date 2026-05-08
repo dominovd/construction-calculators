@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { BrickCalculator } from "./BrickCalculator";
+import { RelatedCalculators } from "@/components/RelatedCalculators";
 
 export const metadata: Metadata = {
   title: "Free Brick Calculator — Bricks & Mortar for Any Wall or Patio",
@@ -58,6 +59,7 @@ export default function BrickPage() {
       </p>
 
       <BrickCalculator />
+      <RelatedCalculators currentSlug="brick-calculator" />
 
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-lg font-semibold text-gray-900">How Many Bricks Per Square Foot?</h2>

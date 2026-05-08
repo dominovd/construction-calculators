@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SepticTankCalculator } from "./SepticTankCalculator";
+import { RelatedCalculators } from "@/components/RelatedCalculators";
 
 export const metadata: Metadata = {
   title: "Free Septic Tank Size Calculator — Tank & Drain Field Sizing",
@@ -129,6 +130,7 @@ export default function SepticTankPage() {
       </p>
 
       <SepticTankCalculator />
+      <RelatedCalculators currentSlug="septic-tank-calculator" />
 
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <section>

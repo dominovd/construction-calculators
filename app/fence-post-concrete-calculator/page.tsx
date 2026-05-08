@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { FencePostConcreteCalculator } from "./FencePostConcreteCalculator";
 import { PriceUpdatedBadge, PriceDisclaimer } from "@/components/PriceUpdatedBadge";
+import { RelatedCalculators } from "@/components/RelatedCalculators";
 
 export const metadata: Metadata = {
   title: "Free Fence Post Concrete Calculator — Bags per Post Estimator",
@@ -101,6 +102,7 @@ export default function FencePostConcretePage() {
       </div>
       <FencePostConcreteCalculator />
       <PriceDisclaimer className="mt-3" />
+      <RelatedCalculators currentSlug="fence-post-concrete-calculator" />
 
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-xl font-semibold text-gray-900">Post Hole Concrete Formula</h2>

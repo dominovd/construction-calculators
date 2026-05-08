@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DrywallCalculator } from "./DrywallCalculator";
 import { PriceUpdatedBadge, PriceDisclaimer } from "@/components/PriceUpdatedBadge";
+import { RelatedCalculators } from "@/components/RelatedCalculators";
 
 export const metadata: Metadata = {
   title: "Free Drywall Calculator — Sheets & Cost for Any Room",
@@ -70,6 +71,7 @@ export default function DrywallPage() {
       </div>
       <DrywallCalculator />
       <PriceDisclaimer className="mt-3" />
+      <RelatedCalculators currentSlug="drywall-calculator" />
 
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-xl font-semibold text-gray-900">How to Calculate Drywall</h2>

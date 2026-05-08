@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { RoofPitchCalculator } from "./RoofPitchCalculator";
+import { RelatedCalculators } from "@/components/RelatedCalculators";
 
 export const metadata: Metadata = {
   title: "Free Roof Pitch Calculator — Angle, Rafter Length & Ridge Height",
@@ -61,6 +62,7 @@ export default function RoofPitchPage() {
       </p>
 
       <RoofPitchCalculator />
+      <RelatedCalculators currentSlug="roof-pitch-calculator" />
 
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-lg font-semibold text-gray-900">What is Roof Pitch?</h2>

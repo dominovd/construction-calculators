@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { InsulationCalculator } from "./InsulationCalculator";
 import { PriceUpdatedBadge, PriceDisclaimer } from "@/components/PriceUpdatedBadge";
+import { RelatedCalculators } from "@/components/RelatedCalculators";
 
 export const metadata: Metadata = {
   title: "Free Insulation Calculator — Batts, Rolls & Blown-in by R-Value",
@@ -70,6 +71,7 @@ export default function InsulationPage() {
       </div>
       <InsulationCalculator />
       <PriceDisclaimer className="mt-3" />
+      <RelatedCalculators currentSlug="insulation-calculator" />
 
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-xl font-semibold text-gray-900">Recommended R-Values by Climate Zone</h2>

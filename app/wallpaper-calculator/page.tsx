@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { WallpaperCalculator } from "./WallpaperCalculator";
+import { RelatedCalculators } from "@/components/RelatedCalculators";
 
 export const metadata: Metadata = {
   title: "Free Wallpaper Calculator — Rolls Needed for Any Room",
@@ -59,6 +60,7 @@ export default function WallpaperPage() {
       <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Free Wallpaper Calculator</h1>
       <p className="text-gray-600 mb-6">Calculate how many wallpaper rolls you need for any room. Deducts doors and windows, adjusts for waste, and supports US and Euro roll sizes.</p>
       <WallpaperCalculator />
+      <RelatedCalculators currentSlug="wallpaper-calculator" />
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-xl font-semibold text-gray-900">Wallpaper Roll Sizes & Coverage</h2>
         <div className="overflow-x-auto">

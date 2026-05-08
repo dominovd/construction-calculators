@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CubicYardCalculator } from "./CubicYardCalculator";
+import { RelatedCalculators } from "@/components/RelatedCalculators";
 
 export const metadata: Metadata = {
   title: "Free Cubic Yard Calculator — Convert Any Shape to Cubic Yards",
@@ -60,6 +61,7 @@ export default function CubicYardPage() {
       <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Free Cubic Yard Calculator</h1>
       <p className="text-gray-600 mb-6">Convert any area and depth to cubic yards and tons. Supports rectangles, circles, and triangles. Works for concrete, topsoil, gravel, mulch, fill dirt, and more.</p>
       <CubicYardCalculator />
+      <RelatedCalculators currentSlug="cubic-yard-calculator" />
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-xl font-semibold text-gray-900">Material Densities — Cubic Yards to Tons</h2>
         <div className="overflow-x-auto">

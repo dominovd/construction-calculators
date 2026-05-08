@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { WindowCalculator } from "./WindowCalculator";
+import { RelatedCalculators } from "@/components/RelatedCalculators";
 
 export const metadata: Metadata = {
   title: "Free Window Calculator — Count, Size & Replacement Cost",
@@ -58,6 +59,7 @@ export default function WindowPage() {
       <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Free Window Calculator</h1>
       <p className="text-gray-600 mb-6">Estimate window material and installation cost for any mix of window types and sizes. Add multiple windows with different dimensions and styles.</p>
       <WindowCalculator />
+      <RelatedCalculators currentSlug="window-calculator" />
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-xl font-semibold text-gray-900">Window Type Cost Comparison</h2>
         <div className="overflow-x-auto">

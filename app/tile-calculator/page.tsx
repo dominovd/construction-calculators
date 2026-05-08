@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { TileCalculator } from "./TileCalculator";
 import { PriceUpdatedBadge, PriceDisclaimer } from "@/components/PriceUpdatedBadge";
+import { RelatedCalculators } from "@/components/RelatedCalculators";
 
 export const metadata: Metadata = {
   title: "Free Tile Calculator — How Many Tiles Do I Need?",
@@ -71,6 +72,7 @@ export default function TilePage() {
       </div>
       <TileCalculator />
       <PriceDisclaimer className="mt-3" />
+      <RelatedCalculators currentSlug="tile-calculator" />
 
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-xl font-semibold text-gray-900">How Much Tile Do I Need?</h2>

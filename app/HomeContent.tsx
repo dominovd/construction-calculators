@@ -45,6 +45,9 @@ const CALCS = [
   { slug: "basement-waterproofing-calculator", name: "Basement Waterproofing Estimator", desc: "Estimate basement waterproofing cost by method: interior drain, exterior, crack injection.", icon: "🏚️" },
   { slug: "hvac-duct-calculator",            name: "HVAC Duct Size Calculator",           desc: "Calculate required CFM and round duct diameter for any room size and ceiling height.",        icon: "🌀" },
   { slug: "septic-tank-calculator",          name: "Septic Tank Size Calculator",         desc: "Calculate minimum septic tank size and drain field area by bedrooms and soil type.",          icon: "🌿" },
+
+  // Cost calculators
+  { slug: "concrete-patio-cost-calculator",  name: "Concrete Patio Cost Calculator",      desc: "Total installed cost: ready-mix, rebar, gravel base + labor. By size, finish, and region.",   icon: "💵" },
 ];
 
 const MARKET_PAGES = [

@@ -46,6 +46,14 @@ const calculators = [
   { slug: "basement-waterproofing-calculator", priority: 0.8, changeFreq: "monthly" as const },
   { slug: "hvac-duct-calculator",            priority: 0.8, changeFreq: "monthly" as const },
   { slug: "septic-tank-calculator",          priority: 0.8, changeFreq: "monthly" as const },
+
+  // Cost calculators (Phase 2 — head-money queries)
+  { slug: "concrete-patio-cost-calculator",  priority: 0.9, changeFreq: "monthly" as const },
+];
+
+// Project bundles (Phase 3 — head-build queries)
+const projectBundles = [
+  { slug: "build-a-deck", priority: 0.9, changeFreq: "monthly" as const },
 ];
 
 const countryPages = Object.keys(COUNTRY_META).map((code) => ({
@@ -166,6 +174,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/privacy`,                lastModified: now, changeFrequency: "yearly",  priority: 0.3 },
     ...calculators.map(({ slug, priority, changeFreq }) => ({
       url: `${BASE}/${slug}`,
+      lastModified: now,
+      changeFrequency: changeFreq,
+      priority,
+    })),
+    { url: `${BASE}/projects`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.8 },
+    ...projectBundles.map(({ slug, priority, changeFreq }) => ({
+      url: `${BASE}/projects/${slug}`,
       lastModified: now,
       changeFrequency: changeFreq,
       priority,

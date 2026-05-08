@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ConcreteCalculator } from "./ConcreteCalculator";
 import { PriceUpdatedBadge, PriceDisclaimer } from "@/components/PriceUpdatedBadge";
+import { RelatedCalculators } from "@/components/RelatedCalculators";
 
 export const metadata: Metadata = {
   title: "Free Concrete Calculator — Cubic Yards, Bags & Cost",
@@ -70,6 +71,7 @@ export default function ConcretePage() {
       </div>
       <ConcreteCalculator />
       <PriceDisclaimer className="mt-3" />
+      <RelatedCalculators currentSlug="concrete-calculator" />
 
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-xl font-semibold text-gray-900">Concrete Formula</h2>

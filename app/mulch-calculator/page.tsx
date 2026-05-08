@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { MulchCalculator } from "./MulchCalculator";
 import { PriceUpdatedBadge, PriceDisclaimer } from "@/components/PriceUpdatedBadge";
+import { RelatedCalculators } from "@/components/RelatedCalculators";
 
 export const metadata: Metadata = {
   title: "Free Mulch Calculator — Cubic Yards & Bags for Garden Beds",
@@ -70,6 +71,7 @@ export default function MulchPage() {
       </div>
       <MulchCalculator />
       <PriceDisclaimer className="mt-3" />
+      <RelatedCalculators currentSlug="mulch-calculator" />
 
       <article className="mt-10 space-y-5 text-sm text-gray-700 leading-relaxed">
         <h2 className="text-xl font-semibold text-gray-900">How Much Mulch Do I Need?</h2>
