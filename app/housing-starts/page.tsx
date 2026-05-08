@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { fetchHousingStarts, formatStarts, formatPct, COUNTRY_META, type CountryStarts } from "@/lib/oecd";
 import { computeChartPaths } from "@/lib/fred";
+import { UsHousingMonthlyPlate } from "@/components/UsHousingMonthlyPlate";
 
 function codeToSlug(code: string): string {
   return COUNTRY_META[code].name.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
@@ -216,9 +217,11 @@ export default async function HousingStartsPage() {
           across major economies.
         </p>
         {latestYear && (
-          <p className="text-xs text-gray-400 mt-2">Latest data: {latestYear}</p>
+          <p className="text-xs text-gray-400 mt-2">Latest annual data: {latestYear} (OECD lag)</p>
         )}
       </div>
+
+      <UsHousingMonthlyPlate />
 
       {!hasData ? (
         <div className="bg-gray-50 border border-gray-200 rounded-xl p-8 text-center text-gray-500 text-sm">

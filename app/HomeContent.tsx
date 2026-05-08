@@ -48,6 +48,7 @@ const CALCS = [
 
   // Cost calculators
   { slug: "concrete-patio-cost-calculator",  name: "Concrete Patio Cost Calculator",      desc: "Total installed cost: ready-mix, rebar, gravel base + labor. By size, finish, and region.",   icon: "💵" },
+  { slug: "deck-cost-calculator",            name: "Deck Cost Calculator",                desc: "Total deck build cost — PT, cedar, composite, hardwood. Materials + labor by size + region.",  icon: "💵" },
 ];
 
 const MARKET_PAGES = [

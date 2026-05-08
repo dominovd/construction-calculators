@@ -163,22 +163,22 @@ export const RETAIL_PRICES = {
     notes: "Range $0.63 (budget) to $4.49 (berber). $2.19–$3.04 typical.",
   },
   "tile-12x12-box": {
-    label: "TrafficMaster Baja Beige 12×12 ceramic (15 ft²/case)",
-    price: 8.84,
+    label: "Mid-tier ceramic tile, 12×12 (15 ft²/case)",
+    price: 22,
     unit: "box",
     source: "Home Depot",
-    sourceUrl: "https://www.homedepot.com/p/TrafficMaster-Baja-Beige-12-in-x-12-in-Matte-Ceramic-Floor-and-Wall-Tile-15-sq-ft-Case-NHDBAJBEI1212C/325046640",
+    sourceUrl: "https://www.homedepot.com/b/Flooring-Tile/Ceramic-Tile/N-5yc1vZb1g0Z1z18gid",
     pricedAt: "2026-05-08",
-    notes: "Builder-grade; Daltile Glacier White $10.89/case; designer tiles $30+.",
+    notes: "Mid-tier blend: builder $8.84, designer $30–50. $22/case = ~$1.50/ft² — defensible default.",
   },
   "flooring-tile-sqft": {
-    label: "Builder-grade ceramic tile (per ft²)",
-    price: 0.59,
+    label: "Mid-tier floor tile (per ft²)",
+    price: 1.5,
     unit: "ft²",
     source: "Home Depot",
-    sourceUrl: "https://www.homedepot.com/p/TrafficMaster-Baja-Beige-12-in-x-12-in-Matte-Ceramic-Floor-and-Wall-Tile-15-sq-ft-Case-NHDBAJBEI1212C/325046640",
+    sourceUrl: "https://www.homedepot.com/b/Flooring-Tile/Ceramic-Tile/N-5yc1vZb1g0Z1z18gid",
     pricedAt: "2026-05-08",
-    notes: "Per-sqft anchor for flooring calculator (= tile-12x12-box / 15).",
+    notes: "Per-sqft anchor for flooring calculator. Builder $0.59, designer $3+.",
   },
   "paver-4x8-each": {
     label: 'Pavestone 8"×4"×60mm Red Holland Paver',
@@ -243,13 +243,13 @@ export const RETAIL_PRICES = {
 
   // ── Lumber ─────────────────────────────────────────────────────────────
   "lumber-bf-spf": {
-    label: "SPF dimensional lumber (per board-foot)",
-    price: 0.8,
+    label: "Mixed lumber (per board-foot, mid-tier)",
+    price: 1.5,
     unit: "board-foot",
     source: "Home Depot",
-    sourceUrl: "https://www.homedepot.com/p/2-in-x-4-in-x-8-ft-2-Standard-Grade-SPF-Dimensional-Lumber-232385/321711458",
+    sourceUrl: "https://www.homedepot.com/b/Lumber-Composites-Dimensional-Lumber/N-5yc1vZc5dx",
     pricedAt: "2026-05-08",
-    notes: "Derived: 2×4×8 ≈ $4.28 ÷ 5.33 BF ≈ $0.80/BF. Hardwood/specialty lumber runs $3–6/BF.",
+    notes: "Mid-tier blend: SPF 2×4 ≈ $0.80/BF, larger PT ≈ $2–3/BF, premium hardwood $5–10/BF. $1.50 is a defensible default for a generic 'lumber' calculator — users adjust via input.",
   },
   "deck-board-pt-1x6-lf": {
     label: "WeatherShield 5/4×6×8 PT decking",

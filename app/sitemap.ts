@@ -49,11 +49,13 @@ const calculators = [
 
   // Cost calculators (Phase 2 — head-money queries)
   { slug: "concrete-patio-cost-calculator",  priority: 0.9, changeFreq: "monthly" as const },
+  { slug: "deck-cost-calculator",            priority: 0.9, changeFreq: "monthly" as const },
 ];
 
 // Project bundles (Phase 3 — head-build queries)
 const projectBundles = [
-  { slug: "build-a-deck", priority: 0.9, changeFreq: "monthly" as const },
+  { slug: "build-a-deck",     priority: 0.9, changeFreq: "monthly" as const },
+  { slug: "install-a-fence",  priority: 0.9, changeFreq: "monthly" as const },
 ];
 
 const countryPages = Object.keys(COUNTRY_META).map((code) => ({

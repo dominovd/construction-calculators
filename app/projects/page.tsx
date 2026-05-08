@@ -19,7 +19,13 @@ const PROJECTS = [
   // Stubs for upcoming bundles — keep them visible so internal links resolve later.
   { slug: "finish-a-basement",    title: "Finish a Basement",     description: "Coming soon — drywall, insulation, flooring, paint, waterproofing.",        emoji: "🏠", status: "soon" as const },
   { slug: "build-a-garage",       title: "Build a Garage",        description: "Coming soon — slab, framing, roofing, drywall, insulation, paint.",          emoji: "🚗", status: "soon" as const },
-  { slug: "install-a-fence",      title: "Install a Fence",       description: "Coming soon — panels, posts, post concrete, stain.",                          emoji: "🪵", status: "soon" as const },
+  {
+    slug: "install-a-fence",
+    title: "Install a Wood Fence",
+    description: "100-ft 6-ft PT privacy fence: panels, posts, concrete, stain — full plan + cost.",
+    emoji: "🪵",
+    status: "live" as const,
+  },
   { slug: "paint-a-room",         title: "Paint a Room",          description: "Coming soon — paint coverage, primer, supplies, drywall patching.",           emoji: "🎨", status: "soon" as const },
 ];
 
