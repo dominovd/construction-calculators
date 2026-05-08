@@ -107,6 +107,17 @@ const breadcrumbLd = {
   ],
 };
 
+const softwareLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Septic Tank Calculator",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  url: "https://easybuildcalc.com/septic-tank-calculator",
+};
+
+
 export default function SepticTankPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
@@ -122,6 +133,7 @@ export default function SepticTankPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareLd) }} />
 
       <h1 className="text-2xl font-bold text-gray-900 mb-1">Free Septic Tank Size Calculator</h1>
       <p className="text-gray-500 text-sm mb-6">

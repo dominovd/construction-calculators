@@ -181,6 +181,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority,
     })),
     { url: `${BASE}/projects`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${BASE}/reports`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.7 },
+    { url: `${BASE}/reports/state-of-us-construction-materials-2026`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.9 },
     ...projectBundles.map(({ slug, priority, changeFreq }) => ({
       url: `${BASE}/projects/${slug}`,
       lastModified: now,

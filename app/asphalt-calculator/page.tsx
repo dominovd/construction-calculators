@@ -48,6 +48,17 @@ const breadcrumbLd = {
   ],
 };
 
+const softwareLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Asphalt Calculator",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  url: "https://easybuildcalc.com/asphalt-calculator",
+};
+
+
 export default function AsphaltPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
@@ -57,6 +68,7 @@ export default function AsphaltPage() {
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareLd) }} />
       <h1 className="text-2xl font-bold text-gray-900 mb-1">Free Asphalt Calculator</h1>
       <p className="text-gray-500 text-sm mb-6">
         Calculate asphalt tonnage and cost for driveways, parking lots, and roads.
