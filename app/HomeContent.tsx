@@ -60,6 +60,21 @@ const MARKET_PAGES = [
   { href: "/faq",              emoji: "❓", title: "Construction FAQ",            desc: "How many bags of concrete, gallons of paint, tiles, studs — quick answers." },
 ];
 
+const PROJECT_PAGES = [
+  { href: "/projects/build-a-deck",     emoji: "🪜", title: "Build a 12×16 Deck",   desc: "Step-by-step plan with 4 calculators inline. Total cost ~$4,500 in 2026." },
+  { href: "/projects/install-a-fence",  emoji: "🪵", title: "Install a Wood Fence", desc: "100-ft 6-ft PT privacy fence: panels, posts, concrete, stain. ~$2,700 installed." },
+  { href: "/projects",                  emoji: "🏗️", title: "All Project Estimators", desc: "Bundles for deck, garage, basement, fence, room paint." },
+];
+
+const REPORT_PAGES = [
+  {
+    href: "/reports/state-of-us-construction-materials-2026",
+    emoji: "📊",
+    title: "State of US Construction Materials — 2026",
+    desc: "Lumber, steel, concrete, housing starts vs. 5-year peaks. Live FRED data. Free to cite.",
+  },
+];
+
 export function HomeContent({ market }: { market: MarketData }) {
   return (
     <>
@@ -110,6 +125,50 @@ export function HomeContent({ market }: { market: MarketData }) {
           </div>
         </div>
       )}
+
+      {/* Project bundles — head-build queries */}
+      <section className="max-w-5xl mx-auto px-4 pt-6 pb-2">
+        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
+          Project Estimators &amp; Plans
+        </h2>
+        <div className="grid sm:grid-cols-3 gap-3">
+          {PROJECT_PAGES.map(({ href, emoji, title, desc }) => (
+            <a
+              key={href}
+              href={href}
+              className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-sm transition-all group"
+            >
+              <span className="text-2xl shrink-0">{emoji}</span>
+              <div>
+                <p className="text-sm font-semibold text-gray-900 group-hover:text-blue-700 mb-0.5">{title}</p>
+                <p className="text-xs text-gray-500 leading-relaxed">{desc}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      {/* Industry reports — backlink magnet */}
+      <section className="max-w-5xl mx-auto px-4 pt-6 pb-2">
+        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
+          Industry Reports
+        </h2>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {REPORT_PAGES.map(({ href, emoji, title, desc }) => (
+            <a
+              key={href}
+              href={href}
+              className="flex items-start gap-3 p-4 bg-blue-50 rounded-xl border border-blue-200 hover:border-blue-400 hover:shadow-sm transition-all group"
+            >
+              <span className="text-2xl shrink-0">{emoji}</span>
+              <div>
+                <p className="text-sm font-semibold text-blue-900 group-hover:text-blue-700 mb-0.5">{title}</p>
+                <p className="text-xs text-blue-700 leading-relaxed">{desc}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
 
       {/* Market Data pages */}
       <section className="max-w-5xl mx-auto px-4 pt-6 pb-2">

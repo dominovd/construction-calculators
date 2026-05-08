@@ -48,14 +48,20 @@ function Header() {
           <a href="/" className="px-3 py-1.5 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors">
             Calculators
           </a>
+          <a href="/projects" className="px-3 py-1.5 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors">
+            Projects
+          </a>
+          <a href="/reports/state-of-us-construction-materials-2026" className="px-3 py-1.5 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors">
+            Reports
+          </a>
           <a href="/material-prices" className="px-3 py-1.5 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors">
-            Material Prices
+            Prices
           </a>
           <a href="/housing-starts" className="px-3 py-1.5 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors">
-            Housing Starts
+            Housing
           </a>
           <a href="/lumber-market" className="px-3 py-1.5 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors">
-            Lumber Market
+            Lumber
           </a>
           <a href="/about" className="px-3 py-1.5 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors">
             About
@@ -77,10 +83,14 @@ function Footer() {
     <footer className="bg-white border-t border-gray-200 mt-16">
       <div className="max-w-5xl mx-auto px-4 py-8 text-sm text-gray-500 flex flex-col sm:flex-row justify-between gap-4">
         <p>© {new Date().getFullYear()} EasyBuildCalc. Free construction calculators.</p>
-        <nav className="flex gap-4">
-          <a href="/material-prices" className="hover:text-gray-700">Material Prices</a>
-          <a href="/housing-starts" className="hover:text-gray-700">Housing Starts</a>
-          <a href="/lumber-market" className="hover:text-gray-700">Lumber Market</a>
+        <nav className="flex flex-wrap gap-4">
+          <a href="/projects" className="hover:text-gray-700">Projects</a>
+          <a href="/reports/state-of-us-construction-materials-2026" className="hover:text-gray-700">Reports</a>
+          <a href="/material-prices" className="hover:text-gray-700">Prices</a>
+          <a href="/housing-starts" className="hover:text-gray-700">Housing</a>
+          <a href="/lumber-market" className="hover:text-gray-700">Lumber</a>
+          <a href="/guides" className="hover:text-gray-700">Guides</a>
+          <a href="/faq" className="hover:text-gray-700">FAQ</a>
           <a href="/about" className="hover:text-gray-700">About</a>
           <a href="/contact" className="hover:text-gray-700">Contact</a>
           <a href="/privacy" className="hover:text-gray-700">Privacy</a>
