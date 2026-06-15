@@ -34,7 +34,29 @@ export default function HowToPage() {
       <p className="text-gray-600 mb-6">
         Cost breakdowns, how-to walkthroughs, and material lists — everything you need before you start building.
       </p>
+      <section className="border border-blue-100 bg-blue-50 rounded-xl p-4 mb-6">
+        <h2 className="text-base font-semibold text-blue-950 mb-2">Use these before ordering materials</h2>
+        <p className="text-sm text-blue-800 leading-relaxed">
+          These guides explain the assumptions behind common construction estimates: thickness,
+          spacing, waste factor, labor scope, permits, and when a DIY material count becomes a
+          contractor job. Each guide links back to the calculator that handles the final numbers.
+        </p>
+      </section>
       <HowToHub />
+      <section className="mt-8 text-sm text-gray-700 leading-relaxed space-y-3">
+        <h2 className="text-lg font-semibold text-gray-900">Popular planning paths</h2>
+        <p>
+          For concrete work, start with the patio cost guide, then confirm cubic yards with the{" "}
+          <a href="/concrete-calculator" className="text-blue-600 hover:underline">concrete calculator</a>{" "}
+          and reinforcement with the{" "}
+          <a href="/rebar-calculator" className="text-blue-600 hover:underline">rebar calculator</a>.
+          For framing, read the wall framing guide first, then use the{" "}
+          <a href="/stud-calculator" className="text-blue-600 hover:underline">stud calculator</a>{" "}
+          to turn wall length, spacing, and openings into a lumber list. For complete jobs, pair a
+          guide with the matching project estimator so material counts, sequence, and cost stay in
+          the same planning flow.
+        </p>
+      </section>
     </div>
   );
 }

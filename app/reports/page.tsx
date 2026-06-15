@@ -45,6 +45,16 @@ export default function ReportsIndexPage() {
         free to cite — please link back to the source page.
       </p>
 
+      <section className="border border-blue-100 bg-blue-50 rounded-xl p-4 mb-6">
+        <h2 className="text-base font-semibold text-blue-950 mb-2">What these reports cover</h2>
+        <p className="text-sm text-blue-800 leading-relaxed">
+          EasyBuildCalc reports focus on builder-facing signals: material price indexes,
+          housing starts, peak-to-current changes, and the planning impact for contractors.
+          The goal is to make public construction data usable for bids, budgets, and project
+          timing without forcing readers to interpret raw economic series.
+        </p>
+      </section>
+
       <ul className="space-y-3">
         {REPORTS.map((r) => (
           <li key={r.slug}>
@@ -64,6 +74,33 @@ export default function ReportsIndexPage() {
           </li>
         ))}
       </ul>
+
+      <section className="mt-8 grid sm:grid-cols-3 gap-3 text-sm">
+        <Link href="/material-prices" className="border border-gray-200 rounded-xl p-4 hover:border-blue-300 transition-colors">
+          <h2 className="font-semibold text-gray-900 mb-1">Material Prices</h2>
+          <p className="text-gray-600">Track monthly lumber, steel, concrete, and housing starts data.</p>
+        </Link>
+        <Link href="/housing-starts" className="border border-gray-200 rounded-xl p-4 hover:border-blue-300 transition-colors">
+          <h2 className="font-semibold text-gray-900 mb-1">Housing Starts</h2>
+          <p className="text-gray-600">Compare annual new construction activity across OECD countries.</p>
+        </Link>
+        <Link href="/lumber-market" className="border border-gray-200 rounded-xl p-4 hover:border-blue-300 transition-colors">
+          <h2 className="font-semibold text-gray-900 mb-1">Lumber Market</h2>
+          <p className="text-gray-600">Compare US lumber PPI with global softwood price trends.</p>
+        </Link>
+      </section>
+
+      <section className="mt-8 text-sm text-gray-700 leading-relaxed space-y-3">
+        <h2 className="text-lg font-semibold text-gray-900">How to cite the data</h2>
+        <p>
+          Each report includes source links and the exact datasets used. If you quote a chart or
+          summary, link to the report URL and mention the original public data source named on the
+          page. For contractor proposals, use the report as market context and the calculators as
+          project-specific estimates. Reports are updated when the underlying public datasets
+          publish new periods, so check the page date before reusing older numbers in bids or
+          forecasts.
+        </p>
+      </section>
     </div>
   );
 }

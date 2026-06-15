@@ -42,6 +42,13 @@ export default async function FaqPage(
   const faq = getFaq(slug);
   if (!faq) notFound();
 
+  const categoryFaqs = FAQS.filter((item) => item.category === faq.category);
+  const categoryIndex = categoryFaqs.findIndex((item) => item.slug === faq.slug);
+  const moreCategoryFaqs = [
+    ...categoryFaqs.slice(categoryIndex + 1),
+    ...categoryFaqs.slice(0, categoryIndex),
+  ].slice(0, 4);
+
   // ── Schema markup ──────────────────────────────────────────────────────────
 
   // 1. QAPage — direct Q&A (appears in search as expandable answer)
@@ -181,6 +188,16 @@ export default async function FaqPage(
         <p className="text-sm text-amber-900 leading-relaxed">{faq.proTip}</p>
       </div>
 
+      <section className="mb-8">
+        <h2 className="text-lg font-semibold text-gray-900 mb-3">Assumptions to Check</h2>
+        <p className="text-sm text-gray-700 leading-relaxed">
+          Before ordering materials, confirm the dimensions, product coverage, waste factor, and
+          local installation requirements for your project. Manufacturer coverage tables and local
+          code rules can change the final quantity, especially for structural work, exterior
+          projects, and irregular layouts.
+        </p>
+      </section>
+
       {/* Calculator CTA */}
       <div className="border border-blue-200 rounded-xl p-5 mb-8 bg-white text-center">
         <p className="text-sm text-gray-600 mb-3">
@@ -207,6 +224,25 @@ export default async function FaqPage(
               >
                 <span className="text-sm text-gray-700 group-hover:text-blue-700">{rf.question}</span>
                 <span className="text-gray-300 group-hover:text-blue-400 ml-2">→</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {moreCategoryFaqs.length > 0 && (
+        <section className="mb-8 border-t border-gray-100 pt-6">
+          <h2 className="text-lg font-semibold text-gray-900 mb-3">
+            More {faq.category} Questions
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-2">
+            {moreCategoryFaqs.map((item) => (
+              <Link
+                key={item.slug}
+                href={`/faq/${item.slug}`}
+                className="block border border-gray-200 rounded-lg px-4 py-3 hover:border-blue-300 hover:bg-blue-50 transition-colors"
+              >
+                <span className="text-sm text-gray-700 hover:text-blue-700">{item.question}</span>
               </Link>
             ))}
           </div>

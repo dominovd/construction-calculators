@@ -44,6 +44,7 @@ export const CALCULATORS: CalcEntry[] = [
   { slug: "concrete-calculator",            label: "Concrete",            category: "concrete-masonry", tags: ["foundation", "slab"] },
   { slug: "concrete-mix-calculator",        label: "Concrete Mix",        category: "concrete-masonry" },
   { slug: "concrete-curb-calculator",       label: "Concrete Curb",       category: "concrete-masonry" },
+  { slug: "concrete-patio-cost-calculator", label: "Concrete Patio Cost",  category: "concrete-masonry", tags: ["patio", "slab", "cost"] },
   { slug: "block-calculator",               label: "Concrete Block",      category: "concrete-masonry", tags: ["wall"] },
   { slug: "brick-calculator",               label: "Brick",               category: "concrete-masonry", tags: ["wall"] },
   { slug: "rebar-calculator",               label: "Rebar",               category: "concrete-masonry", tags: ["foundation"] },
@@ -55,6 +56,7 @@ export const CALCULATORS: CalcEntry[] = [
   { slug: "stud-calculator",                label: "Wall Studs",          category: "lumber-framing", tags: ["wall", "framing"] },
   { slug: "stair-calculator",               label: "Stair Stringer",      category: "lumber-framing" },
   { slug: "deck-calculator",                label: "Deck",                category: "lumber-framing", tags: ["outdoor", "fence"] },
+  { slug: "deck-cost-calculator",           label: "Deck Cost",           category: "lumber-framing", tags: ["outdoor", "deck", "cost"] },
   { slug: "fence-calculator",               label: "Fence",               category: "lumber-framing", tags: ["outdoor", "fence"] },
 
   // ── Roofing ────────────────────────────────────────────────────────────

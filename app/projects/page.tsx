@@ -55,6 +55,16 @@ export default function ProjectsIndexPage() {
         estimate — so you don&apos;t have to add up four spreadsheets.
       </p>
 
+      <section className="border border-blue-100 bg-blue-50 rounded-xl p-4 mb-6">
+        <h2 className="text-base font-semibold text-blue-950 mb-2">How project estimators work</h2>
+        <p className="text-sm text-blue-800 leading-relaxed">
+          A project page combines several focused calculators into one planning workflow. Instead
+          of estimating concrete, lumber, fasteners, finishes, and labor separately, each estimator
+          follows the order a builder would use on site: scope the footprint, size the materials,
+          add waste, then compare DIY and installed cost.
+        </p>
+      </section>
+
       <ul className="grid sm:grid-cols-2 gap-3">
         {PROJECTS.map((p) => (
           <li key={p.slug}>
@@ -88,6 +98,19 @@ export default function ProjectsIndexPage() {
           </li>
         ))}
       </ul>
+
+      <section className="mt-8 text-sm text-gray-700 leading-relaxed space-y-3">
+        <h2 className="text-lg font-semibold text-gray-900">Best starting points</h2>
+        <p>
+          Use the deck and fence estimators when you need a complete material list, not just one
+          quantity. For smaller jobs, start with a single calculator such as the{" "}
+          <Link href="/concrete-calculator" className="text-blue-600 hover:underline">concrete calculator</Link>,{" "}
+          <Link href="/deck-cost-calculator" className="text-blue-600 hover:underline">deck cost calculator</Link>, or{" "}
+          <Link href="/fence-post-concrete-calculator" className="text-blue-600 hover:underline">fence post concrete calculator</Link>.
+          For market timing, pair the estimate with current{" "}
+          <Link href="/material-prices" className="text-blue-600 hover:underline">construction material price trends</Link>.
+        </p>
+      </section>
     </div>
   );
 }

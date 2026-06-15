@@ -61,7 +61,7 @@ export const FAQS: Faq[] = [
     relatedCalc: { slug: "paint-calculator", name: "Paint Calculator" },
     relatedFaqs: [
       { slug: "how-many-sheets-of-drywall-for-12x12-room", question: "How many sheets of drywall for a 12×12 room?" },
-      { slug: "how-many-gallons-of-paint-for-1500-sq-ft-house", question: "How many gallons of paint for a 1,500 sq ft house?" },
+      { slug: "how-many-gallons-of-paint-for-a-bedroom", question: "How many gallons of paint for a bedroom?" },
     ],
   },
 
@@ -96,7 +96,7 @@ export const FAQS: Faq[] = [
     relatedCalc: { slug: "rebar-calculator", name: "Rebar Calculator" },
     relatedFaqs: [
       { slug: "how-many-bags-of-concrete-for-10x10-slab", question: "How many bags of concrete for a 10×10 slab?" },
-      { slug: "how-much-rebar-for-20x20-slab", question: "How much rebar for a 20×20 slab?" },
+      { slug: "how-much-rebar-for-a-driveway", question: "How much rebar for a driveway?" },
     ],
   },
 
@@ -2772,7 +2772,7 @@ export const FAQS: Faq[] = [
       "Always measure in the direction the carpet will run — the 12-foot roll width may or may not align with your room's longer dimension. Minimize seams by running the carpet lengthwise in the room.",
     relatedCalc: { slug: "carpet-calculator", name: "Carpet Calculator" },
     relatedFaqs: [
-      { slug: "how-many-square-yards-of-carpet-for-a-12x12-room", question: "How many sq yd of carpet for a 12×12 room?" },
+      { slug: "how-many-tiles-for-12x12-room", question: "How many tiles for a 12×12 room?" },
       { slug: "how-many-square-feet-in-a-box-of-laminate-flooring", question: "How many sq ft in a box of laminate flooring?" },
     ],
   },

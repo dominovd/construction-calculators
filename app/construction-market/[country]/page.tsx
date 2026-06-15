@@ -110,6 +110,20 @@ function buildArticle(country: CountryStarts, allCountries: CountryStarts[]) {
   return { trend, vsAvg, peakYear, peak, globalRank, avg };
 }
 
+function marketSignal(article: ReturnType<typeof buildArticle>, yoy: number | null) {
+  if (!article) return null;
+  if ((yoy ?? 0) > 5 && article.vsAvg > 0) {
+    return "high-demand";
+  }
+  if ((yoy ?? 0) < -5 && article.vsAvg < 0) {
+    return "softening";
+  }
+  if (article.globalRank <= 5) {
+    return "large-market";
+  }
+  return "stable";
+}
+
 /* ─── Page ───────────────────────────────────────────────────────── */
 export default async function CountryPage({
   params,
@@ -135,6 +149,7 @@ export default async function CountryPage({
 
   const { name, flag, latest, latestYear, yoy, values } = country;
   const article = buildArticle(country, allCountries);
+  const signal = marketSignal(article, yoy);
 
   const breadcrumbLd = {
     "@context": "https://schema.org",
@@ -285,6 +300,62 @@ export default async function CountryPage({
                 : "A contracting market may create opportunities to negotiate better material pricing or lock in subcontractor rates."}
             </span>
           </div>
+
+          <section className="border-t border-gray-100 pt-5">
+            <h2 className="text-lg font-semibold text-gray-900 mb-3">
+              What this means for planning
+            </h2>
+            <p>
+              Use housing starts as a demand signal rather than a direct price quote. A rising
+              starts trend can tighten subcontractor availability and push demand toward framing,
+              concrete, roofing, windows, and site materials. A falling trend can make supplier
+              quotes more negotiable, but it may also reflect slower permitting or weaker buyer
+              demand.
+            </p>
+            {signal === "high-demand" && (
+              <p>
+                {name} is showing both positive year-over-year movement and activity above its
+                recent average. For active builders, that usually means confirming lead times early
+                and padding estimates for materials with volatile delivery windows.
+              </p>
+            )}
+            {signal === "softening" && (
+              <p>
+                {name} is below its recent average and moving lower year over year. This is a good
+                market to refresh bids frequently, compare supplier quotes, and avoid carrying old
+                material assumptions into new work.
+              </p>
+            )}
+            {signal === "large-market" && (
+              <p>
+                Because {name} ranks near the top of the tracked OECD markets by housing-start
+                volume, even modest percentage changes can represent a large shift in material and
+                labor demand.
+              </p>
+            )}
+            {signal === "stable" && (
+              <p>
+                {name} is not showing an extreme signal in the current dataset. For estimates, use
+                the latest starts number as context, then rely on local supplier pricing and project
+                dimensions for the final material count.
+              </p>
+            )}
+          </section>
+
+          <section className="border-t border-gray-100 pt-5">
+            <h2 className="text-lg font-semibold text-gray-900 mb-3">
+              Related estimating tools
+            </h2>
+            <p>
+              For project-level planning, pair this market page with the{" "}
+              <a href="/material-prices" className="text-blue-600 hover:underline">material price index</a>,{" "}
+              <a href="/concrete-calculator" className="text-blue-600 hover:underline">concrete calculator</a>,{" "}
+              <a href="/lumber-calculator" className="text-blue-600 hover:underline">lumber calculator</a>, and{" "}
+              <a href="/deck-cost-calculator" className="text-blue-600 hover:underline">deck cost calculator</a>.
+              Market data explains demand pressure; calculators translate dimensions into order
+              quantities.
+            </p>
+          </section>
         </article>
       )}
 

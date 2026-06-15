@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "seo:qc": "node scripts/seo-qc.mjs",
     "start": "next start",
     "lint": "next lint"
   },
